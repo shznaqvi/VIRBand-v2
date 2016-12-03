@@ -1,0 +1,173 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="android:Theme.Holo.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowActionBarOverlay">true</item>
+        <item name="actionBarStyle">@style/ActionBarTheme</item>
+        <item name="android:layoutDirection">rtl</item>
+        <item name="android:typeface">serif</item>
+    </style>
+
+
+    <style name="SpinnerItem">
+        <item name="android:textAppearance">@style/SpinnerItemText</item>
+    </style>
+
+    <style name="SpinnerItemText">
+        <item name="android:textSize">36sp</item>
+        <item name="android:typeface">serif</item>
+    </style>
+
+    <style name="ActionBarTheme" parent="android:Theme.Holo.Light.DarkActionBar">
+        <item name="android:background">@drawable/background_grad</item>
+        <item name="background">@drawable/background_grad</item>
+    </style>
+
+
+    <!-- Form Styles -->
+    <style name="labels">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">24dp</item>
+        <item name="android:background">@color/colorPrimary</item>
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:textSize">36sp</item>
+        <item name="android:typeface">serif</item>
+        <item name="android:padding">16dp</item>
+
+    </style>
+
+    <style name="errors">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">24dp</item>
+        <item name="android:background">#ffd6d6</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">#ff1e1e</item>
+        <item name="android:textSize">36sp</item>
+        <item name="android:typeface">serif</item>
+        <item name="android:visibility">invisible</item>
+        <item name="android:padding">16dp</item>
+    </style>
+
+    <style name="sub">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">0dp</item>
+        <item name="android:background">#d6d6d6</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">#ef6d6d</item>
+        <item name="android:textSize">36sp</item>
+        <item name="android:typeface">serif</item>
+        <item name="android:visibility">invisible</item>
+        <item name="android:padding">16dp</item>
+        <item name="android:textStyle">italic</item>
+
+    </style>
+
+    <style name="textInput">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginBottom">16dp</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:background">#efefef</item>
+        <item name="android:padding">16dp</item>
+    </style>
+
+    <style name="spinner">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginBottom">16dp</item>
+        <item name="android:textSize">36sp</item>
+        <item name="android:typeface">serif</item>
+        <item name="android:textColor">#ff0000</item>
+        <item name="android:background">#efefef</item>
+        <item name="android:padding">16dp</item>
+
+
+    </style>
+
+    <style name="spinnerItemStyle">
+        <item name="android:padding">10dp</item>
+        <item name="android:textSize">36sp</item>
+        <item name="android:typeface">serif</item>
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
+
+    <style name="spinnerDropDownItemStyle">
+        <item name="android:padding">20dp</item>
+        <item name="android:textSize">36sp</item>
+        <item name="android:typeface">serif</item>
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
+
+
+    <style name="radiogroup">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">right</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:layout_marginBottom">16dp</item>
+        <item name="android:background">#efefef</item>
+        <item name="android:textSize">36sp</item>
+        <item name="android:typeface">serif</item>
+        <item name="android:padding">16dp</item>
+
+    </style>
+
+    <style name="radiobutton">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:button">@null</item>
+        <item name="android:drawableRight">@android:drawable/btn_radio</item>
+        <item name="android:textSize">36sp</item>
+        <item name="android:typeface">serif</item>
+        <item name="android:background">#efefef</item>
+        <item name="android:padding">4dp</item>
+    </style>
+
+    <style name="buttons">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">36sp</item>
+        <item name="android:typeface">serif</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:padding">16dp</item>
+    </style>
+
+    <style name="checkbox">
+        <item name="android:layout_gravity">right</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:button">@null</item>
+        <item name="android:textSize">36sp</item>
+        <item name="android:typeface">serif</item>
+        <item name="android:drawableRight">?android:attr/listChoiceIndicatorMultiple</item>
+        <item name="android:background">#efefef</item>
+        <item name="android:padding">4dp</item>
+
+
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+
+    <style name="FullscreenTheme" parent="AppTheme">
+        <item name="android:actionBarStyle">@style/FullscreenActionBarStyle</item>
+        <item name="android:windowActionBarOverlay">true</item>
+        <item name="android:windowBackground">@null</item>
+        <item name="metaButtonBarStyle">?android:attr/buttonBarStyle</item>
+        <item name="metaButtonBarButtonStyle">?android:attr/buttonBarButtonStyle</item>
+    </style>
+
+    <style name="FullscreenActionBarStyle" parent="android:Theme.Holo.Light.DarkActionBar">
+        <item name="android:background">@color/black_overlay</item>
+    </style>
+
+</resources>
