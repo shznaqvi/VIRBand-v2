@@ -64,7 +64,7 @@ public class MainActivity extends Activity {
         String iStatus = "";
         for (FormsContract fc : todaysForms) {
 
-            switch (fc.getistatus()) {
+            switch (fc.getIstatus()) {
                 case "1":
                     iStatus = "Complete";
                     break;
@@ -79,7 +79,7 @@ public class MainActivity extends Activity {
                     break;
             }
 
-            rSumText += fc.getSubarea() + " " + fc.getHousehold() + " " + iStatus;
+            rSumText += fc.getSubareacode() + " " + fc.getHousehold() + " " + iStatus;
             rSumText += "\r\n";
 
         }
@@ -98,7 +98,7 @@ public class MainActivity extends Activity {
 
     }
 
-   /* public void openForm(View v) {
+    public void openForm(View v) {
         Intent oF = new Intent(this, SectionAActivity.class);
         startActivity(oF);
     }
@@ -107,7 +107,7 @@ public class MainActivity extends Activity {
         Intent iA = new Intent(this, SectionAActivity.class);
         startActivity(iA);
     }
-
+ /*
     public void openB(View v) {
         Intent iB = new Intent(this, SectionBActivity.class);
         startActivity(iB);
@@ -173,7 +173,7 @@ public class MainActivity extends Activity {
             new SyncForms(this).execute(formsUrl);
 
             Toast.makeText(getApplicationContext(), "Syncing IMs", Toast.LENGTH_SHORT).show();
-            new SyncIMs(this).execute(imsUrl);
+            //new SyncIMs(this).execute(imsUrl);
 
             SharedPreferences syncPref = getSharedPreferences("SyncInfo", Context.MODE_PRIVATE);
             SharedPreferences.Editor editor = syncPref.edit();

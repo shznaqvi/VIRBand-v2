@@ -11,6 +11,7 @@
     <color name="gray">#7f7f7f</color>
     <color name="whiteOverlay">#99ffffff</color>
     <color name="dullWhile">#d6d6d6</color>
+    <color name="dullWhileOverlay">#99d6d6d6</color>
     <color name="white">#ffffff</color>
 
     <color name="black_overlay">#66000000</color>

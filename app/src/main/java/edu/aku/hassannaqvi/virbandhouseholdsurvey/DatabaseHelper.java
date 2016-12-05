@@ -49,6 +49,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             + singleForm.COLUMN_NAME_INTERVIEWER + " TEXT,"
             + singleForm.COLUMN_NAME_AREA_CODE + " TEXT,"
             + singleForm.COLUMN_NAME_SUBAREA_CODE + " TEXT,"
+            + singleForm.COLUMN_NAME_HOUSEHOLD + " TEXT,"
             + singleForm.COLUMN_NAME_ISTATUS + " TEXT,"
 
             //+ singleForm.COLUMN_NAME_SA + " TEXT,"
