@@ -309,6 +309,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 singleForm.COLUMN_NAME_SB,
                 singleForm.COLUMN_NAME_SC,
                 singleForm.COLUMN_NAME_SD,
+                singleForm.COLUMN_NAME_SE,
                 singleForm.COLUMN_NAME_SIC,
 
 
