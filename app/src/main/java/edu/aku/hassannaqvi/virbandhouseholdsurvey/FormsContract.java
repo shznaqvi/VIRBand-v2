@@ -21,11 +21,13 @@ public class FormsContract {
     private String areacode = "0000"; // Area Code
     private String subareacode = ""; // Cluster
     private String household = ""; // Household number
+    private String childName = ""; // Household number
     private String istatus = ""; // Interview Status
     //private String sA = "";
     private String sB = "";
     private String sC = "";
     private String sD = "";
+    private String sE = "";
     private String sIC = "";
 
     private String gpsLat = "";
@@ -43,12 +45,12 @@ public class FormsContract {
         return projectName;
     }
 
-    public String get_ID() {
+    public String getID() {
         return _ID;
     }
 
-    public void set_ID(String _ID) {
-        this._ID = _ID;
+    public void setID(String id) {
+        this._ID = id;
     }
 
     public String getUID() {
@@ -99,6 +101,14 @@ public class FormsContract {
         this.household = household;
     }
 
+    public String getChildName() {
+        return childName;
+    }
+
+    public void setChildName(String childName) {
+        this.childName = childName;
+    }
+
     public String getIstatus() {
         return istatus;
     }
@@ -129,6 +139,14 @@ public class FormsContract {
 
     public void setsD(String sD) {
         this.sD = sD;
+    }
+
+    public String getsE() {
+        return sE;
+    }
+
+    public void setsE(String sE) {
+        this.sE = sE;
     }
 
     public String getsIC() {
@@ -203,11 +221,13 @@ public class FormsContract {
         this.areacode = jsonObject.getString("areacode");
         this.subareacode = jsonObject.getString("subareacode");
         this.household = jsonObject.getString("household");
+        this.childName = jsonObject.getString("childname");
         this.istatus = jsonObject.getString("istatus");
         //this.sA = jsonObject.getString("sA");
         this.sB = jsonObject.getString("sB");
         this.sC = jsonObject.getString("sC");
         this.sD = jsonObject.getString("sD");
+        this.sE = jsonObject.getString("sE");
         this.sIC = jsonObject.getString("sIC");
         this.gpsLat = jsonObject.getString("gpsLat");
         this.gpsLng = jsonObject.getString("gpsLng");
@@ -227,11 +247,13 @@ public class FormsContract {
         this.areacode = cursor.getString(cursor.getColumnIndex(singleForm.COLUMN_NAME_AREA_CODE));
         this.subareacode = cursor.getString(cursor.getColumnIndex(singleForm.COLUMN_NAME_SUBAREA_CODE));
         this.household = cursor.getString(cursor.getColumnIndex(singleForm.COLUMN_NAME_HOUSEHOLD));
+        this.childName = cursor.getString(cursor.getColumnIndex(singleForm.COLUMN_NAME_CHILDNAME));
         this.istatus = cursor.getString(cursor.getColumnIndex(singleForm.COLUMN_NAME_ISTATUS));
         //this.sA = cursor.getString(cursor.getColumnIndex(singleForm.COLUMN_NAME_SA));
         this.sB = cursor.getString(cursor.getColumnIndex(singleForm.COLUMN_NAME_SB));
         this.sC = cursor.getString(cursor.getColumnIndex(singleForm.COLUMN_NAME_SC));
         this.sD = cursor.getString(cursor.getColumnIndex(singleForm.COLUMN_NAME_SD));
+        this.sE = cursor.getString(cursor.getColumnIndex(singleForm.COLUMN_NAME_SE));
         this.sIC = cursor.getString(cursor.getColumnIndex(singleForm.COLUMN_NAME_SIC));
         this.gpsLat = cursor.getString(cursor.getColumnIndex(singleForm.COLUMN_NAME_GPS_LAT));
         this.gpsLng = cursor.getString(cursor.getColumnIndex(singleForm.COLUMN_NAME_GPS_LNG));
@@ -265,6 +287,7 @@ public class FormsContract {
         json.put(singleForm.COLUMN_NAME_AREA_CODE, this.areacode == null ? JSONObject.NULL : this.areacode);
         json.put(singleForm.COLUMN_NAME_AREA_CODE, this.subareacode == null ? JSONObject.NULL : this.subareacode);
         json.put(singleForm.COLUMN_NAME_HOUSEHOLD, this.household == null ? JSONObject.NULL : this.household);
+        json.put(singleForm.COLUMN_NAME_CHILDNAME, this.childName == null ? JSONObject.NULL : this.childName);
         json.put(singleForm.COLUMN_NAME_ISTATUS, this.istatus == null ? JSONObject.NULL : this.istatus);
 
         //json.put(singleForm.COLUMN_NAME_SA, this.sA == null?JSONObject.NULL:this.sA);
@@ -272,6 +295,7 @@ public class FormsContract {
         json.put(singleForm.COLUMN_NAME_SB, this.sB == null ? JSONObject.NULL : this.sB);
         json.put(singleForm.COLUMN_NAME_SC, this.sC == null ? JSONObject.NULL : this.sC);
         json.put(singleForm.COLUMN_NAME_SD, this.sD == null ? JSONObject.NULL : this.sD);
+        json.put(singleForm.COLUMN_NAME_SE, this.sE == null ? JSONObject.NULL : this.sE);
         json.put(singleForm.COLUMN_NAME_SIC, this.sIC == null ? JSONObject.NULL : this.sIC);
 
         return json;
@@ -297,11 +321,13 @@ public class FormsContract {
         public static final String COLUMN_NAME_AREA_CODE = "areacode";
         public static final String COLUMN_NAME_SUBAREA_CODE = "subarea";
         public static final String COLUMN_NAME_HOUSEHOLD = "household";
+        public static final String COLUMN_NAME_CHILDNAME = "childname";
         public static final String COLUMN_NAME_ISTATUS = "istatus";
         //public static final String COLUMN_NAME_SA = "sa";
         public static final String COLUMN_NAME_SB = "sb";
         public static final String COLUMN_NAME_SC = "sc";
         public static final String COLUMN_NAME_SD = "sd";
+        public static final String COLUMN_NAME_SE = "se";
         public static final String COLUMN_NAME_SIC = "sic";
 
     }

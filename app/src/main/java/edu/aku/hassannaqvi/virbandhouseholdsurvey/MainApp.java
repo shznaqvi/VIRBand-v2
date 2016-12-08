@@ -24,8 +24,12 @@ public class MainApp extends Application {
     /*
         public static final String _IP = "43.245.131.159"; // Test server
     */
-    public static final Integer MONTHS_LIMIT = 11;
+    public static final Integer MONTHS_UPPER_LIMIT = 11;
+    public static final Integer MONTHS_LOWER_LIMIT = 6;
     public static final Integer DAYS_LIMIT = 29;
+    public static final Integer YEARS_LIMIT = 0;
+    public static final Integer RESPONDENTS_AGE_LIMIT = 14;
+
     private static final long MINIMUM_DISTANCE_CHANGE_FOR_UPDATES = 1; // in Meters
     private static final long MINIMUM_TIME_BETWEEN_UPDATES = 1000; // in Milliseconds
     private static final int TWENTY_MINUTES = 1000 * 60 * 20;
@@ -44,7 +48,7 @@ public class MainApp extends Application {
     public static int loginFieldArea = -1;
     public static String child_name = "TEST";
     public static FormsContract fc;
-    public static OCsContract im;
+    public static OCsContract oc;
     public static String userName = "0000";
     public static String areaCode;
     protected LocationManager locationManager;
@@ -53,7 +57,7 @@ public class MainApp extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        TypefaceUtil.overrideFont(getApplicationContext(), "SERIF", "fonts/JameelNooriNastaleeq.ttf"); // font from assets: "assets/fonts/Roboto-Regular.ttf
+        TypefaceUtil.overrideFont(getApplicationContext(), "SERIF", "fonts/jameelnoorinastaleeq.ttf"); // font from assets: "assets/fonts/Roboto-Regular.ttf
 
         deviceId = Settings.Secure.getString(getApplicationContext().getContentResolver(),
                 Settings.Secure.ANDROID_ID);

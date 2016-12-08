@@ -107,9 +107,9 @@ public class MainActivity extends Activity {
         Intent iA = new Intent(this, SectionAActivity.class);
         startActivity(iA);
     }
- /*
+
     public void openB(View v) {
-        Intent iB = new Intent(this, SectionBActivity.class);
+        Intent iB = new Intent(this, SectionAActivity.class);
         startActivity(iB);
     }
 
@@ -117,7 +117,7 @@ public class MainActivity extends Activity {
         Intent iC = new Intent(this, SectionCActivity.class);
         startActivity(iC);
     }
-
+/*
     public void openD(View v) {
         Intent iD = new Intent(this, SectionDActivity.class);
         startActivity(iD);

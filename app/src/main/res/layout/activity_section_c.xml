@@ -1,0 +1,406 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_seaction_a"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/blue_abstract_background"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="edu.aku.hassannaqvi.virbandhouseholdsurvey.SectionAActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingEnd="@dimen/activity_horizontal_margin"
+        android:paddingStart="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        tools:context="edu.aku.hassannaqvi.virbandhouseholdsurvey.MainActivity">
+
+
+        <TextView
+            android:id="@+id/crf1_header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/sectionC"
+            android:textSize="30sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="?android:attr/listDivider" />
+
+
+        <!--  = = = = =  START OF FORM FIELDS - Section C = = = = = -->
+
+        // Respondent's Name
+
+        <TextView
+            style="@style/labels"
+            android:text="@string/vc01" />
+
+        <EditText
+            android:id="@+id/vc01"
+            style="@style/textInput"
+            android:digits="qwertyuiopasdfghjklzxcvbnm QWERTYUIOPASDFGHJKLZXCVBNM"
+            android:hint="@string/vc01"
+            android:inputType="textPersonName"
+            android:maxLength="35" />
+
+        // Resp. Age
+
+        <TextView
+            style="@style/labels"
+            android:text="@string/vc02" />
+
+        <EditText
+            android:id="@+id/vc02"
+            style="@style/textInput"
+            android:digits="0123456789"
+            android:hint="@string/vc02"
+            android:inputType="number"
+            android:maxLength="2" />
+
+        // Resp. Gender
+
+        <TextView
+            style="@style/labels"
+            android:text="@string/vc03" />
+
+        <RadioGroup
+            android:id="@+id/vc03"
+            style="@style/radiogroup">
+
+            <RadioButton
+                android:id="@+id/vc0301"
+                style="@style/radiobutton"
+                android:text="@string/vc0301" />
+
+            <RadioButton
+                android:id="@+id/vc0302"
+                style="@style/radiobutton"
+                android:text="@string/vc0302" />
+
+        </RadioGroup>
+
+        // Address
+
+        <TextView
+            style="@style/labels"
+            android:text="@string/vc04" />
+
+        <EditText
+            android:id="@+id/vc04"
+            style="@style/textInput"
+            android:digits="qwertyuiopasdfghjklzxcvbnm QWERTYUIOPASDFGHJKLZXCVBNM01234567890!#()-.,"
+            android:hint="@string/vc04"
+            android:inputType="text"
+            android:maxLength="35" />
+
+        // Residence Type
+
+        <TextView
+            style="@style/labels"
+            android:text="@string/vc05" />
+
+        <RadioGroup
+            android:id="@+id/vc05"
+            style="@style/radiogroup">
+
+            <RadioButton
+                android:id="@+id/vc0501"
+                style="@style/radiobutton"
+                android:text="@string/vc0501" />
+
+            <RadioButton
+                android:id="@+id/vc0502"
+                style="@style/radiobutton"
+                android:text="@string/vc0502" />
+
+        </RadioGroup>
+
+        // Respondent's Name
+
+        <TextView
+            style="@style/labels"
+            android:text="@string/vc06" />
+
+        // PTCL
+
+        <EditText
+            android:id="@+id/vc0601"
+            style="@style/textInput"
+            android:digits="0123456789"
+            android:hint="@string/vc0601"
+            android:inputType="number"
+            android:maxLength="8" />
+
+        // Mobile
+
+        <EditText
+            android:id="@+id/vc0602"
+            style="@style/textInput"
+            android:digits="0123456789"
+            android:hint="@string/vc0602"
+            android:inputType="number"
+            android:maxLength="11" />
+
+        // Religion
+
+        <TextView
+            style="@style/labels"
+            android:text="@string/vc07" />
+
+        <RadioGroup
+            android:id="@+id/vc07"
+            style="@style/radiogroup">
+
+            <RadioButton
+                android:id="@+id/vc0701"
+                style="@style/radiobutton"
+                android:text="@string/vc0701" />
+
+            <RadioButton
+                android:id="@+id/vc0702"
+                style="@style/radiobutton"
+                android:text="@string/vc0702" />
+
+            <RadioButton
+                android:id="@+id/vc0703"
+                style="@style/radiobutton"
+                android:text="@string/vc0703" />
+
+            <RadioButton
+                android:id="@+id/vc0788"
+                style="@style/radiobutton"
+                android:text="@string/Others" />
+
+        </RadioGroup>
+
+        <EditText
+            android:id="@+id/vc0788x"
+            style="@style/textInput"
+            android:digits="qwertyuiopasdfghjklzxcvbnm QWERTYUIOPASDFGHJKLZXCVBNM01234567890!#()-.,"
+            android:hint="@string/Others"
+            android:inputType="text"
+            android:maxLength="35" />
+
+        // Family System
+
+        <TextView
+            style="@style/labels"
+            android:text="@string/vc08" />
+
+        <RadioGroup
+            android:id="@+id/vc08"
+            style="@style/radiogroup">
+
+            <RadioButton
+                android:id="@+id/vc0801"
+                style="@style/radiobutton"
+                android:text="@string/vc0801" />
+
+            <RadioButton
+                android:id="@+id/vc0802"
+                style="@style/radiobutton"
+                android:text="@string/vc0802" />
+
+        </RadioGroup>
+
+        // Languages
+
+        <TextView
+            style="@style/labels"
+            android:text="@string/vc09" />
+
+        <RadioGroup
+            android:id="@+id/vc09"
+            style="@style/radiogroup">
+
+            <RadioButton
+                android:id="@+id/vc0901"
+                style="@style/radiobutton"
+                android:text="@string/vc0901" />
+
+            <RadioButton
+                android:id="@+id/vc0902"
+                style="@style/radiobutton"
+                android:text="@string/vc0902" />
+
+            <RadioButton
+                android:id="@+id/vc0903"
+                style="@style/radiobutton"
+                android:text="@string/vc0903" />
+
+            <RadioButton
+                android:id="@+id/vc0904"
+                style="@style/radiobutton"
+                android:text="@string/vc0904" />
+
+            <RadioButton
+                android:id="@+id/vc0905"
+                style="@style/radiobutton"
+                android:text="@string/vc0905" />
+
+            <RadioButton
+                android:id="@+id/vc0906"
+                style="@style/radiobutton"
+                android:text="@string/vc0906" />
+
+            <RadioButton
+                android:id="@+id/vc0988"
+                style="@style/radiobutton"
+                android:text="@string/Others" />
+
+        </RadioGroup>
+
+
+        <EditText
+            android:id="@+id/vc0988x"
+            style="@style/textInput"
+            android:digits="qwertyuiopasdfghjklzxcvbnm QWERTYUIOPASDFGHJKLZXCVBNM01234567890!#()-.,"
+            android:hint="@string/Others"
+            android:inputType="text"
+            android:maxLength="35" />
+
+        // Languages
+
+        <TextView
+            style="@style/labels"
+            android:text="@string/vc10" />
+
+        <RadioGroup
+            android:id="@+id/vc10"
+            style="@style/radiogroup">
+
+            <RadioButton
+                android:id="@+id/vc1001"
+                style="@style/radiobutton"
+                android:text="@string/vc1001" />
+
+            <RadioButton
+                android:id="@+id/vc1002"
+                style="@style/radiobutton"
+                android:text="@string/vc1002" />
+
+            <RadioButton
+                android:id="@+id/vc1003"
+                style="@style/radiobutton"
+                android:text="@string/vc1003" />
+
+            <RadioButton
+                android:id="@+id/vc1004"
+                style="@style/radiobutton"
+                android:text="@string/vc1004" />
+
+            <RadioButton
+                android:id="@+id/vc1005"
+                style="@style/radiobutton"
+                android:text="@string/vc1005" />
+
+        </RadioGroup>
+
+        // Languages
+
+        <TextView
+            style="@style/labels"
+            android:text="@string/vc11" />
+
+        <RadioGroup
+            android:id="@+id/vc11"
+            style="@style/radiogroup">
+
+            <RadioButton
+                android:id="@+id/vc1101"
+                style="@style/radiobutton"
+                android:text="@string/vc1101" />
+
+            <RadioButton
+                android:id="@+id/vc1102"
+                style="@style/radiobutton"
+                android:text="@string/vc1102" />
+
+            <RadioButton
+                android:id="@+id/vc1103"
+                style="@style/radiobutton"
+                android:text="@string/vc1103" />
+
+            <RadioButton
+                android:id="@+id/vc1104"
+                style="@style/radiobutton"
+                android:text="@string/vc1104" />
+
+            <RadioButton
+                android:id="@+id/vc1105"
+                style="@style/radiobutton"
+                android:text="@string/vc1105" />
+
+            <RadioButton
+                android:id="@+id/vc1106"
+                style="@style/radiobutton"
+                android:text="@string/vc1106" />
+
+            <RadioButton
+                android:id="@+id/vc1107"
+                style="@style/radiobutton"
+                android:text="@string/vc1107" />
+
+            <RadioButton
+                android:id="@+id/vc1108"
+                style="@style/radiobutton"
+                android:text="@string/vc1108" />
+
+            <RadioButton
+                android:id="@+id/vc1188"
+                style="@style/radiobutton"
+                android:text="@string/Others" />
+
+        </RadioGroup>
+
+
+        <EditText
+            android:id="@+id/vc1188x"
+            style="@style/textInput"
+            android:digits="qwertyuiopasdfghjklzxcvbnm QWERTYUIOPASDFGHJKLZXCVBNM01234567890!#()-.,"
+            android:hint="@string/Others"
+            android:inputType="text"
+            android:maxLength="35" />
+
+
+        <!--  = = = = =  END OF FORM FIELDS - Section C = = = = = -->
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_End"
+                style="@style/buttons"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:onClick="endInterview"
+                android:text="@string/end_interview"
+                android:textColor="#ff1e1e" />
+
+            <!--'onClick' for btn_End will NOT change and always call 'endInterview'-->
+
+            <Button
+                android:id="@+id/btn_Continue"
+                style="@style/buttons"
+                android:onClick="startInterview"
+                android:text="@string/start_interview"
+                android:textColor="#1ed61e" />
+            <!--'onClick' for btn_Continue will call next section form e.g.: openSection2-->
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>
