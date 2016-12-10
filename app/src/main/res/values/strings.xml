@@ -11,9 +11,9 @@
     <string name="error_invalid_password">This password is too short</string>
     <string name="error_incorrect_password">This password is incorrect</string>
     <string name="error_field_required">This field is required</string>
-    <string name="permission_rationale">"Contacts permissions are needed for providing email
-        completions."
-    </string>
+  <string name="permission_rationale">"Contacts permissions are needed for providing email
+    completions."
+  </string>
 
     <string name="Yes"> ہاں </string>
     <string name="No"> نہیں </string>
@@ -106,32 +106,32 @@
     <string name="vc1107"> بہن </string>
     <string name="vc1108"> بھائی </string>
     <string name="vd01"> جوابدہندہ کی تعلیمی قابلیت </string>
-    <string name="vd0101">   روایتی تعلیم سے نا آشنا </string>
-    <string name="vd0102">   ابتدائی </string>
-    <string name="vd0103">   ثانوی </string>
-    <string name="vd0104">   میٹرک </string>
-    <string name="vd0105">   انٹر </string>
-    <string name="vd0106">   گریجویشن </string>
-    <string name="vd0107">   ماسٹرز </string>
-    <string name="vd0108">   مدرسہ تعلیم </string>
+    <string name="vd0101"> روایتی تعلیم سے نا آشنا </string>
+    <string name="vd0102"> ابتدائی </string>
+    <string name="vd0103"> ثانوی </string>
+    <string name="vd0104"> میٹرک </string>
+    <string name="vd0105"> انٹر </string>
+    <string name="vd0106"> گریجویشن </string>
+    <string name="vd0107"> ماسٹرز </string>
+    <string name="vd0108"> مدرسہ تعلیم </string>
     <string name="vd02"> والدہ کی تعلیم </string>
-    <string name="vd0201">      روایتی تعلیم سے نا آشنا </string>
-    <string name="vd0202">      ابتدائی </string>
-    <string name="vd0203">      ثانوی </string>
-    <string name="vd0204">      میٹرک </string>
-    <string name="vd0205">      انٹر </string>
-    <string name="vd0206">      گریجویشن </string>
-    <string name="vd0207">      ماسٹرز </string>
-    <string name="vd0208">      مدرسہ تعلیم </string>
+    <string name="vd0201"> روایتی تعلیم سے نا آشنا </string>
+    <string name="vd0202"> ابتدائی </string>
+    <string name="vd0203"> ثانوی </string>
+    <string name="vd0204"> میٹرک </string>
+    <string name="vd0205"> انٹر </string>
+    <string name="vd0206"> گریجویشن </string>
+    <string name="vd0207"> ماسٹرز </string>
+    <string name="vd0208"> مدرسہ تعلیم </string>
     <string name="vd03"> والد کی تعلیم </string>
-    <string name="vd0301">      روایتی تعلیم سے نا آشنا </string>
-    <string name="vd0302">      ابتدائی </string>
-    <string name="vd0303">      ثانوی </string>
-    <string name="vd0304">      میٹرک </string>
-    <string name="vd0305">      انٹر </string>
-    <string name="vd0306">      گریجویشن </string>
-    <string name="vd0307">      ماسٹرز </string>
-    <string name="vd0308">      مدرسہ تعلیم </string>
+    <string name="vd0301"> روایتی تعلیم سے نا آشنا </string>
+    <string name="vd0302"> ابتدائی </string>
+    <string name="vd0303"> ثانوی </string>
+    <string name="vd0304"> میٹرک </string>
+    <string name="vd0305"> انٹر </string>
+    <string name="vd0306"> گریجویشن </string>
+    <string name="vd0307"> ماسٹرز </string>
+    <string name="vd0308"> مدرسہ تعلیم </string>
     <string name="vd04"> والد کا پیشہ </string>
     <string name="vd0401"> بیروزگار </string>
     <string name="vd0402"> سرکاری ملازم </string>
@@ -146,11 +146,11 @@
     <string name="vd0505"> نجی کاروبار </string>
     <string name="vd0506"> گھریلو خاتون </string>
     <string name="vd06"> گھرانے کی کل ماہانہ آمدنی </string>
-    <string name="vd0601">     دس ہزار روپے سے کم </string>
-    <string name="vd0602">     دس ہزار ایک سے تیس ہزار روپے تک </string>
-    <string name="vd0603">     تیس ہزار ایک سے پچاس ہزار روپے تک </string>
-    <string name="vd0604">     پچاس ہزار ایک سے ستر ہزار روپے تک </string>
-    <string name="vd0605">     ستر ہزار ایک سے نوے ہزار روپے تک </string>
+    <string name="vd0601"> دس ہزار روپے سے کم </string>
+    <string name="vd0602"> دس ہزار ایک سے تیس ہزار روپے تک </string>
+    <string name="vd0603"> تیس ہزار ایک سے پچاس ہزار روپے تک </string>
+    <string name="vd0604"> پچاس ہزار ایک سے ستر ہزار روپے تک </string>
+    <string name="vd0605"> ستر ہزار ایک سے نوے ہزار روپے تک </string>
     <string name="vd0606"> نوے ہزار روپےسے زائد </string>
     <string name="ve01"> کیا آپ نے کبھی حفاظتی ٹیکوں کے بارے میں سنا ہے </string>
     <string name="ve02"> آپ نے حفاظتی ٹیکوں کے بارے میں کیا سنا ہے </string>

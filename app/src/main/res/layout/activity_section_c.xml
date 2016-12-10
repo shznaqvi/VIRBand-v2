@@ -216,16 +216,20 @@
 
         <TextView
             style="@style/labels"
-            android:text="@string/vc09" />
+            android:text="@string/vc09"
+            />
 
         <RadioGroup
             android:id="@+id/vc09"
-            style="@style/radiogroup">
+            style="@style/radiogroup"
+            android:orientation="vertical">
 
             <RadioButton
                 android:id="@+id/vc0901"
                 style="@style/radiobutton"
-                android:text="@string/vc0901" />
+                android:text="@string/vc0901"
+                android:layout_weight="@null"
+                android:layout_width="match_parent"/>
 
             <RadioButton
                 android:id="@+id/vc0902"
@@ -235,27 +239,37 @@
             <RadioButton
                 android:id="@+id/vc0903"
                 style="@style/radiobutton"
-                android:text="@string/vc0903" />
+                android:text="@string/vc0903"
+                android:layout_weight="@null"
+                android:layout_width="match_parent"/>
 
             <RadioButton
                 android:id="@+id/vc0904"
                 style="@style/radiobutton"
-                android:text="@string/vc0904" />
+                android:text="@string/vc0904"
+                android:layout_weight="@null"
+                android:layout_width="match_parent"/>
 
             <RadioButton
                 android:id="@+id/vc0905"
                 style="@style/radiobutton"
-                android:text="@string/vc0905" />
+                android:text="@string/vc0905"
+                android:layout_weight="@null"
+                android:layout_width="match_parent"/>
 
             <RadioButton
                 android:id="@+id/vc0906"
                 style="@style/radiobutton"
-                android:text="@string/vc0906" />
+                android:text="@string/vc0906"
+                android:layout_weight="@null"
+                android:layout_width="match_parent"/>
 
             <RadioButton
                 android:id="@+id/vc0988"
                 style="@style/radiobutton"
-                android:text="@string/Others" />
+                android:text="@string/Others"
+                android:layout_weight="@null"
+                android:layout_width="match_parent"/>
 
         </RadioGroup>
 
@@ -276,32 +290,43 @@
 
         <RadioGroup
             android:id="@+id/vc10"
-            style="@style/radiogroup">
+            style="@style/radiogroup"
+            android:orientation="vertical">
 
             <RadioButton
                 android:id="@+id/vc1001"
                 style="@style/radiobutton"
-                android:text="@string/vc1001" />
+                android:text="@string/vc1001"
+                android:layout_weight="@null"
+                android:layout_width="match_parent"/>
 
             <RadioButton
                 android:id="@+id/vc1002"
                 style="@style/radiobutton"
-                android:text="@string/vc1002" />
+                android:text="@string/vc1002"
+                android:layout_weight="@null"
+                android:layout_width="match_parent"/>
 
             <RadioButton
                 android:id="@+id/vc1003"
                 style="@style/radiobutton"
-                android:text="@string/vc1003" />
+                android:text="@string/vc1003"
+                android:layout_weight="@null"
+                android:layout_width="match_parent"/>
 
             <RadioButton
                 android:id="@+id/vc1004"
                 style="@style/radiobutton"
-                android:text="@string/vc1004" />
+                android:text="@string/vc1004"
+                android:layout_weight="@null"
+                android:layout_width="match_parent"/>
 
             <RadioButton
                 android:id="@+id/vc1005"
                 style="@style/radiobutton"
-                android:text="@string/vc1005" />
+                android:text="@string/vc1005"
+                android:layout_weight="@null"
+                android:layout_width="match_parent"/>
 
         </RadioGroup>
 
@@ -313,52 +338,71 @@
 
         <RadioGroup
             android:id="@+id/vc11"
-            style="@style/radiogroup">
+            style="@style/radiogroup"
+            android:orientation="vertical">
 
             <RadioButton
                 android:id="@+id/vc1101"
                 style="@style/radiobutton"
-                android:text="@string/vc1101" />
+                android:text="@string/vc1101"
+                android:layout_weight="@null"
+                android:layout_width="match_parent"/>
 
             <RadioButton
                 android:id="@+id/vc1102"
                 style="@style/radiobutton"
-                android:text="@string/vc1102" />
+                android:text="@string/vc1102"
+                android:layout_weight="@null"
+                android:layout_width="match_parent"/>
 
             <RadioButton
                 android:id="@+id/vc1103"
                 style="@style/radiobutton"
-                android:text="@string/vc1103" />
+                android:text="@string/vc1103"
+                android:layout_weight="@null"
+                android:layout_width="match_parent"/>
 
             <RadioButton
                 android:id="@+id/vc1104"
                 style="@style/radiobutton"
-                android:text="@string/vc1104" />
+                android:text="@string/vc1104"
+                android:layout_weight="@null"
+                android:layout_width="match_parent"/>
 
             <RadioButton
                 android:id="@+id/vc1105"
                 style="@style/radiobutton"
-                android:text="@string/vc1105" />
+                android:text="@string/vc1105"
+                android:layout_weight="@null"
+                android:layout_width="match_parent"/>
 
             <RadioButton
                 android:id="@+id/vc1106"
                 style="@style/radiobutton"
-                android:text="@string/vc1106" />
+                android:text="@string/vc1106"
+                android:layout_weight="@null"
+                android:layout_width="match_parent"/>
 
             <RadioButton
                 android:id="@+id/vc1107"
                 style="@style/radiobutton"
-                android:text="@string/vc1107" />
+                android:text="@string/vc1107"
+                android:layout_weight="@null"
+                android:layout_width="match_parent"/>
 
             <RadioButton
                 android:id="@+id/vc1108"
                 style="@style/radiobutton"
-                android:text="@string/vc1108" />
+                android:text="@string/vc1108"
+                android:layout_weight="@null"
+                android:layout_width="match_parent"/>
 
             <RadioButton
                 android:id="@+id/vc1188"
                 style="@style/radiobutton"
-                android:text="@string/Others" />
+                android:text="@string/Others"
+                android:layout_weight="@null"
+                android:layout_width="match_parent"/>
 
         </RadioGroup>
 

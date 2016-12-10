@@ -51,6 +51,7 @@ public class MainApp extends Application {
     public static OCsContract oc;
     public static String userName = "0000";
     public static String areaCode;
+    public static boolean isParent = false;
     protected LocationManager locationManager;
     Location location;
 

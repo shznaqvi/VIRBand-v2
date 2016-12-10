@@ -167,7 +167,7 @@ public class SectionCActivity extends Activity {
 
     @OnClick(R.id.btn_End)
     void onBtnEndClick() {
-        //Toast.makeText(this, "Processing Section C", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Not Processing This Section", Toast.LENGTH_SHORT).show();
        /* if (formValidation()) {
             try {
                 SaveDraft();
@@ -175,10 +175,10 @@ public class SectionCActivity extends Activity {
                 e.printStackTrace();
             }
             if (UpdateDB()) {*/
-        //Toast.makeText(this, "Starting Closing Section", Toast.LENGTH_SHORT).show();
-        //Intent endSec = new Intent(this, EndingActivity.class);
-        //endSec.putExtra("complete", false);
-        //startActivity(endSec);
+        Toast.makeText(this, "Starting Form Ending Section", Toast.LENGTH_SHORT).show();
+        Intent endSec = new Intent(this, EndingActivity.class);
+        endSec.putExtra("complete", false);
+        startActivity(endSec);
            /* } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
             }
@@ -187,7 +187,7 @@ public class SectionCActivity extends Activity {
 
     @OnClick(R.id.btn_Continue)
     void onBtnContinueClick() {
-        Toast.makeText(this, "Processing Section B", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Processing This Section", Toast.LENGTH_SHORT).show();
         if (formValidation()) {
             try {
                 SaveDraft();
@@ -195,9 +195,9 @@ public class SectionCActivity extends Activity {
                 e.printStackTrace();
             }
             if (UpdateDB()) {
-                Toast.makeText(this, "Starting Section B", Toast.LENGTH_SHORT).show();
-                Intent secB = new Intent(this, SectionCActivity.class);
-                startActivity(secB);
+                Toast.makeText(this, "Starting Next Section", Toast.LENGTH_SHORT).show();
+                Intent secNext = new Intent(this, SectionCActivity.class);
+                startActivity(secNext);
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
             }
@@ -220,6 +220,9 @@ public class SectionCActivity extends Activity {
     }
 
     private void SaveDraft() throws JSONException {
+
+        Toast.makeText(this, "Saving Draft for Section C", Toast.LENGTH_SHORT).show();
+
         JSONObject sc = new JSONObject();
 
         sc.put("vc01", vc01.getText().toString());
@@ -245,6 +248,10 @@ public class SectionCActivity extends Activity {
                 : vc1106.isChecked() ? "6" : vc1107.isChecked() ? "7" : vc1108.isChecked() ? "8"
                 : vc1188.isChecked() ? "88" : "");
         sc.put("vc1188x", vc1188x.getText().toString());
+
+        if (vc1101.isChecked() || vc1102.isChecked()) {
+            MainApp.isParent = true;
+        }
 
         MainApp.fc.setsC(String.valueOf(sc));
 
