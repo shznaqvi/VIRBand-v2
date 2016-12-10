@@ -28,13 +28,27 @@
     <string name="sectionA"> A. شناختی تفصیلات </string>
     <string name="sectionB"> B.	 انڈیکس چائلڈ کی تفصیلات</string>
     <string name="sectionC"> C.	 جوابدہندہ کی تفصیلات</string>
-    <string name="sectionD"> D. شناختی تفصیلات </string>
+    <string name="sectionD"> A. شناختی تفصیلات </string>
 
 
     <string name="title_activity_splashscreen">SplashscreenActivity</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
-
+    <string name="vb04"> نام </string>
+    <string name="vb05"> جنس </string>
+    <string name="vb0501"> بچہ </string>
+    <string name="vb0502"> بچی </string>
+    <string name="vb07"> عمر </string>
+    <string name="vb07d"> دن </string>
+    <string name="vb07m"> مہینہ </string>
+    <string name="vb07y"> سال </string>
+    <string name="vb06"> تاریخ پیدائش </string>
+    <string name="vb08"> والد کا نام </string>
+    <string name="vb09"> والدہ کا نام </string>
+    <string name="vb1001">سرکاری ہسپتال</string>
+    <string name="vb1002">نجی ہسپتال</string>
+    <string name="vb1003">میٹرنٹی ہوم ( TBA یا LHV کا گھر)</string>
+    <string name="vb1004">گھر پر</string>
     <string name="AreaCode">علاقہ</string>
     <string name="childCount">پانچ سال سے کم عمر بچوں کی تعداد (بشمول منتخب بچےکے)</string>
 

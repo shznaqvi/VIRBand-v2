@@ -611,7 +611,7 @@
                 android:id="@+id/ve0802"
                 android:text="@string/No"
                 />
-            
+
             <RadioButton
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -637,28 +637,28 @@
          <RadioButton
              android:layout_width="match_parent"
              android:layout_height="wrap_content"
-             android:id="@+id/ve08a1"
+             android:id="@+id/ve08a01"
              android:text="@string/ve08a1"
              />
 
 <RadioButton
              android:layout_width="match_parent"
              android:layout_height="wrap_content"
-             android:id="@+id/ve08a2"
+             android:id="@+id/ve08a02"
              android:text="@string/ve08a2"
              />
 
 <RadioButton
              android:layout_width="match_parent"
              android:layout_height="wrap_content"
-             android:id="@+id/ve08a3"
+             android:id="@+id/ve08a03"
              android:text="@string/ve08a3"
              />
 
 <RadioButton
              android:layout_width="match_parent"
              android:layout_height="wrap_content"
-             android:id="@+id/ve08a4"
+             android:id="@+id/ve08a04"
              android:text="@string/ve08a4"
              />
 
@@ -700,28 +700,28 @@
 <RadioButton
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:id="@+id/ve08b1"
+    android:id="@+id/ve08b01"
     android:text="@string/ve08b1"
     />
 
 <RadioButton
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:id="@+id/ve08b2"
+    android:id="@+id/ve08b02"
     android:text="@string/ve08b2"
     />
 
 <RadioButton
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:id="@+id/ve08b3"
+    android:id="@+id/ve08b03"
     android:text="@string/ve08b3"
     />
 
 <RadioButton
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:id="@+id/ve08b4"
+    android:id="@+id/ve08b04"
     android:text="@string/ve08b4"
     />
 
@@ -729,14 +729,14 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:id="@+id/ve08b99"
-    android:text="@string/ve08b99"
+    android:text="@string/DNK"
     />
 
  <RadioButton
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:id="@+id/ve08b88"
-    android:text="@string/ve08b88"
+    android:text="@string/Others"
     />
 
 </RadioGroup>
@@ -981,21 +981,21 @@
             <RadioButton
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/ve12a1"
+                android:id="@+id/ve12a01"
                 android:text="@string/ve12a2"
                 />
 
  <RadioButton
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/ve12a2"
+                android:id="@+id/ve12a02"
                 android:text="@string/ve12a2"
                 />
 
 <RadioButton
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/ve12a3"
+                android:id="@+id/ve12a03"
                 android:text="@string/ve12a3"
                 />
 
@@ -1654,28 +1654,28 @@
             <CheckBox
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/ve24a1"
+                android:id="@+id/ve24a01"
                 android:text="@string/ve24a1"
                 />
 
   <CheckBox
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/ve24a2"
+                android:id="@+id/ve24a02"
                 android:text="@string/ve24a2"
                 />
 
  <CheckBox
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/ve24a3"
+                android:id="@+id/ve24a03"
                 android:text="@string/ve24a3"
                 />
 
 <CheckBox
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/ve24a4"
+                android:id="@+id/ve24a04"
                 android:text="@string/ve24a4"
                 />
 
@@ -1710,28 +1710,28 @@
         <CheckBox
            android:layout_width="match_parent"
            android:layout_height="wrap_content"
-           android:id="@+id/ve24b1"
+           android:id="@+id/ve24b01"
            android:text="@string/ve24b1"
            />
 
 <CheckBox
            android:layout_width="match_parent"
            android:layout_height="wrap_content"
-           android:id="@+id/ve24b2"
+           android:id="@+id/ve24b02"
            android:text="@string/ve24b2"
            />
 
 <CheckBox
            android:layout_width="match_parent"
            android:layout_height="wrap_content"
-           android:id="@+id/ve24b3"
+           android:id="@+id/ve24b03"
            android:text="@string/ve24b3"
            />
 
 <CheckBox
            android:layout_width="match_parent"
            android:layout_height="wrap_content"
-           android:id="@+id/ve24b4"
+           android:id="@+id/ve24b04"
            android:text="@string/ve24b4"
            />
 
@@ -1805,14 +1805,14 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:text="@string/ve25a1"
-    android:id="@+id/ve25a1"
+    android:id="@+id/ve25a01"
     />
 
 <CheckBox
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:text="@string/ve25a2"
-    android:id="@+id/ve25a2"
+    android:id="@+id/ve25a02"
     />
 
 
@@ -1820,14 +1820,14 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:text="@string/ve25a3"
-    android:id="@+id/ve25a3"
+    android:id="@+id/ve25a03"
     />
 
 <CheckBox
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:text="@string/ve25a4"
-    android:id="@+id/ve25a4"
+    android:id="@+id/ve25a04"
     />
 
 
@@ -1835,7 +1835,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:text="@string/ve25a5"
-    android:id="@+id/ve25a5"
+    android:id="@+id/ve25a05"
     />
 
 <CheckBox
