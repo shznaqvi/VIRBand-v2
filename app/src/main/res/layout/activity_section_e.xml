@@ -21,7 +21,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
             android:layout_marginTop="16dp"
-            android:text="@string/section_E"
+            android:text="@string/sectionE"
             android:textAlignment="center"
             android:textStyle="bold"
             tools:typeface="serif" />
@@ -591,6 +591,36 @@
     android:layout_marginTop="16dp"
     android:text="@string/ve08"
     />
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/ve08"
+            >
+
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ve0801"
+                android:text="@string/Yes"
+                />
+
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ve0802"
+                android:text="@string/No"
+                />
+
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ve0899"
+                android:text="@string/DNK"
+                />
+
+        </RadioGroup>
+
 
         <TextView
             android:layout_width="match_parent"
@@ -1828,6 +1858,13 @@
     android:id="@+id/ve25a88x"
     android:text="@string/Others"
     />
+
+
+
+
+
+
+
 
 
 
