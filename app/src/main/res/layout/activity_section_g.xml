@@ -108,7 +108,7 @@
             android:onClick=""
             android:text="@string/"
             android:textColor="#1ed61e" />
-        
+
 
 
 </LinearLayout>

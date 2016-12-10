@@ -1091,7 +1091,45 @@
     android:text="@string/ve1404"
     />
 
+    <RadioButton
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/ve1405"
+    android:text="@string/ve1405"
+    />
+
+     <RadioButton
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/ve1406"
+    android:text="@string/ve1406"
+    />
+
+       <RadioButton
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/ve1499"
+    android:text="@string/DNK"
+    />
+
+
+       <RadioButton
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/ve1488"
+    android:text="@string/Others"
+    />
+
+
 </RadioGroup>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/ve1488x"
+            android:hint="@string/Others"
+            />
+
 
 <TextView
     android:layout_width="match_parent"
@@ -1276,6 +1314,15 @@
                 />
 
         </RadioGroup>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/ve1788x"
+            android:hint="@string/Others"
+
+
+            />
 
 
         <TextView
@@ -1500,7 +1547,7 @@
  <RadioButton
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:id="@+id/ve2103"
+    android:id="@+id/ve2199"
     android:text="@string/DNK"
     />
 
@@ -1625,7 +1672,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/ve2388"
-        android:text="@string/Others "
+        android:text="@string/Others"
         />
 
 </RadioGroup>
@@ -1852,19 +1899,13 @@
     android:id="@+id/ve25a88"
     />
 
+
 <EditText
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:id="@+id/ve25a88x"
     android:text="@string/Others"
     />
-
-
-
-
-
-
-
 
 
 
