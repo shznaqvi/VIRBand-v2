@@ -1745,7 +1745,6 @@
             android:layout_height="wrap_content"
             android:text="@string/Others"
             android:id="@+id/ve24a88x"
-
             />
 
 <TextView
@@ -1906,7 +1905,6 @@
     android:id="@+id/ve25a88x"
     android:text="@string/Others"
     />
-
 
 
     </LinearLayout>

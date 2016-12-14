@@ -237,6 +237,7 @@
     android:hint="@string/vh0688x"
     />
 
+
 <TextView
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -251,6 +252,8 @@
     android:id="@+id/vh07"
     android:inputType="text"
     />
+
+
 
 <TextView
     android:layout_width="match_parent"
@@ -267,6 +270,7 @@
     android:inputType="text"
     />
 
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -279,7 +283,6 @@
     android:layout_height="wrap_content"
     android:id="@+id/vh09"
     >
-
 
     <RadioButton
         android:layout_width="match_parent"
@@ -346,7 +349,6 @@
     />
 </RadioGroup>
 
-
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -394,6 +396,45 @@
             android:layout_marginTop="16dp"
             />
 
+<RadioGroup
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/vh12"
+    >
 
-</LinearLayout>
+    <RadioButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/vh1201"
+        android:text="@string/Yes"
+        />
+
+<RadioButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/vh1202"
+        android:text="@string/No"
+        />
+
+<RadioButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/vh1203"
+        android:text="@string/vh1203"
+        />
+
+</RadioGroup>
+
+
+
+        <Button
+            android:id="@+id/btn_Continue"
+            style="@style/buttons"
+            android:onClick=""
+            android:text="@string/"
+            android:textColor="#1ed61e"
+            />
+
+
+    </LinearLayout>
     </ScrollView>
