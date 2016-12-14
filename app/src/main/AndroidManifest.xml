@@ -41,7 +41,8 @@
         <activity android:name=".SectionCActivity" />
         <activity android:name=".EndingActivity" />
         <activity android:name=".SectionDActivity" />
-        <activity android:name=".SectionEActivity"></activity>
+        <activity android:name=".SectionEActivity" />
+        <activity android:name=".SectionFActivity"></activity>
     </application>
 
 </manifest>

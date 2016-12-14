@@ -33,7 +33,7 @@
         <item name="android:textColor">#ffffff</item>
         <item name="android:textSize">36sp</item>
         <item name="android:typeface">serif</item>
-        <item name="android:padding">16dp</item>
+        <item name="android:padding">8dp</item>
 
     </style>
 
@@ -47,7 +47,7 @@
         <item name="android:textSize">36sp</item>
         <item name="android:typeface">serif</item>
         <item name="android:visibility">invisible</item>
-        <item name="android:padding">16dp</item>
+        <item name="android:padding">8dp</item>
     </style>
 
     <style name="sub">
@@ -60,7 +60,7 @@
         <item name="android:textSize">36sp</item>
         <item name="android:typeface">serif</item>
         <item name="android:visibility">invisible</item>
-        <item name="android:padding">16dp</item>
+        <item name="android:padding">8dp</item>
         <item name="android:textStyle">italic</item>
 
     </style>
@@ -71,7 +71,7 @@
         <item name="android:layout_marginBottom">16dp</item>
         <item name="android:textSize">24sp</item>
         <item name="android:background">@color/dullWhileOverlay</item>
-        <item name="android:padding">16dp</item>
+        <item name="android:padding">8dp</item>
     </style>
 
     <style name="spinner">
@@ -82,7 +82,7 @@
         <item name="android:typeface">serif</item>
         <item name="android:textColor">#ff0000</item>
         <item name="android:background">@color/dullWhileOverlay</item>
-        <item name="android:padding">16dp</item>
+        <item name="android:padding">8dp</item>
 
 
     </style>
@@ -111,7 +111,7 @@
         <item name="android:background">@color/dullWhileOverlay</item>
         <item name="android:textSize">36sp</item>
         <item name="android:typeface">serif</item>
-        <item name="android:padding">16dp</item>
+        <item name="android:padding">8dp</item>
 
     </style>
 
@@ -124,7 +124,7 @@
         <item name="android:textSize">24sp</item>
         <item name="android:typeface">serif</item>
         <item name="android:background">@color/dullWhileOverlay</item>
-        <item name="android:padding">4dp</item>
+        <item name="android:padding">16dp</item>
     </style>
 
     <style name="buttons"  parent="android:Widget.Button">

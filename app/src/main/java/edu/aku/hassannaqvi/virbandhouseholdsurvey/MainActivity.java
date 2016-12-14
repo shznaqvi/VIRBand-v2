@@ -122,12 +122,12 @@ public class MainActivity extends Activity {
         Intent iD = new Intent(this, SectionDActivity.class);
         startActivity(iD);
     }
-/*
+
     public void openE(View v) {
         Intent iD = new Intent(this, SectionEActivity.class);
         startActivity(iD);
     }
-
+/*
     public void openF(View v) {
         Intent iD = new Intent(this, SectionFActivity.class);
         startActivity(iD);
