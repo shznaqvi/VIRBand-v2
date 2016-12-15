@@ -129,7 +129,7 @@ public class MainActivity extends Activity {
     }
 /*
     public void openF(View v) {
-        Intent iD = new Intent(this, SectionFActivity.class);
+        Intent iD = new Intent(this, SectionICActivity.class);
         startActivity(iD);
     }
 

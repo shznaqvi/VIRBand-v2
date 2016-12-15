@@ -42,7 +42,7 @@
         <activity android:name=".EndingActivity" />
         <activity android:name=".SectionDActivity" />
         <activity android:name=".SectionEActivity" />
-        <activity android:name=".SectionFActivity"></activity>
+        <activity android:name=".SectionICActivity"></activity>
     </application>
 
 </manifest>

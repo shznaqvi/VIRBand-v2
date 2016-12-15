@@ -58,7 +58,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             + singleForm.COLUMN_NAME_SD + " TEXT,"
             + singleForm.COLUMN_NAME_SE + " TEXT,"
 
-            + singleForm.COLUMN_NAME_SIC + " TEXT"
+            + singleForm.COLUMN_NAME_SIC01 + " TEXT,"
+            + singleForm.COLUMN_NAME_SIC02 + " TEXT,"
+            + singleForm.COLUMN_NAME_SIC03 + " TEXT,"
+            + singleForm.COLUMN_NAME_SIC04 + " TEXT,"
+            + singleForm.COLUMN_NAME_SIC05 + " TEXT,"
+            + singleForm.COLUMN_NAME_SIC06 + " TEXT,"
             + " );";
     private static final String SQL_DELETE_USERS =
             "DROP TABLE IF EXISTS " + singleUser.TABLE_NAME;
@@ -172,7 +177,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(singleForm.COLUMN_NAME_SC, fc.getsC() == null ? "" : fc.getsC());
         values.put(singleForm.COLUMN_NAME_SD, fc.getsD() == null ? "" : fc.getsD());
         values.put(singleForm.COLUMN_NAME_SE, fc.getsE() == null ? "" : fc.getsE());
-        values.put(singleForm.COLUMN_NAME_SIC, fc.getsIC() == null ? "" : fc.getsIC());
+        values.put(singleForm.COLUMN_NAME_SIC01, fc.getsIC01() == null ? "" : fc.getsIC01());
+        values.put(singleForm.COLUMN_NAME_SIC02, fc.getsIC02() == null ? "" : fc.getsIC02());
+        values.put(singleForm.COLUMN_NAME_SIC03, fc.getsIC03() == null ? "" : fc.getsIC03());
+        values.put(singleForm.COLUMN_NAME_SIC04, fc.getsIC04() == null ? "" : fc.getsIC04());
+        values.put(singleForm.COLUMN_NAME_SIC05, fc.getsIC05() == null ? "" : fc.getsIC05());
+        values.put(singleForm.COLUMN_NAME_SIC06, fc.getsIC06() == null ? "" : fc.getsIC06());
 
 
         // Insert the new row, returning the primary key value of the new row
@@ -235,6 +245,45 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 
 // Which row to update, based on the ID
+        String selection = singleForm._ID + " = ?";
+        String[] selectionArgs = {String.valueOf(MainApp.fc.getID())};
+
+        int count = db.update(singleForm.TABLE_NAME,
+                values,
+                selection,
+                selectionArgs);
+        return count;
+    }
+
+    public int updateSIC(int tp) {
+
+        SQLiteDatabase db = this.getReadableDatabase();
+
+// New value for one column
+        ContentValues values = new ContentValues();
+
+        switch (tp) {
+            case 1:
+                values.put(singleForm.COLUMN_NAME_SIC01, MainApp.fc.getsIC01());
+                break;
+            case 2:
+                values.put(singleForm.COLUMN_NAME_SIC02, MainApp.fc.getsIC02());
+                break;
+            case 3:
+                values.put(singleForm.COLUMN_NAME_SIC03, MainApp.fc.getsIC03());
+                break;
+            case 4:
+                values.put(singleForm.COLUMN_NAME_SIC04, MainApp.fc.getsIC04());
+                break;
+            case 5:
+                values.put(singleForm.COLUMN_NAME_SIC05, MainApp.fc.getsIC05());
+                break;
+            case 6:
+                values.put(singleForm.COLUMN_NAME_SIC06, MainApp.fc.getsIC06());
+                break;
+        }
+
+        // Which row to update, based on the ID
         String selection = singleForm._ID + " = ?";
         String[] selectionArgs = {String.valueOf(MainApp.fc.getID())};
 
@@ -310,9 +359,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 singleForm.COLUMN_NAME_SC,
                 singleForm.COLUMN_NAME_SD,
                 singleForm.COLUMN_NAME_SE,
-                singleForm.COLUMN_NAME_SIC,
-
-
+                singleForm.COLUMN_NAME_SIC01,
+                singleForm.COLUMN_NAME_SIC02,
+                singleForm.COLUMN_NAME_SIC03,
+                singleForm.COLUMN_NAME_SIC04,
+                singleForm.COLUMN_NAME_SIC05,
+                singleForm.COLUMN_NAME_SIC06
         };
         String whereClause = null;
         String[] whereArgs = null;

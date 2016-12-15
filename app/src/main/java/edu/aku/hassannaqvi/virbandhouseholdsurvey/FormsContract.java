@@ -28,7 +28,12 @@ public class FormsContract {
     private String sC = "";
     private String sD = "";
     private String sE = "";
-    private String sIC = "";
+    private String sIC01 = "";
+    private String sIC02 = "";
+    private String sIC03 = "";
+    private String sIC04 = "";
+    private String sIC05 = "";
+    private String sIC06 = "";
 
     private String gpsLat = "";
     private String gpsLng = "";
@@ -149,12 +154,53 @@ public class FormsContract {
         this.sE = sE;
     }
 
-    public String getsIC() {
-        return sIC;
+
+    public String getsIC01() {
+        return sIC01;
     }
 
-    public void setsIC(String sIC) {
-        this.sIC = sIC;
+    public void setsIC01(String sIC01) {
+        this.sIC01 = sIC01;
+    }
+
+    public String getsIC02() {
+        return sIC02;
+    }
+
+    public void setsIC02(String sIC02) {
+        this.sIC02 = sIC02;
+    }
+
+    public String getsIC03() {
+        return sIC03;
+    }
+
+    public void setsIC03(String sIC03) {
+        this.sIC03 = sIC03;
+    }
+
+    public String getsIC04() {
+        return sIC04;
+    }
+
+    public void setsIC04(String sIC04) {
+        this.sIC04 = sIC04;
+    }
+
+    public String getsIC05() {
+        return sIC05;
+    }
+
+    public void setsIC05(String sIC05) {
+        this.sIC05 = sIC05;
+    }
+
+    public String getsIC06() {
+        return sIC06;
+    }
+
+    public void setsIC06(String sIC06) {
+        this.sIC06 = sIC06;
     }
 
     public String getGpsLat() {
@@ -228,7 +274,12 @@ public class FormsContract {
         this.sC = jsonObject.getString("sC");
         this.sD = jsonObject.getString("sD");
         this.sE = jsonObject.getString("sE");
-        this.sIC = jsonObject.getString("sIC");
+        this.sIC01 = jsonObject.getString("sIC01");
+        this.sIC02 = jsonObject.getString("sIC02");
+        this.sIC03 = jsonObject.getString("sIC03");
+        this.sIC04 = jsonObject.getString("sIC04");
+        this.sIC05 = jsonObject.getString("sIC05");
+        this.sIC06 = jsonObject.getString("sIC06");
         this.gpsLat = jsonObject.getString("gpsLat");
         this.gpsLng = jsonObject.getString("gpsLng");
         this.gpsTime = jsonObject.getString("gpsTime");
@@ -254,7 +305,12 @@ public class FormsContract {
         this.sC = cursor.getString(cursor.getColumnIndex(singleForm.COLUMN_NAME_SC));
         this.sD = cursor.getString(cursor.getColumnIndex(singleForm.COLUMN_NAME_SD));
         this.sE = cursor.getString(cursor.getColumnIndex(singleForm.COLUMN_NAME_SE));
-        this.sIC = cursor.getString(cursor.getColumnIndex(singleForm.COLUMN_NAME_SIC));
+        this.sIC01 = cursor.getString(cursor.getColumnIndex(singleForm.COLUMN_NAME_SIC01));
+        this.sIC02 = cursor.getString(cursor.getColumnIndex(singleForm.COLUMN_NAME_SIC02));
+        this.sIC03 = cursor.getString(cursor.getColumnIndex(singleForm.COLUMN_NAME_SIC03));
+        this.sIC04 = cursor.getString(cursor.getColumnIndex(singleForm.COLUMN_NAME_SIC04));
+        this.sIC05 = cursor.getString(cursor.getColumnIndex(singleForm.COLUMN_NAME_SIC05));
+        this.sIC06 = cursor.getString(cursor.getColumnIndex(singleForm.COLUMN_NAME_SIC06));
         this.gpsLat = cursor.getString(cursor.getColumnIndex(singleForm.COLUMN_NAME_GPS_LAT));
         this.gpsLng = cursor.getString(cursor.getColumnIndex(singleForm.COLUMN_NAME_GPS_LNG));
         this.gpsTime = cursor.getString(cursor.getColumnIndex(singleForm.COLUMN_NAME_GPS_TIME));
@@ -296,7 +352,12 @@ public class FormsContract {
         json.put(singleForm.COLUMN_NAME_SC, this.sC == null ? JSONObject.NULL : this.sC);
         json.put(singleForm.COLUMN_NAME_SD, this.sD == null ? JSONObject.NULL : this.sD);
         json.put(singleForm.COLUMN_NAME_SE, this.sE == null ? JSONObject.NULL : this.sE);
-        json.put(singleForm.COLUMN_NAME_SIC, this.sIC == null ? JSONObject.NULL : this.sIC);
+        json.put(singleForm.COLUMN_NAME_SIC01, this.sIC01 == null ? JSONObject.NULL : this.sIC01);
+        json.put(singleForm.COLUMN_NAME_SIC02, this.sIC02 == null ? JSONObject.NULL : this.sIC02);
+        json.put(singleForm.COLUMN_NAME_SIC03, this.sIC03 == null ? JSONObject.NULL : this.sIC03);
+        json.put(singleForm.COLUMN_NAME_SIC04, this.sIC04 == null ? JSONObject.NULL : this.sIC04);
+        json.put(singleForm.COLUMN_NAME_SIC05, this.sIC05 == null ? JSONObject.NULL : this.sIC05);
+        json.put(singleForm.COLUMN_NAME_SIC06, this.sIC06 == null ? JSONObject.NULL : this.sIC06);
 
         return json;
     }
@@ -328,7 +389,12 @@ public class FormsContract {
         public static final String COLUMN_NAME_SC = "sc";
         public static final String COLUMN_NAME_SD = "sd";
         public static final String COLUMN_NAME_SE = "se";
-        public static final String COLUMN_NAME_SIC = "sic";
+        public static final String COLUMN_NAME_SIC01 = "sic01";
+        public static final String COLUMN_NAME_SIC02 = "sic02";
+        public static final String COLUMN_NAME_SIC03 = "sic03";
+        public static final String COLUMN_NAME_SIC04 = "sic04";
+        public static final String COLUMN_NAME_SIC05 = "sic05";
+        public static final String COLUMN_NAME_SIC06 = "sic06";
 
     }
 }
