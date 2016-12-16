@@ -111,14 +111,14 @@
             android:id="@+id/vb01"
             style="@style/textInput"
             android:digits="qwertyuiopasdfghjklzxcvbnm QWERTYUIOPASDFGHJKLZXCVBNM"
-            android:hint="@string/vb04"
+            android:hint="@string/vb01"
             android:inputType="textPersonName"
             android:maxLength="35" />
 
 
         <TextView
             style="@style/labels"
-            android:text="@string/vb05" />
+            android:text="@string/vb02" />
 
         <RadioGroup
             android:id="@+id/vb02"
@@ -150,7 +150,7 @@
             <RadioButton
                 android:id="@+id/vbAge"
                 style="@style/radiobutton"
-                android:text="@string/vb03" />
+                android:text="@string/vb04" />
 
         </RadioGroup>
 
@@ -180,6 +180,7 @@
             android:id="@+id/fldGrpAge"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+
             android:orientation="vertical">
 
             <TextView
