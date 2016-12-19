@@ -190,7 +190,7 @@ public class SectionICActivity extends Activity {
                 }
             }
         });
-        
+
         vic_d.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
@@ -203,7 +203,7 @@ public class SectionICActivity extends Activity {
                 }
             }
         });
-         
+
         vic_e.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
@@ -216,7 +216,7 @@ public class SectionICActivity extends Activity {
                 }
             }
         });
-        
+
         vic_f88.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {

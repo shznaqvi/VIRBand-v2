@@ -253,6 +253,9 @@ public class SectionDActivity extends Activity {
             }
             if (UpdateDB()) {
                 Toast.makeText(this, "Starting Next Section", Toast.LENGTH_SHORT).show();
+
+                finish();
+
                 Intent secNext = new Intent(this, SectionEActivity.class);
                 startActivity(secNext);
             } else {

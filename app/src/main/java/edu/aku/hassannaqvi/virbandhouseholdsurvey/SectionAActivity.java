@@ -2,6 +2,7 @@ package edu.aku.hassannaqvi.virbandhouseholdsurvey;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.provider.Settings;
@@ -181,9 +182,15 @@ public class SectionAActivity extends Activity {
                 e.printStackTrace();
             }
             if (UpdateDB()) {
-                Toast.makeText(this, "Starting Section B", Toast.LENGTH_SHORT).show();
-                //Intent secB = new Intent(this, SectionCActivity.class);
-                //startActivity(secB);
+                Toast.makeText(this, "Starting Section C", Toast.LENGTH_SHORT).show();
+
+//                Toast.makeText(getApplicationContext(),""+household.getText().toString().length(),Toast.LENGTH_LONG).show();
+
+                finish();
+
+                Intent secB = new Intent(this, SectionCActivity.class);
+                startActivity(secB);
+
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
             }
@@ -284,9 +291,12 @@ public class SectionAActivity extends Activity {
         }
 
         // Household
-        if (household.getText().toString().length() < 5 || !household.getText().toString().contains("-")) {
+//        if (household.getText().toString().length() < 5 || !household.getText().toString().contains("-")) {
+
+        if (household.getText().toString().length() != 5) {
             Toast.makeText(this, "ERROR(invalid): " + getString(R.string.household), Toast.LENGTH_LONG).show();
-            household.setError("This data is invalid!");
+//            household.setError("This data is invalid!");
+            household.setError("Field required 5 characters");
             Log.i(TAG, "household: This data is invalid!");
             return false;
         } else {
@@ -338,7 +348,9 @@ public class SectionAActivity extends Activity {
             vb04d.setError("Age not given");
             Log.i(TAG, "vb04: Age no given");
             return false;
-        } else if (vbAge.isChecked() && (Integer.valueOf(vb04d.getText().toString()) > MainApp.DAYS_LIMIT
+        }
+
+        else if (vbAge.isChecked() && (Integer.valueOf(vb04d.getText().toString()) > MainApp.DAYS_LIMIT
                 || Integer.valueOf(vb04m.getText().toString()) > MainApp.MONTHS_UPPER_LIMIT
                 || Integer.valueOf(vb04m.getText().toString()) < MainApp.MONTHS_LOWER_LIMIT)) {
             Toast.makeText(this, "ERROR(invalid): " + getString(R.string.vb04), Toast.LENGTH_LONG).show();

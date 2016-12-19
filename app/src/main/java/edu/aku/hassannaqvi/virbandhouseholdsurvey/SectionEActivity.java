@@ -662,10 +662,10 @@ public class SectionEActivity extends Activity {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
                 if (ve1201.isChecked()) {
-                    fldGrpve12a.setVisibility(View.VISIBLE);
+                    fldGrpve12a.setVisibility(View.GONE);
                     ve12a88x.setText(null);
                 } else {
-                    fldGrpve12a.setVisibility(View.GONE);
+                    fldGrpve12a.setVisibility(View.VISIBLE);
                     ve12a.clearCheck();
                     ve12a88x.setText(null);
                 }

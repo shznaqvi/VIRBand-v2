@@ -54,7 +54,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             + singleForm.COLUMN_NAME_HOUSEHOLD + " TEXT,"
             + singleForm.COLUMN_NAME_ISTATUS + " TEXT,"
 
-            //+ singleForm.COLUMN_NAME_SA + " TEXT,"
+//            + singleForm.COLUMN_NAME_SA + " TEXT,"
+
             + singleForm.COLUMN_NAME_SB + " TEXT,"
             + singleForm.COLUMN_NAME_SC + " TEXT,"
             + singleForm.COLUMN_NAME_SD + " TEXT,"
@@ -65,7 +66,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             + singleForm.COLUMN_NAME_SIC03 + " TEXT,"
             + singleForm.COLUMN_NAME_SIC04 + " TEXT,"
             + singleForm.COLUMN_NAME_SIC05 + " TEXT,"
-            + singleForm.COLUMN_NAME_SIC06 + " TEXT"
+            + singleForm.COLUMN_NAME_SIC06 + " TEXT,"
+            + singleForm.COLUMN_NAME_CHILDNAME + " TEXT"
             + " );";
     private static final String SQL_DELETE_USERS =
             "DROP TABLE IF EXISTS " + singleUser.TABLE_NAME;
@@ -193,6 +195,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 singleForm.TABLE_NAME,
                 singleForm.COLUMN_NAME_NULLABLE,
                 values);
+
         return newRowId;
     }
 
