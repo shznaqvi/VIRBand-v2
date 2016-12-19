@@ -66,6 +66,19 @@
             android:inputType="number"
             android:maxLength="2" />
 
+
+        <TextView
+            style="@style/labels"
+            android:text="@string/vb01" />
+
+        <EditText
+            android:id="@+id/vb01"
+            style="@style/textInput"
+            android:digits="qwertyuiopasdfghjklzxcvbnm QWERTYUIOPASDFGHJKLZXCVBNM"
+            android:hint="@string/vb01"
+            android:inputType="textPersonName"
+            android:maxLength="35" />
+
         // Resp. Gender
 
         <TextView
@@ -330,7 +343,7 @@
 
         </RadioGroup>
 
-        // Languages
+        // Relationship
 
         <TextView
             style="@style/labels"
