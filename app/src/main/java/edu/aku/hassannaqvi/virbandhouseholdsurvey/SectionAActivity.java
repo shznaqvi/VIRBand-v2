@@ -119,7 +119,6 @@ public class SectionAActivity extends Activity {
         vb03.setMaxDate(new Date().getTime());
         vb03.setMinDate(new Date().getTime() - (MainApp.MILLISECONDS_IN_YEAR * 2));
 
-
         vbAgeDob.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {

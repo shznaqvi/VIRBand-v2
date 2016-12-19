@@ -341,6 +341,7 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
     public void gotoMain(View v) {
         Intent im = new Intent(LoginActivity.this, MainActivity.class);
         startActivity(im);
+
     }
 
     private interface ProfileQuery {

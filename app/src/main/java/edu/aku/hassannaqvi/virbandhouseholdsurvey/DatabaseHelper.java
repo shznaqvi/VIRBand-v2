@@ -1,5 +1,6 @@
 package edu.aku.hassannaqvi.virbandhouseholdsurvey;
 
+import android.app.Application;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -8,6 +9,7 @@ import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
+import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -63,7 +65,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             + singleForm.COLUMN_NAME_SIC03 + " TEXT,"
             + singleForm.COLUMN_NAME_SIC04 + " TEXT,"
             + singleForm.COLUMN_NAME_SIC05 + " TEXT,"
-            + singleForm.COLUMN_NAME_SIC06 + " TEXT,"
+            + singleForm.COLUMN_NAME_SIC06 + " TEXT"
             + " );";
     private static final String SQL_DELETE_USERS =
             "DROP TABLE IF EXISTS " + singleUser.TABLE_NAME;
@@ -402,45 +404,52 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     public Collection<FormsContract> getTodayForms() {
 
-        SQLiteDatabase db = this.getReadableDatabase();
-        Cursor c = null;
-        String[] columns = {
-                singleForm._ID,
-                singleForm.COLUMN_NAME_AREA_CODE,
-                singleForm.COLUMN_NAME_SUBAREA_CODE,
-                singleForm.COLUMN_NAME_HOUSEHOLD,
-        };
-
-        String whereClause = singleForm.COLUMN_NAME_AREA_CODE + " LIKE ?";
-        String[] whereArgs = {spDateT};
-        String groupBy = null;
-        String having = null;
-
-        String orderBy =
-                singleForm._ID + " ASC";
-
         Collection<FormsContract> formList = new ArrayList<FormsContract>();
+
         try {
-            c = db.query(
-                    singleForm.TABLE_NAME,  // The table to query
-                    columns,                   // The columns to return
-                    whereClause,               // The columns for the WHERE clause
-                    whereArgs,                 // The values for the WHERE clause
-                    groupBy,                   // don't group the rows
-                    having,                    // don't filter by row groups
-                    orderBy                    // The sort order
-            );
-            while (c.moveToNext()) {
-                FormsContract fc = new FormsContract();
-                formList.add(fc.Hydrate(c));
+            SQLiteDatabase db = this.getReadableDatabase();
+            Cursor c = null;
+            String[] columns = {
+                    singleForm._ID,
+                    singleForm.COLUMN_NAME_AREA_CODE,
+                    singleForm.COLUMN_NAME_SUBAREA_CODE,
+                    singleForm.COLUMN_NAME_HOUSEHOLD,
+            };
+
+            String whereClause = singleForm.COLUMN_NAME_AREA_CODE + " LIKE ?";
+            String[] whereArgs = {spDateT};
+            String groupBy = null;
+            String having = null;
+
+            String orderBy =
+                    singleForm._ID + " ASC";
+
+
+            try {
+                c = db.query(
+                        singleForm.TABLE_NAME,  // The table to query
+                        columns,                   // The columns to return
+                        whereClause,               // The columns for the WHERE clause
+                        whereArgs,                 // The values for the WHERE clause
+                        groupBy,                   // don't group the rows
+                        having,                    // don't filter by row groups
+                        orderBy                    // The sort order
+                );
+                while (c.moveToNext()) {
+                    FormsContract fc = new FormsContract();
+                    formList.add(fc.Hydrate(c));
+                }
+            } finally {
+                if (c != null) {
+                    c.close();
+                }
+                if (db != null) {
+                    db.close();
+                }
             }
-        } finally {
-            if (c != null) {
-                c.close();
-            }
-            if (db != null) {
-                db.close();
-            }
+        }
+        catch (SQLException e){
+            Log.e(e.getMessage(),"Error");
         }
 
 
