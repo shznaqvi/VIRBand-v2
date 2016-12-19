@@ -32,7 +32,7 @@
     <string name="sectionA"> A. شناختی تفصیلات </string>
     <string name="sectionB"> B.	 انڈیکس چائلڈ کی تفصیلات</string>
     <string name="sectionC"> C.	 جوابدہندہ کی تفصیلات</string>
-    <string name="sectionD"> A. شناختی تفصیلات </string>
+    <string name="sectionD"> D. شناختی تفصیلات </string>
 
 
     <string name="title_activity_splashscreen">SplashscreenActivity</string>

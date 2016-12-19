@@ -198,9 +198,16 @@ public class SectionICActivity extends Activity {
                 e.printStackTrace();
             }
             if (UpdateDB()) {
-                Toast.makeText(this, "Starting Next Section", Toast.LENGTH_SHORT).show();
-                Intent secNext = new Intent(this, SectionEActivity.class);
-                startActivity(secNext);
+
+                Toast.makeText(this, "Thanks for your feedback", Toast.LENGTH_SHORT).show();
+
+                finish();
+
+//                Toast.makeText(this, "Starting Next Section", Toast.LENGTH_SHORT).show();
+//                Intent secNext = new Intent(this, SectionEActivity.class);
+//                startActivity(secNext);
+
+
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
             }

@@ -898,7 +898,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="string/ve12a" />
+            android:text="@string/ve12a" />
 
         <RadioGroup
             android:id="@+id/ve12a"

@@ -67,6 +67,7 @@
             style="@style/textInput"
             android:hint="@string/household"
             android:inputType="text"
+            android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"
             android:maxLength="5" />
 
         <TextView

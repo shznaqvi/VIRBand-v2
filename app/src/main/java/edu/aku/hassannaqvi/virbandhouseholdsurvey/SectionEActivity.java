@@ -662,10 +662,10 @@ public class SectionEActivity extends Activity {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
                 if (ve1201.isChecked()) {
-                    fldGrpve12a.setVisibility(View.VISIBLE);
+                    fldGrpve12a.setVisibility(View.GONE);
                     ve12a88x.setText(null);
                 } else {
-                    fldGrpve12a.setVisibility(View.GONE);
+                    fldGrpve12a.setVisibility(View.VISIBLE);
                     ve12a.clearCheck();
                     ve12a88x.setText(null);
                 }
@@ -1025,7 +1025,10 @@ public class SectionEActivity extends Activity {
             }
             if (UpdateDB()) {
                 Toast.makeText(this, "Starting Next Section", Toast.LENGTH_SHORT).show();
-                Intent secNext = new Intent(this, SectionEActivity.class);
+
+                finish();
+
+                Intent secNext = new Intent(this, SectionICActivity.class);
                 startActivity(secNext);
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();

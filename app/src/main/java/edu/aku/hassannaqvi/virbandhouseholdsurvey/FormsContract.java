@@ -384,7 +384,9 @@ public class FormsContract {
         public static final String COLUMN_NAME_HOUSEHOLD = "household";
         public static final String COLUMN_NAME_CHILDNAME = "childname";
         public static final String COLUMN_NAME_ISTATUS = "istatus";
-        //public static final String COLUMN_NAME_SA = "sa";
+
+//        public static final String COLUMN_NAME_SA = "sa";
+
         public static final String COLUMN_NAME_SB = "sb";
         public static final String COLUMN_NAME_SC = "sc";
         public static final String COLUMN_NAME_SD = "sd";
