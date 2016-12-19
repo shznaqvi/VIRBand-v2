@@ -1024,9 +1024,16 @@ public class SectionEActivity extends Activity {
                 e.printStackTrace();
             }
             if (UpdateDB()) {
-                Toast.makeText(this, "Starting Next Section", Toast.LENGTH_SHORT).show();
-                Intent secNext = new Intent(this, SectionEActivity.class);
-                startActivity(secNext);
+                if(MainApp.gotoIM) {
+                    Toast.makeText(this, "Starting Next Section", Toast.LENGTH_SHORT).show();
+                    Intent secNext = new Intent(this, SectionEActivity.class);
+                    startActivity(secNext);
+                } else {
+                    Toast.makeText(this, "Starting Form Ending Section", Toast.LENGTH_SHORT).show();
+                    Intent endSec = new Intent(this, EndingActivity.class);
+                    endSec.putExtra("complete", false);
+                    startActivity(endSec);
+                }
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
             }
@@ -1167,6 +1174,9 @@ public class SectionEActivity extends Activity {
                 : "default");
         se.put("ve12a88x", ve12a88x.getText().toString());
         se.put("ve13", ve1301.isChecked() ? "1" : ve1302.isChecked() ? "2" : ve1399.isChecked() ? "99" : "default");
+
+        MainApp.gotoIM = !ve1302.isChecked();
+
         se.put("ve14", ve1401.isChecked() ? "1"
                 : ve1402.isChecked() ? "2"
                 : ve1403.isChecked() ? "3"

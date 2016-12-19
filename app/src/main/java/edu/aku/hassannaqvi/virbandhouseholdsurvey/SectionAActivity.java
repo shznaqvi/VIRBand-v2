@@ -22,7 +22,9 @@ import org.json.JSONObject;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
+import java.util.concurrent.TimeUnit;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -209,6 +211,21 @@ public class SectionAActivity extends Activity {
         sB.put("vb04d", vb04d.getText().toString());
         sB.put("vb04m", vb04m.getText().toString());
         sB.put("vb04y", vb04y.getText().toString());
+
+        if (vbDob.isChecked()) {
+            Calendar cal = Calendar.getInstance();
+            cal.set(vb03.getYear(), vb03.getMonth(), vb03.getDayOfMonth());
+            Date date1 = new Date();
+            Date date2 = cal.getTime();
+            long diff = date1.getTime() - date2.getTime();
+            MainApp.ageindays = (int) TimeUnit.DAYS.convert(diff, TimeUnit.MILLISECONDS);
+        } else {
+            int m2days = (int) (Integer.valueOf(vb04m.getText().toString()) * 30.4375);
+            int y2days = (Integer.valueOf(vb04y.getText().toString()) * 365);
+            MainApp.ageindays = m2days + y2days + Integer.valueOf(vb04d.getText().toString());
+        }
+
+
         sB.put("vb05", vb05.getText().toString());
         sB.put("vb06", vb06.getText().toString());
         sB.put("vb07", vb0701.isChecked() ? "1" : vb0702.isChecked() ? "2" : vb0703.isChecked() ? "3"

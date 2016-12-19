@@ -32,85 +32,85 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="@string/vic01a" />
+            android:text="@string/vic_a" />
 
         <RadioGroup
-            android:id="@+id/vic01a"
+            android:id="@+id/vic_a"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
 
             <RadioButton
-                android:id="@+id/vic01a1"
+                android:id="@+id/vic_a01"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/Yes" />
 
             <RadioButton
-                android:id="@+id/vic01a2"
+                android:id="@+id/vic_a02"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/No" />
 
         </RadioGroup>
         <RadioGroup
-            android:id="@+id/vic01b"
+            android:id="@+id/vic_b"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
 
             <RadioButton
-                android:id="@+id/vic01b1"
+                android:id="@+id/vic_b01"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/vic01b1" />
+                android:text="@string/vic_b1" />
 
             <RadioButton
-                android:id="@+id/vic01b2"
+                android:id="@+id/vic_b02"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/vic01b2" />
+                android:text="@string/vic_b2" />
 
             <RadioButton
-                android:id="@+id/vic01b3"
+                android:id="@+id/vic_b03"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/vic01b3" />
+                android:text="@string/vic_b3" />
 
             <RadioButton
-                android:id="@+id/vic01b4"
+                android:id="@+id/vic_b04"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/vic01b4" />
-
-
-            <RadioButton
-                android:id="@+id/vic01b5"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/vic01b5" />
-
-            <RadioButton
-                android:id="@+id/vic01b6"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/vic01b6" />
-
-            <RadioButton
-                android:id="@+id/vic01b7"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/vic01b7" />
-
-            <RadioButton
-                android:id="@+id/vic01b99"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/vic01b8" />
+                android:text="@string/vic_b4" />
 
 
             <RadioButton
-                android:id="@+id/vic01b88"
+                android:id="@+id/vic_b05"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/vic_b5" />
+
+            <RadioButton
+                android:id="@+id/vic_b06"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/vic_b6" />
+
+            <RadioButton
+                android:id="@+id/vic_b07"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/vic_b7" />
+
+            <RadioButton
+                android:id="@+id/vic_b99"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/vic_b8" />
+
+
+            <RadioButton
+                android:id="@+id/vic_b88"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/Others" />
@@ -118,18 +118,24 @@
 
         </RadioGroup>
         <EditText
-            android:id="@+id/vic01b88x"
+            android:id="@+id/vic_b88x"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/Others" />
+     <LinearLayout
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:id="@+id/fldGrpDOV"
+         android:orientation="vertical">
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="@string/vic01c" />
+            android:text="@string/vic_c" />
 
         <DatePicker
-            android:id="@+id/vic01c"
+            android:id="@+id/vic_c"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -137,12 +143,12 @@
             android:datePickerMode="spinner"
             android:paddingTop="8dp"
             android:spinnersShown="true" />
-
+     </LinearLayout>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="@string/vic01c"
+            android:text="@string/vic_c"
 
             />
 
@@ -155,40 +161,40 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/vic01d"
+            android:text="@string/vic_d"
             android:layout_marginTop="16dp"
             />
 
       <RadioGroup
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
-          android:id="@+id/vic01d"
+          android:id="@+id/vic_d"
           >
 <RadioButton
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:id="@+id/vic01d1"
+    android:id="@+id/vic_d01"
     android:text="@string/Yes"
     />
 
 <RadioButton
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:id="@+id/vic01d2"
+    android:id="@+id/vic_d02"
     android:text="@string/No"
     />
 
 <RadioButton
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:id="@+id/vic01d99"
+    android:id="@+id/vic_d99"
     android:text="@string/DNK"
     />
 
 <RadioButton
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:id="@+id/vic01d88"
+    android:id="@+id/vic_d88"
     android:text="@string/Others"
     />
 
@@ -196,48 +202,48 @@
 <EditText
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:id="@+id/vic01d88x"
+    android:id="@+id/vic_d88x"
     android:hint="@string/Others"
     />
 
 <TextView
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:text="@string/vic01e1"
+    android:text="@string/vic_e1"
     android:layout_marginTop="16dp"
     />
 
         <RadioGroup
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/vic01e"
+            android:id="@+id/vic_e"
             >
 
 <RadioButton
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:id="@+id/vic01e1"
-    android:text="@string/vic01e1"
+    android:id="@+id/vic_e01"
+    android:text="@string/vic_e1"
     />
 
 <RadioButton
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:id="@+id/vic01e2"
-    android:text="@string/vic01e2"
+    android:id="@+id/vic_e02"
+    android:text="@string/vic_e2"
     />
 
 <RadioButton
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:id="@+id/vic01e3"
-    android:text="@string/vic01e3"
+    android:id="@+id/vic_e03"
+    android:text="@string/vic_e3"
     />
 
       <RadioButton
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
-          android:id="@+id/vic01e88"
+          android:id="@+id/vic_e88"
           android:text="@string/Others"
           />
 
@@ -246,7 +252,7 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/vic01e88x"
+            android:id="@+id/vic_e88x"
             android:text="@string/Others"
             />
 
@@ -254,7 +260,7 @@
 <TextView
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:text="@string/vic01f"
+    android:text="@string/vic_f"
     android:layout_marginTop="16dp"
     />
 
@@ -262,50 +268,50 @@
     <CheckBox
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/vic01f1"
-        android:text="@string/vic01f1"
+        android:id="@+id/vic_f01"
+        android:text="@string/vic_f1"
         />
  <CheckBox
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/vic01f2"
-        android:text="@string/vic01f2"
+        android:id="@+id/vic_f02"
+        android:text="@string/vic_f2"
         />
 
 
     <CheckBox
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/vic01f3"
-        android:text="@string/vic01f3"
+        android:id="@+id/vic_f03"
+        android:text="@string/vic_f3"
         />
 
 
      <CheckBox
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/vic01f4"
-        android:text="@string/vic01f4"
+        android:id="@+id/vic_f04"
+        android:text="@string/vic_f4"
         />
 
      <CheckBox
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/vic01f5"
-        android:text="@string/vic01f5"
+        android:id="@+id/vic_f05"
+        android:text="@string/vic_f5"
         />
 
       <CheckBox
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/vic01f6"
-        android:text="@string/vic01f6"
+        android:id="@+id/vic_f06"
+        android:text="@string/vic_f6"
         />
 
        <CheckBox
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/vic01f99"
+        android:id="@+id/vic_f99"
         android:text="@string/DNK"
         />
 
@@ -313,14 +319,14 @@
        <CheckBox
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/vic01f88"
+        android:id="@+id/vic_f88"
         android:text="@string/Others"
         />
 
 <EditText
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:id="@+id/vic01f88x"
+    android:id="@+id/vic_f88x"
     android:hint="@string/Others"
     />
 
@@ -329,70 +335,70 @@
 <TextView
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:text="@string/vic01g"
+    android:text="@string/vic_g"
      android:layout_marginTop="16dp"
     />
 
 <CheckBox
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:id="@+id/vic01g1"
-    android:text="@string/vic01g1"
+    android:id="@+id/vic_g01"
+    android:text="@string/vic_g1"
     />
 
 <CheckBox
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:id="@+id/vic01g2"
-    android:text="@string/vic01g2"
+    android:id="@+id/vic_g02"
+    android:text="@string/vic_g2"
     />
 
 <CheckBox
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:id="@+id/vic01g3"
-    android:text="@string/vic01g3"
+    android:id="@+id/vic_g03"
+    android:text="@string/vic_g3"
     />
 
 <CheckBox
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:id="@+id/vic01g4"
-    android:text="@string/vic01g4"
+    android:id="@+id/vic_g04"
+    android:text="@string/vic_g4"
     />
 
 <CheckBox
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:id="@+id/vic01g5"
-    android:text="@string/vic01g5"
+    android:id="@+id/vic_g05"
+    android:text="@string/vic_g5"
     />
 
 <CheckBox
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:id="@+id/vic01g6"
-    android:text="@string/vic01g6"
+    android:id="@+id/vic_g06"
+    android:text="@string/vic_g6"
     />
 
 <CheckBox
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:id="@+id/vic01g99"
+    android:id="@+id/vic_g99"
     android:text="@string/DNK"
     />
 
 <CheckBox
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:id="@+id/vic01g88"
+    android:id="@+id/vic_g88"
     android:text="@string/Others"
     />
 
 <EditText
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:id="@+id/vic01g88x"
+    android:id="@+id/vic_g88x"
     android:hint="@string/Others"
     />
 
