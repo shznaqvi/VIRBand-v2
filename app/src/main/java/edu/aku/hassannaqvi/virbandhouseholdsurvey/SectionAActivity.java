@@ -145,6 +145,7 @@ public class SectionAActivity extends Activity {
                     vb0788x.setVisibility(View.VISIBLE);
                 } else {
                     vb0788x.setVisibility(View.GONE);
+                    vb0788x.setText(null);
                 }
             }
         });
@@ -207,7 +208,6 @@ public class SectionAActivity extends Activity {
         MainApp.fc.setInterviewer(MainApp.userName);
         MainApp.fc.setAreacode(String.valueOf(MainApp.areaCode));
         MainApp.fc.setSubareacode(subAreaCode.getText().toString());
-        MainApp.fc.setHousehold(household.getText().toString());
         MainApp.fc.setHousehold(household.getText().toString());
 
         JSONObject sB = new JSONObject();

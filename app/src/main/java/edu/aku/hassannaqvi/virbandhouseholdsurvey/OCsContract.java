@@ -14,13 +14,14 @@ import org.json.JSONObject; /**
     //private final String surveyType = "SN";
     private String _ID = "";
     private String UID = "";
+    private String UUID = "";
     private String formDate = ""; // Date
     private String areacode = "0000"; // Area Code
     private String subareacode = ""; // Cluster
     private String household = ""; // Household number
     private String childName = ""; // Household number
     //private String sA = "";
-    private String sH = "";
+    private String sG = "";
     private String sOC01 = "";
     private String sOC02 = "";
     private String sOC03 = "";
@@ -37,41 +38,45 @@ import org.json.JSONObject; /**
     public OCsContract Sync (JSONObject jsonObject) throws JSONException {
         this._ID = jsonObject.getString(singleOCs._ID);
         this.UID = jsonObject.getString(singleOCs.COLUMN_NAME_UID);
+        this.UUID = jsonObject.getString(singleOCs.COLUMN_NAME_UUID);
         this.formDate = jsonObject.getString(singleOCs.COLUMN_NAME_FORM_DATE);
         this.areacode = jsonObject.getString(singleOCs.COLUMN_NAME_AREA_CODE);
-        this.subareacode = jsonObject.getString("subareacode");
-        this.household = jsonObject.getString("household");
-        this.childName = jsonObject.getString("childName");
-        this.sH = jsonObject.getString("sH");
-        this.sOC01 = jsonObject.getString("sOC01");
-        this.sOC02 = jsonObject.getString("sOC02");
-        this.sOC03 = jsonObject.getString("sOC03");
-        this.sOC04 = jsonObject.getString("sOC04");
-        this.sOC05 = jsonObject.getString("sOC05");
-        this.sOC06 = jsonObject.getString("sOC06");
-        this.deviceID = jsonObject.getString("deviceID");
-        this.synced = jsonObject.getString("synced");
-        this.synced_date = jsonObject.getString("synced_date");
+        this.subareacode = jsonObject.getString(singleOCs.COLUMN_NAME_SUBAREA_CODE);
+        this.household = jsonObject.getString(singleOCs.COLUMN_NAME_HOUSEHOLD);
+        this.childName = jsonObject.getString(singleOCs.COLUMN_NAME_CHILDNAME);
+        this.sG = jsonObject.getString(singleOCs.COLUMN_NAME_SG);
+        this.sOC01 = jsonObject.getString(singleOCs.COLUMN_NAME_SOC01);
+        this.sOC02 = jsonObject.getString(singleOCs.COLUMN_NAME_SOC02);
+        this.sOC03 = jsonObject.getString(singleOCs.COLUMN_NAME_SOC03);
+        this.sOC04 = jsonObject.getString(singleOCs.COLUMN_NAME_SOC04);
+        this.sOC05 = jsonObject.getString(singleOCs.COLUMN_NAME_SOC05);
+        this.sOC06 = jsonObject.getString(singleOCs.COLUMN_NAME_SOC06);
+        this.deviceID = jsonObject.getString(singleOCs.COLUMN_NAME_DEVICE_ID);
+        this.synced = jsonObject.getString(singleOCs.COLUMN_NAME_SYNCED);
+        this.synced_date = jsonObject.getString(singleOCs.COLUMN_NAME_SYNCED_DATE);
 
         return this;
     }
 
     public OCsContract Hydrate(Cursor cursor) {
-        this.formDate = cursor.getString(cursor.getColumnIndex("formDate"));
-        this.areacode = cursor.getString(cursor.getColumnIndex("areacode"));
-        this.subareacode = cursor.getString(cursor.getColumnIndex("subareacode"));
-        this.household = cursor.getString(cursor.getColumnIndex("household"));
-        this.childName = cursor.getString(cursor.getColumnIndex("childName"));
-        this.sH = cursor.getString(cursor.getColumnIndex("sH"));
-        this.sOC01 = cursor.getString(cursor.getColumnIndex("sOC01"));
-        this.sOC02 = cursor.getString(cursor.getColumnIndex("sOC02"));
-        this.sOC03 = cursor.getString(cursor.getColumnIndex("sOC03"));
-        this.sOC04 = cursor.getString(cursor.getColumnIndex("sOC04"));
-        this.sOC05 = cursor.getString(cursor.getColumnIndex("sOC05"));
-        this.sOC06 = cursor.getString(cursor.getColumnIndex("sOC06"));
-        this.deviceID = cursor.getString(cursor.getColumnIndex("deviceID"));
-        this.synced = cursor.getString(cursor.getColumnIndex("synced"));
-        this.synced_date = cursor.getString(cursor.getColumnIndex("synced_date"));
+        this._ID = cursor.getString(cursor.getColumnIndex(singleOCs._ID));
+        this.UID = cursor.getString(cursor.getColumnIndex(singleOCs.COLUMN_NAME_UID));
+        this.UUID = cursor.getString(cursor.getColumnIndex(singleOCs.COLUMN_NAME_UUID));
+        this.formDate = cursor.getString(cursor.getColumnIndex(singleOCs.COLUMN_NAME_FORM_DATE));
+        this.areacode = cursor.getString(cursor.getColumnIndex(singleOCs.COLUMN_NAME_AREA_CODE));
+        this.subareacode = cursor.getString(cursor.getColumnIndex(singleOCs.COLUMN_NAME_SUBAREA_CODE));
+        this.household = cursor.getString(cursor.getColumnIndex(singleOCs.COLUMN_NAME_HOUSEHOLD));
+        this.childName = cursor.getString(cursor.getColumnIndex(singleOCs.COLUMN_NAME_CHILDNAME));
+        this.sG = cursor.getString(cursor.getColumnIndex(singleOCs.COLUMN_NAME_SG));
+        this.sOC01 = cursor.getString(cursor.getColumnIndex(singleOCs.COLUMN_NAME_SOC01));
+        this.sOC02 = cursor.getString(cursor.getColumnIndex(singleOCs.COLUMN_NAME_SOC02));
+        this.sOC03 = cursor.getString(cursor.getColumnIndex(singleOCs.COLUMN_NAME_SOC03));
+        this.sOC04 = cursor.getString(cursor.getColumnIndex(singleOCs.COLUMN_NAME_SOC04));
+        this.sOC05 = cursor.getString(cursor.getColumnIndex(singleOCs.COLUMN_NAME_SOC05));
+        this.sOC06 = cursor.getString(cursor.getColumnIndex(singleOCs.COLUMN_NAME_SOC06));
+        this.deviceID = cursor.getString(cursor.getColumnIndex(singleOCs.COLUMN_NAME_DEVICE_ID));
+        this.synced = cursor.getString(cursor.getColumnIndex(singleOCs.COLUMN_NAME_SYNCED));
+        this.synced_date = cursor.getString(cursor.getColumnIndex(singleOCs.COLUMN_NAME_SYNCED_DATE));
 
         return this;
     }
@@ -90,6 +95,14 @@ import org.json.JSONObject; /**
 
     public void setUID(String UID) {
         this.UID = UID;
+    }
+
+    public String getUUID() {
+        return UUID;
+    }
+
+    public void setUUID(String UUID) {
+        this.UUID = UUID;
     }
 
     public String getFormDate() {
@@ -132,12 +145,12 @@ import org.json.JSONObject; /**
         this.childName = childName;
     }
 
-    public String getsH() {
-        return sH;
+    public String getsG() {
+        return sG;
     }
 
-    public void setsH(String sH) {
-        this.sH = sH;
+    public void setsG(String sG) {
+        this.sG = sG;
     }
 
     public String getsOC01() {
@@ -219,6 +232,7 @@ import org.json.JSONObject; /**
         public static final String COLUMN_NAME_NULLABLE = "NULLHACK";
         public static final String _ID = "_id";
         public static final String COLUMN_NAME_UID = "uid";
+        public static final String COLUMN_NAME_UUID = "uuid";
         public static final String COLUMN_NAME_PROJECT_NAME = "projectname";
         public static final String COLUMN_NAME_DEVICE_ID = "deviceid";
         public static final String COLUMN_NAME_SYNCED = "sync";
@@ -229,7 +243,7 @@ import org.json.JSONObject; /**
         public static final String COLUMN_NAME_HOUSEHOLD = "household";
         public static final String COLUMN_NAME_CHILDNAME = "childname";
 
-        public static final String COLUMN_NAME_SH = "sh";
+        public static final String COLUMN_NAME_SG = "sg";
         public static final String COLUMN_NAME_SOC01 = "soc01";
         public static final String COLUMN_NAME_SOC02 = "soc02";
         public static final String COLUMN_NAME_SOC03 = "soc03";

@@ -73,6 +73,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             + singleOCs.TABLE_NAME + "("
             + singleOCs._ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
             + singleOCs.COLUMN_NAME_UID + " TEXT,"
+            + singleOCs.COLUMN_NAME_UUID + " TEXT,"
             + singleOCs.COLUMN_NAME_DEVICE_ID + " TEXT,"
             + singleOCs.COLUMN_NAME_PROJECT_NAME + " TEXT,"
             + singleOCs.COLUMN_NAME_SYNCED + " TEXT,"
@@ -81,7 +82,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             + singleOCs.COLUMN_NAME_AREA_CODE + " TEXT,"
             + singleOCs.COLUMN_NAME_SUBAREA_CODE + " TEXT,"
             + singleOCs.COLUMN_NAME_HOUSEHOLD + " TEXT,"
-            + singleOCs.COLUMN_NAME_SH + " TEXT,"
+            + singleOCs.COLUMN_NAME_SG + " TEXT,"
             + singleOCs.COLUMN_NAME_SOC01 + " TEXT,"
             + singleOCs.COLUMN_NAME_SOC02 + " TEXT,"
             + singleOCs.COLUMN_NAME_SOC03 + " TEXT,"
@@ -230,13 +231,15 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 // Create a new map of values, where column names are the keys
         ContentValues values = new ContentValues();
+        values.put(singleOCs.COLUMN_NAME_UID, oc.getUID());
+        values.put(singleOCs.COLUMN_NAME_UUID, oc.getUUID());
         values.put(singleOCs.COLUMN_NAME_DEVICE_ID, oc.getDeviceID());
         values.put(singleOCs.COLUMN_NAME_FORM_DATE, oc.getFormDate());
         values.put(singleOCs.COLUMN_NAME_AREA_CODE, oc.getAreacode());
         values.put(singleOCs.COLUMN_NAME_SUBAREA_CODE, oc.getSubareacode());
         values.put(singleOCs.COLUMN_NAME_HOUSEHOLD, oc.getHousehold());
         values.put(singleOCs.COLUMN_NAME_CHILDNAME, oc.getChildName());
-        values.put(singleOCs.COLUMN_NAME_SH, oc.getsH() == null ? "" : oc.getsH());
+        values.put(singleOCs.COLUMN_NAME_SG, oc.getsG() == null ? "" : oc.getsG());
         values.put(singleOCs.COLUMN_NAME_SOC01, oc.getsOC01() == null ? "" : oc.getsOC01());
         values.put(singleOCs.COLUMN_NAME_SOC02, oc.getsOC02() == null ? "" : oc.getsOC02());
         values.put(singleOCs.COLUMN_NAME_SOC03, oc.getsOC03() == null ? "" : oc.getsOC03());
@@ -511,7 +514,7 @@ public Collection<OCsContract> getAllOCs() {
                 singleOCs.COLUMN_NAME_SUBAREA_CODE,
                 singleOCs.COLUMN_NAME_HOUSEHOLD,
                 singleOCs.COLUMN_NAME_CHILDNAME,
-                singleOCs.COLUMN_NAME_SH,
+                singleOCs.COLUMN_NAME_SG,
                 singleOCs.COLUMN_NAME_SOC01,
                 singleOCs.COLUMN_NAME_SOC02,
                 singleOCs.COLUMN_NAME_SOC03,

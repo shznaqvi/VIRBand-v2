@@ -23,84 +23,12 @@
 
 
         <TextView
-            android:id="@+id/crf1_header"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:text="@string/sectionG"
-            android:textSize="30sp" />
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="2dp"
-            android:background="?android:attr/listDivider" />
-
-
-        <!--  = = = = =  START OF FORM FIELDS - Section G = = = = = -->
-
-        <!--Main Area-->
-        <TextView
-            android:id="@+id/areaCode"
-            style="@style/labels"
-            android:text="@string/AreaCode" />
-
-        <!-- Sub Area Code -->
-        <TextView
-            style="@style/labels"
-            android:text="@string/subAreaCode" />
-
-        <EditText
-            android:id="@+id/subAreaCode"
-            style="@style/textInput"
-            android:hint="@string/subAreaCode"
-            android:inputType="number"
-            android:maxLength="2" />
-
-        <LinearLayout
-            android:id="@+id/fldGrpDOB"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <TextView
-                style="@style/labels"
-                android:text="@string/vb03" />
-
-            <DatePicker
-                android:id="@+id/vg03"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/dullWhileOverlay"
-                android:calendarViewShown="true"
-                android:datePickerMode="spinner"
-                android:paddingTop="8dp"
-                android:spinnersShown="true" />
-
-        </LinearLayout>
-
-        <!--Household No. (with Family type) -->
-        <TextView
-            style="@style/labels"
-            android:text="@string/household" />
-
-        <EditText
-            android:id="@+id/household"
-            style="@style/textInput"
-            android:hint="@string/household"
-            android:inputType="text"
-            android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"
-            android:maxLength="5" />
-
-        <!--  = = = = =  END OF FORM FIELDS - Section G = = = = = -->
-
-
-        <TextView
             android:id="@+id/crf2_header"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="32dp"
-            android:text="@string/sectionH"
+            android:text="@string/sectionG"
             android:textSize="30sp" />
 
         <View
@@ -111,14 +39,12 @@
 
         <!--  = = = = =  START OF FORM FIELDS - Section H = = = = = -->
 
-        // Name
-
         <TextView
             style="@style/labels"
-            android:text="@string/vh01" />
+            android:text="@string/vg01" />
 
         <EditText
-            android:id="@+id/vh01"
+            android:id="@+id/vg01"
             style="@style/textInput"
             android:digits="qwertyuiopasdfghjklzxcvbnm QWERTYUIOPASDFGHJKLZXCVBNM"
             android:hint="@string/vc01"
@@ -127,39 +53,39 @@
 
         <TextView
             style="@style/labels"
-            android:text="@string/vh02" />
+            android:text="@string/vg02" />
 
         <RadioGroup
-            android:id="@+id/vh02"
+            android:id="@+id/vg02"
             style="@style/radiogroup">
 
             <RadioButton
-                android:id="@+id/vh0201"
+                android:id="@+id/vg0201"
                 style="@style/radiobutton"
                 android:text="@string/vb0201" />
 
             <RadioButton
-                android:id="@+id/vh0202"
+                android:id="@+id/vg0202"
                 style="@style/radiobutton"
                 android:text="@string/vb0202" />
 
         </RadioGroup>
 
         <RadioGroup
-            android:id="@+id/vhAgeDob"
+            android:id="@+id/vgAgeDob"
             style="@style/radiogroup"
             android:layout_marginTop="32dp"
             android:background="@color/colorPrimary">
 
             <RadioButton
-                android:id="@+id/vhDob"
+                android:id="@+id/vgDob"
                 style="@style/radiobutton"
-                android:text="@string/vh03" />
+                android:text="@string/vg03" />
 
             <RadioButton
-                android:id="@+id/vhAge"
+                android:id="@+id/vgAge"
                 style="@style/radiobutton"
-                android:text="@string/vh04" />
+                android:text="@string/vg04" />
 
         </RadioGroup>
 
@@ -171,10 +97,10 @@
 
             <TextView
                 style="@style/labels"
-                android:text="@string/vh03" />
+                android:text="@string/vg03" />
 
             <DatePicker
-                android:id="@+id/vh03"
+                android:id="@+id/vg03"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/dullWhileOverlay"
@@ -194,7 +120,7 @@
 
             <TextView
                 style="@style/labels"
-                android:text="@string/vh04" />
+                android:text="@string/vg04" />
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -202,7 +128,7 @@
                 android:orientation="horizontal">
 
                 <EditText
-                    android:id="@+id/vh04d"
+                    android:id="@+id/vg04d"
                     style="@style/textInput"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -213,7 +139,7 @@
                     android:maxLength="2" />
 
                 <EditText
-                    android:id="@+id/vh04m"
+                    android:id="@+id/vg04m"
                     style="@style/textInput"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -224,7 +150,7 @@
                     android:maxLength="2" />
 
                 <EditText
-                    android:id="@+id/vh04y"
+                    android:id="@+id/vg04y"
                     style="@style/textInput"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -237,98 +163,95 @@
         </LinearLayout>
 
 
-        // Respondent's Name
-
         <TextView
             style="@style/labels"
-            android:text="@string/vh05" />
+            android:text="@string/vg05" />
 
         <EditText
-            android:id="@+id/vh05"
+            android:id="@+id/vg05"
             style="@style/textInput"
             android:digits="qwertyuiopasdfghjklzxcvbnm QWERTYUIOPASDFGHJKLZXCVBNM"
             android:hint="@string/vc01"
             android:inputType="textPersonName"
             android:maxLength="35" />
 
-        // Relationship
 
         <TextView
             style="@style/labels"
-            android:text="@string/vh06" />
+            android:text="@string/vg06" />
 
         <RadioGroup
-            android:id="@+id/vh06"
+            android:id="@+id/vg06"
             style="@style/radiogroup"
             android:orientation="vertical">
 
             <RadioButton
-                android:id="@+id/vh0601"
+                android:id="@+id/vg0601"
                 style="@style/radiobutton"
-                android:text="@string/vh0601"
+                android:layout_width="match_parent"
                 android:layout_weight="@null"
-                android:layout_width="match_parent"/>
+                android:text="@string/vg0601" />
 
             <RadioButton
-                android:id="@+id/vh0602"
+                android:id="@+id/vg0602"
                 style="@style/radiobutton"
-                android:text="@string/vh0602"
+                android:layout_width="match_parent"
                 android:layout_weight="@null"
-                android:layout_width="match_parent"/>
+                android:text="@string/vg0602" />
 
             <RadioButton
-                android:id="@+id/vh0603"
+                android:id="@+id/vg0603"
                 style="@style/radiobutton"
-                android:text="@string/vh0603"
+                android:layout_width="match_parent"
                 android:layout_weight="@null"
-                android:layout_width="match_parent"/>
+                android:text="@string/vg0603" />
 
             <RadioButton
-                android:id="@+id/vh0604"
+                android:id="@+id/vg0604"
                 style="@style/radiobutton"
-                android:text="@string/vh0604"
+                android:layout_width="match_parent"
                 android:layout_weight="@null"
-                android:layout_width="match_parent"/>
+                android:text="@string/vg0604" />
 
             <RadioButton
-                android:id="@+id/vh0605"
+                android:id="@+id/vg0605"
                 style="@style/radiobutton"
-                android:text="@string/vh0605"
+                android:layout_width="match_parent"
                 android:layout_weight="@null"
-                android:layout_width="match_parent"/>
+                android:text="@string/vg0605" />
 
             <RadioButton
-                android:id="@+id/vh0606"
+                android:id="@+id/vg0606"
                 style="@style/radiobutton"
-                android:text="@string/vh0606"
+                android:layout_width="match_parent"
                 android:layout_weight="@null"
-                android:layout_width="match_parent"/>
+                android:text="@string/vg0606" />
 
             <RadioButton
-                android:id="@+id/vh0607"
+                android:id="@+id/vg0607"
                 style="@style/radiobutton"
-                android:text="@string/vh0607"
+                android:layout_width="match_parent"
                 android:layout_weight="@null"
-                android:layout_width="match_parent"/>
+                android:text="@string/vg0607" />
 
             <RadioButton
-                android:id="@+id/vh0608"
+                android:id="@+id/vg0608"
                 style="@style/radiobutton"
-                android:text="@string/vh0608"
+                android:layout_width="match_parent"
                 android:layout_weight="@null"
-                android:layout_width="match_parent"/>
+                android:text="@string/vg0608" />
 
             <RadioButton
-                android:id="@+id/vh0688"
+                android:id="@+id/vg0688"
                 style="@style/radiobutton"
-                android:text="@string/Others"
+                android:layout_width="match_parent"
                 android:layout_weight="@null"
-                android:layout_width="match_parent"/>
+                android:text="@string/Others" />
 
         </RadioGroup>
 
         <EditText
-            android:id="@+id/vh0688x"
+            android:id="@+id/vg0688x"
             style="@style/textInput"
             android:digits="qwertyuiopasdfghjklzxcvbnm QWERTYUIOPASDFGHJKLZXCVBNM"
             android:hint="@string/Others"
@@ -339,25 +262,25 @@
 
         <TextView
             style="@style/labels"
-            android:text="@string/vh07" />
+            android:text="@string/vg07" />
 
         <EditText
-            android:id="@+id/vh07"
+            android:id="@+id/vg07"
             style="@style/textInput"
             android:digits="qwertyuiopasdfghjklzxcvbnm QWERTYUIOPASDFGHJKLZXCVBNM"
-            android:hint="@string/vh07"
+            android:hint="@string/vg07"
             android:inputType="textPersonName"
             android:maxLength="35" />
 
         <TextView
             style="@style/labels"
-            android:text="@string/vh08" />
+            android:text="@string/vg08" />
 
         <EditText
-            android:id="@+id/vh08"
+            android:id="@+id/vg08"
             style="@style/textInput"
             android:digits="qwertyuiopasdfghjklzxcvbnm QWERTYUIOPASDFGHJKLZXCVBNM"
-            android:hint="@string/vh08"
+            android:hint="@string/vg08"
             android:inputType="textPersonName"
             android:maxLength="35" />
 
@@ -365,42 +288,43 @@
 
         <TextView
             style="@style/labels"
-            android:text="@string/vh09" />
+            android:text="@string/vg09" />
+
         <RadioGroup
-            android:id="@+id/vh09"
+            android:id="@+id/vg09"
             style="@style/radiogroup"
             android:orientation="vertical">
 
             <RadioButton
-                android:id="@+id/vh0901"
+                android:id="@+id/vg0901"
                 style="@style/radiobutton"
                 android:layout_width="match_parent"
                 android:layout_weight="@null"
                 android:text="@string/vb0701" />
 
             <RadioButton
-                android:id="@+id/vh0902"
+                android:id="@+id/vg0902"
                 style="@style/radiobutton"
                 android:layout_width="match_parent"
                 android:layout_weight="@null"
                 android:text="@string/vb0702" />
 
             <RadioButton
-                android:id="@+id/vh0903"
+                android:id="@+id/vg0903"
                 style="@style/radiobutton"
                 android:layout_width="match_parent"
                 android:layout_weight="@null"
                 android:text="@string/vb0703" />
 
             <RadioButton
-                android:id="@+id/vh0904"
+                android:id="@+id/vg0904"
                 style="@style/radiobutton"
                 android:layout_width="match_parent"
                 android:layout_weight="@null"
                 android:text="@string/vb0704" />
 
             <RadioButton
-                android:id="@+id/vh0988"
+                android:id="@+id/vg0988"
                 style="@style/radiobutton"
                 android:layout_width="match_parent"
                 android:layout_weight="@null"
@@ -409,7 +333,7 @@
         </RadioGroup>
 
         <EditText
-            android:id="@+id/vh0988x"
+            android:id="@+id/vg0988x"
             style="@style/textInput"
             android:digits="qwertyuiopasdfghjklzxcvbnm QWERTYUIOPASDFGHJKLZXCVBNM"
             android:hint="@string/Others"
@@ -420,21 +344,22 @@
 
         <TextView
             style="@style/labels"
-            android:text="@string/vh10" />
+            android:text="@string/vg10" />
+
         <RadioGroup
-            android:id="@+id/vh10"
+            android:id="@+id/vg10"
             style="@style/radiogroup"
             android:orientation="vertical">
 
             <RadioButton
-                android:id="@+id/vh1001"
+                android:id="@+id/vg1001"
                 style="@style/radiobutton"
                 android:layout_width="match_parent"
                 android:layout_weight="@null"
                 android:text="@string/J_Yes" />
 
             <RadioButton
-                android:id="@+id/vh1002"
+                android:id="@+id/vg1002"
                 style="@style/radiobutton"
                 android:layout_width="match_parent"
                 android:layout_weight="@null"
@@ -442,68 +367,81 @@
 
         </RadioGroup>
 
-        <TextView
-            style="@style/labels"
-            android:text="@string/vh11" />
-        <RadioGroup
-            android:id="@+id/vh11"
-            style="@style/radiogroup"
+        <LinearLayout
+            android:id="@+id/fldGrpvg10"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <RadioButton
-                android:id="@+id/vh1101"
-                style="@style/radiobutton"
+            <TextView
+                style="@style/labels"
+                android:text="@string/vg11" />
+
+            <RadioGroup
+                android:id="@+id/vg11"
+                style="@style/radiogroup"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:id="@+id/vg1101"
+                    style="@style/radiobutton"
+                    android:layout_width="match_parent"
+                    android:layout_weight="@null"
+                    android:text="@string/J_Yes" />
+
+                <RadioButton
+                    android:id="@+id/vg1102"
+                    style="@style/radiobutton"
+                    android:layout_width="match_parent"
+                    android:layout_weight="@null"
+                    android:text="@string/J_No" />
+
+                <RadioButton
+                    android:id="@+id/vg1103"
+                    style="@style/radiobutton"
+                    android:layout_width="match_parent"
+                    android:layout_weight="@null"
+                    android:text="@string/NotAvailable" />
+
+            </RadioGroup>
+            <LinearLayout
+                android:id="@+id/fldGrpvg11"
                 android:layout_width="match_parent"
-                android:layout_weight="@null"
-                android:text="@string/J_Yes" />
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+            <TextView
+                style="@style/labels"
+                android:text="@string/vg12" />
 
-            <RadioButton
-                android:id="@+id/vh1102"
-                style="@style/radiobutton"
-                android:layout_width="match_parent"
-                android:layout_weight="@null"
-                android:text="@string/J_No" />
+            <RadioGroup
+                android:id="@+id/vg12"
+                style="@style/radiogroup"
+                android:orientation="vertical">
 
-            <RadioButton
-                android:id="@+id/vh1103"
-                style="@style/radiobutton"
-                android:layout_width="match_parent"
-                android:layout_weight="@null"
-                android:text="@string/NotAvailable" />
+                <RadioButton
+                    android:id="@+id/vg1201"
+                    style="@style/radiobutton"
+                    android:layout_width="match_parent"
+                    android:layout_weight="@null"
+                    android:text="@string/J_Yes" />
 
-        </RadioGroup>
+                <RadioButton
+                    android:id="@+id/vg1202"
+                    style="@style/radiobutton"
+                    android:layout_width="match_parent"
+                    android:layout_weight="@null"
+                    android:text="@string/J_No" />
 
-        <TextView
-            style="@style/labels"
-            android:text="@string/vh12" />
-        <RadioGroup
-            android:id="@+id/vh12"
-            style="@style/radiogroup"
-            android:orientation="vertical">
+                <RadioButton
+                    android:id="@+id/vg1203"
+                    style="@style/radiobutton"
+                    android:layout_width="match_parent"
+                    android:layout_weight="@null"
+                    android:text="@string/NotAvailable" />
 
-            <RadioButton
-                android:id="@+id/vh1201"
-                style="@style/radiobutton"
-                android:layout_width="match_parent"
-                android:layout_weight="@null"
-                android:text="@string/J_Yes" />
-
-            <RadioButton
-                android:id="@+id/vh1202"
-                style="@style/radiobutton"
-                android:layout_width="match_parent"
-                android:layout_weight="@null"
-                android:text="@string/J_No" />
-
-            <RadioButton
-                android:id="@+id/vh1203"
-                style="@style/radiobutton"
-                android:layout_width="match_parent"
-                android:layout_weight="@null"
-                android:text="@string/NotAvailable" />
-
-        </RadioGroup>
-
+            </RadioGroup>
+                </LinearLayout>
+        </LinearLayout>
         <!--  = = = = =  END OF FORM FIELDS = = = = = -->
         <LinearLayout
             android:layout_width="wrap_content"
