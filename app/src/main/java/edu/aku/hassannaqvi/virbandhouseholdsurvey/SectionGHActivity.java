@@ -40,10 +40,12 @@ public class SectionGHActivity extends Activity {
 
     String dtToday = new SimpleDateFormat("dd-MM-yy HH:mm").format(new Date().getTime());
 
-    @BindView(R.id.activity_seaction_a)
-    ScrollView activitySeactionA;
-    @BindView(R.id.crf1_header)
-    TextView crf1Header;
+    @BindView(R.id.activity_seaction_g_h)
+    ScrollView activity_seaction_g_h;
+
+//    @BindView(R.id.crf1_header)
+//    TextView crf1Header;
+
     @BindView(R.id.areaCode)
     TextView areaCode;
     @BindView(R.id.subAreaCode)
@@ -180,14 +182,14 @@ public class SectionGHActivity extends Activity {
                 e.printStackTrace();
             }
             if (UpdateDB()) {
-                Toast.makeText(this, "Starting Section C", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Thanks For your feedback", Toast.LENGTH_SHORT).show();
 
 //                Toast.makeText(getApplicationContext(),""+household.getText().toString().length(),Toast.LENGTH_LONG).show();
 
                 finish();
 
-                Intent secB = new Intent(this, SectionCActivity.class);
-                startActivity(secB);
+//                Intent secB = new Intent(this, SectionCActivity.class);
+//                startActivity(secB);
 
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
