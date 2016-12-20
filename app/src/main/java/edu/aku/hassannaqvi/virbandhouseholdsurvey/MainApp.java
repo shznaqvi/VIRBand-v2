@@ -47,11 +47,16 @@ public class MainApp extends Application {
     public static String interviewerCode;
     public static int loginFieldArea = -1;
     public static String child_name = "TEST";
+    public static boolean gotoIM = true;
+    public static boolean gotoOC = true;
+
+
     public static FormsContract fc;
     public static OCsContract oc;
     public static String userName = "0000";
     public static String areaCode;
     public static boolean isParent = false;
+    public static long ageindays;
     protected LocationManager locationManager;
     Location location;
 

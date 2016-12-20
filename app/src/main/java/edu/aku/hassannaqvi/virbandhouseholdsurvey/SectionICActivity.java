@@ -3,9 +3,13 @@ package edu.aku.hassannaqvi.virbandhouseholdsurvey;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.ScrollView;
@@ -16,6 +20,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -33,96 +38,99 @@ public class SectionICActivity extends Activity {
     ScrollView activitySectionF;
     @BindView(R.id.vic)
     TextView vic;
-    @BindView(R.id.vic01a)
-    RadioGroup vic01a;
-    @BindView(R.id.vic01a1)
-    RadioButton vic01a1;
-    @BindView(R.id.vic01a2)
-    RadioButton vic01a2;
-    @BindView(R.id.vic01c)
-    DatePicker vic01c;
-    @BindView(R.id.vic01b)
-    RadioGroup vic01b;
-    @BindView(R.id.vic01b1)
-    RadioButton vic01b1;
-    @BindView(R.id.vic01b2)
-    RadioButton vic01b2;
-    @BindView(R.id.vic01b3)
-    RadioButton vic01b3;
-    @BindView(R.id.vic01b4)
-    RadioButton vic01b4;
-    @BindView(R.id.vic01b5)
-    RadioButton vic01b5;
-    @BindView(R.id.vic01b6)
-    RadioButton vic01b6;
-    @BindView(R.id.vic01b7)
-    RadioButton vic01b7;
-    @BindView(R.id.vic01b99)
-    RadioButton vic01b99;
-    @BindView(R.id.vic01b88)
-    RadioButton vic01b88;
-    @BindView(R.id.vic01b88x)
-    EditText vic01b88x;
-    @BindView(R.id.vic01d)
-    RadioGroup vic01d;
-    @BindView(R.id.vic01d1)
-    RadioButton vic01d1;
-    @BindView(R.id.vic01d2)
-    RadioButton vic01d2;
-    @BindView(R.id.vic01d99)
-    RadioButton vic01d99;
-    @BindView(R.id.vic01d88)
-    RadioButton vic01d88;
-    @BindView(R.id.vic01d88x)
-    EditText vic01d88x;
-    @BindView(R.id.vic01e)
-    RadioGroup vic01e;
-    @BindView(R.id.vic01e1)
-    RadioButton vic01e1;
-    @BindView(R.id.vic01e2)
-    RadioButton vic01e2;
-    @BindView(R.id.vic01e3)
-    RadioButton vic01e3;
-    @BindView(R.id.vic01e88)
-    RadioButton vic01e88;
-    @BindView(R.id.vic01e88x)
-    EditText vic01e88x;
-    @BindView(R.id.vic01f1)
-    CheckBox vic01f1;
-    @BindView(R.id.vic01f2)
-    CheckBox vic01f2;
-    @BindView(R.id.vic01f3)
-    CheckBox vic01f3;
-    @BindView(R.id.vic01f4)
-    CheckBox vic01f4;
-    @BindView(R.id.vic01f5)
-    CheckBox vic01f5;
-    @BindView(R.id.vic01f6)
-    CheckBox vic01f6;
-    @BindView(R.id.vic01f99)
-    CheckBox vic01f99;
-    @BindView(R.id.vic01f88)
-    CheckBox vic01f88;
-    @BindView(R.id.vic01f88x)
-    EditText vic01f88x;
-    @BindView(R.id.vic01g1)
-    CheckBox vic01g1;
-    @BindView(R.id.vic01g2)
-    CheckBox vic01g2;
-    @BindView(R.id.vic01g3)
-    CheckBox vic01g3;
-    @BindView(R.id.vic01g4)
-    CheckBox vic01g4;
-    @BindView(R.id.vic01g5)
-    CheckBox vic01g5;
-    @BindView(R.id.vic01g6)
-    CheckBox vic01g6;
-    @BindView(R.id.vic01g99)
-    CheckBox vic01g99;
-    @BindView(R.id.vic01g88)
-    CheckBox vic01g88;
-    @BindView(R.id.vic01g88x)
-    EditText vic01g88x;
+    @BindView(R.id.vic_a)
+    RadioGroup vic_a;
+    @BindView(R.id.vic_a01)
+    RadioButton vic_a01;
+    @BindView(R.id.vic_a02)
+    RadioButton vic_a02;
+    @BindView(R.id.vic_c)
+    DatePicker vic_c;
+    @BindView(R.id.vic_b)
+    RadioGroup vic_b;
+    @BindView(R.id.vic_b01)
+    RadioButton vic_b01;
+    @BindView(R.id.vic_b02)
+    RadioButton vic_b02;
+    @BindView(R.id.vic_b03)
+    RadioButton vic_b03;
+    @BindView(R.id.vic_b04)
+    RadioButton vic_b04;
+    @BindView(R.id.vic_b05)
+    RadioButton vic_b05;
+    @BindView(R.id.vic_b06)
+    RadioButton vic_b06;
+    @BindView(R.id.vic_b07)
+    RadioButton vic_b07;
+    @BindView(R.id.vic_b99)
+    RadioButton vic_b99;
+    @BindView(R.id.vic_b88)
+    RadioButton vic_b88;
+    @BindView(R.id.vic_b88x)
+    EditText vic_b88x;
+    @BindView(R.id.vic_d)
+    RadioGroup vic_d;
+    @BindView(R.id.vic_d01)
+    RadioButton vic_d01;
+    @BindView(R.id.vic_d02)
+    RadioButton vic_d02;
+    @BindView(R.id.vic_d99)
+    RadioButton vic_d99;
+    @BindView(R.id.vic_d88)
+    RadioButton vic_d88;
+    @BindView(R.id.vic_d88x)
+    EditText vic_d88x;
+    @BindView(R.id.vic_e)
+    RadioGroup vic_e;
+    @BindView(R.id.vic_e01)
+    RadioButton vic_e01;
+    @BindView(R.id.vic_e02)
+    RadioButton vic_e02;
+    @BindView(R.id.vic_e03)
+    RadioButton vic_e03;
+    @BindView(R.id.vic_e88)
+    RadioButton vic_e88;
+    @BindView(R.id.vic_e88x)
+    EditText vic_e88x;
+    @BindView(R.id.vic_f01)
+    CheckBox vic_f01;
+    @BindView(R.id.vic_f02)
+    CheckBox vic_f02;
+    @BindView(R.id.vic_f03)
+    CheckBox vic_f03;
+    @BindView(R.id.vic_f04)
+    CheckBox vic_f04;
+    @BindView(R.id.vic_f05)
+    CheckBox vic_f05;
+    @BindView(R.id.vic_f06)
+    CheckBox vic_f06;
+    @BindView(R.id.vic_f99)
+    CheckBox vic_f99;
+    @BindView(R.id.vic_f88)
+    CheckBox vic_f88;
+    @BindView(R.id.vic_f88x)
+    EditText vic_f88x;
+    @BindView(R.id.vic_g01)
+    CheckBox vic_g01;
+    @BindView(R.id.vic_g02)
+    CheckBox vic_g02;
+    @BindView(R.id.vic_g03)
+    CheckBox vic_g03;
+    @BindView(R.id.vic_g04)
+    CheckBox vic_g04;
+    @BindView(R.id.vic_g05)
+    CheckBox vic_g05;
+    @BindView(R.id.vic_g06)
+    CheckBox vic_g06;
+    @BindView(R.id.vic_g99)
+    CheckBox vic_g99;
+    @BindView(R.id.vic_g88)
+    CheckBox vic_g88;
+    @BindView(R.id.vic_g88x)
+    EditText vic_g88x;
+    @BindView(R.id.fldGrpDOV)
+    LinearLayout fldGrpDov;
+
     private int tp = 0;
 
     @Override
@@ -131,8 +139,7 @@ public class SectionICActivity extends Activity {
         setContentView(R.layout.activity_section_ic);
         ButterKnife.bind(this);
 
-        icTP = getIntent().getIntExtra("icTP", 0);
-        icTP += 1;
+        icTP = getIntent().getIntExtra("icTP", 1);
         ic = getIntent().getBooleanExtra("ic", false);
         switch (icTP) {
             case 1:
@@ -164,6 +171,77 @@ public class SectionICActivity extends Activity {
                 //DOV.setMinDate(d.getTime() + VIRBandApp.MILLISECONDS_IN_DAY);
                 break;
         }
+        vic_c.setMinDate(new Date().getTime() - (MainApp.MILLISECONDS_IN_DAY * (MainApp.ageindays)));
+        vic_c.setMaxDate(new Date().getTime() + MainApp.MILLISECONDS_IN_DAY);
+
+        vic_b.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                if (vic_b01.isChecked()) {
+                    fldGrpDov.setVisibility(View.VISIBLE);
+                } else {
+                    fldGrpDov.setVisibility(View.GONE);
+                }
+                if (vic_b88.isChecked()) {
+                    vic_b88x.setVisibility(View.VISIBLE);
+                } else {
+                    vic_b88x.setVisibility(View.GONE);
+                    vic_b88x.setText(null);
+                }
+            }
+        });
+
+        vic_d.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                if (vic_d88.isChecked()) {
+                    vic_d88x.setVisibility(View.VISIBLE);
+                } else {
+                    vic_d88x.setVisibility(View.GONE);
+                    vic_d88x.setText(null);
+
+                }
+            }
+        });
+
+        vic_e.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                if (vic_e88.isChecked()) {
+                    vic_e88x.setVisibility(View.VISIBLE);
+                } else {
+                    vic_e88x.setVisibility(View.GONE);
+                    vic_e88x.setText(null);
+
+                }
+            }
+        });
+
+        vic_f88.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (b) {
+                    vic_f88x.setVisibility(View.VISIBLE);
+                } else {
+                    vic_f88x.setVisibility(View.GONE);
+                    vic_f88x.setText(null);
+
+                }
+            }
+        });
+
+        vic_g88.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (b) {
+                    vic_g88x.setVisibility(View.VISIBLE);
+                } else {
+                    vic_g88x.setVisibility(View.GONE);
+                    vic_g88x.setText(null);
+
+                }
+            }
+        });
 
     }
 
@@ -185,6 +263,8 @@ public class SectionICActivity extends Activity {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
             }
         } */
+
+
     }
 
 
@@ -198,16 +278,28 @@ public class SectionICActivity extends Activity {
                 e.printStackTrace();
             }
             if (UpdateDB()) {
-
-                Toast.makeText(this, "Thanks for your feedback", Toast.LENGTH_SHORT).show();
-
-                finish();
-
-//                Toast.makeText(this, "Starting Next Section", Toast.LENGTH_SHORT).show();
-//                Intent secNext = new Intent(this, SectionEActivity.class);
-//                startActivity(secNext);
-
-
+                Toast.makeText(this, "Starting Next Section", Toast.LENGTH_SHORT).show();
+                if (icTP >= 1 && icTP < 6) {
+                    Intent repSec = new Intent(this, SectionICActivity.class);
+                    repSec.putExtra("icTP", icTP);
+                    if (ic) {
+                        repSec.putExtra("ic", true);
+                    } else {
+                        repSec.putExtra("ic", false);
+                    }
+                    startActivity(repSec);
+                } else {
+                    if (MainApp.gotoIM) {
+                        Toast.makeText(this, "Starting Form Other Child Section", Toast.LENGTH_SHORT).show();
+                        Intent ghSec = new Intent(this, SectionGHActivity.class);
+                        startActivity(ghSec);
+                    } else {
+                        Toast.makeText(this, "Starting Form Ending Section", Toast.LENGTH_SHORT).show();
+                        Intent endSec = new Intent(this, EndingActivity.class);
+                        endSec.putExtra("complete", false);
+                        startActivity(endSec);
+                    }
+                }
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
             }
@@ -217,7 +309,11 @@ public class SectionICActivity extends Activity {
     private boolean UpdateDB() {
         DatabaseHelper db = new DatabaseHelper(this);
 
-        int updcount = db.updateSE();
+        if (ic) {
+            updcount = db.updateSIC(icTP);
+        } else {
+            // updcount = db.updateSOC(icTP);
+        }
 
         if (updcount == 1) {
             Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
@@ -227,59 +323,64 @@ public class SectionICActivity extends Activity {
             return false;
         }
 
+
     }
 
+
     private void SaveDraft() throws JSONException {
+
+
         Toast.makeText(this, "Saving Draft for  This Section", Toast.LENGTH_SHORT).show();
 
-        String DOB = new SimpleDateFormat("dd-MM-yyyy HH:mm").format(vic01c.getCalendarView().getDate());
+        String DOV = new SimpleDateFormat("dd-MM-yyyy HH:mm").format(vic_c.getCalendarView().getDate());
 
         JSONObject sic = new JSONObject();
 
-        sic.put("vic01a", vic01a1.isChecked() ? "1" : vic01a2.isChecked() ? "2" : "default");
-        sic.put("vic01b", vic01b1.isChecked() ? "1"
-                : vic01b2.isChecked() ? "2"
-                : vic01b3.isChecked() ? "3" :
-                                vic01b4.isChecked() ? "4" :
-                                        vic01b5.isChecked() ? "5" :
-                                                vic01b6.isChecked() ? "6" :
-                                                        vic01b7.isChecked() ? "7" :
-                                                                vic01b88.isChecked() ? "88" :
-                                                                        vic01b99.isChecked() ? "99" :
-                                                                                "default"
+        sic.put("vic" + icTP + "a", vic_a01.isChecked() ? "1" : vic_a02.isChecked() ? "2" : "default");
+        sic.put("vic" + icTP + "b", vic_b01.isChecked() ? "1"
+                : vic_b02.isChecked() ? "2"
+                : vic_b03.isChecked() ? "3" :
+                vic_b04.isChecked() ? "4" :
+                        vic_b05.isChecked() ? "5" :
+                                vic_b06.isChecked() ? "6" :
+                                        vic_b07.isChecked() ? "7" :
+                                                vic_b88.isChecked() ? "88" :
+                                                        vic_b99.isChecked() ? "99" :
+                                                                "default"
         );
-        sic.put("vic01b88x", vic01b88x.getText().toString());
-        sic.put("vic01b", vic01b1.isChecked() ? DOB : "");
-        sic.put("vic01d", vic01d1.isChecked() ? "1" :
-                vic01d2.isChecked() ? "2" :
-                        vic01d88.isChecked() ? "88" :
-                                vic01d99.isChecked() ? "99" :
+        sic.put("vic" + icTP + "b88x", vic_b88x.getText().toString());
+        sic.put("vic" + icTP + "c", vic_b01.isChecked() ? DOV : "");
+
+        sic.put("vic" + icTP + "d", vic_d01.isChecked() ? "1" :
+                vic_d02.isChecked() ? "2" :
+                        vic_d88.isChecked() ? "88" :
+                                vic_d99.isChecked() ? "99" :
                                         "default");
-        sic.put("vic01d88x", vic01d88x.getText().toString());
-        sic.put("vic01e", vic01e1.isChecked() ? "1"
-                : vic01e2.isChecked() ? "2"
-                : vic01e3.isChecked() ? "3"
-                : vic01e88.isChecked() ? "88"
+        sic.put("vic" + icTP + "d88x", vic_d88x.getText().toString());
+        sic.put("vic" + icTP + "e", vic_e01.isChecked() ? "1"
+                : vic_e02.isChecked() ? "2"
+                : vic_e03.isChecked() ? "3"
+                : vic_e88.isChecked() ? "88"
                 : "default");
-        sic.put("vic01e88x", vic01e88x.getText().toString());
-        sic.put("vic01f1", vic01f1.isChecked() ? "1" : "default");
-        sic.put("vic01f2", vic01f2.isChecked() ? "2" : "default");
-        sic.put("vic01f3", vic01f3.isChecked() ? "3" : "default");
-        sic.put("vic01f4", vic01f4.isChecked() ? "4" : "default");
-        sic.put("vic01f5", vic01f5.isChecked() ? "5" : "default");
-        sic.put("vic01f6", vic01f6.isChecked() ? "6" : "default");
-        sic.put("vic01f99", vic01f99.isChecked() ? "99" : "default");
-        sic.put("vic01f88", vic01f88.isChecked() ? "88" : "default");
-        sic.put("vic01f88x", vic01f88x.getText().toString());
-        sic.put("vic01g1", vic01g1.isChecked() ? "1" : "default");
-        sic.put("vic01g2", vic01g2.isChecked() ? "2" : "default");
-        sic.put("vic01g3", vic01g3.isChecked() ? "3" : "default");
-        sic.put("vic01g4", vic01g4.isChecked() ? "4" : "default");
-        sic.put("vic01g5", vic01g5.isChecked() ? "5" : "default");
-        sic.put("vic01g6", vic01g6.isChecked() ? "6" : "default");
-        sic.put("vic01g99", vic01g99.isChecked() ? "99" : "default");
-        sic.put("vic01g88", vic01g88.isChecked() ? "88" : "default");
-        sic.put("vic01g88x", vic01g88x.getText().toString());
+        sic.put("vic" + icTP + "e88x", vic_e88x.getText().toString());
+        sic.put("vic" + icTP + "f1", vic_f01.isChecked() ? "1" : "default");
+        sic.put("vic" + icTP + "f2", vic_f02.isChecked() ? "2" : "default");
+        sic.put("vic" + icTP + "f3", vic_f03.isChecked() ? "3" : "default");
+        sic.put("vic" + icTP + "f4", vic_f04.isChecked() ? "4" : "default");
+        sic.put("vic" + icTP + "f5", vic_f05.isChecked() ? "5" : "default");
+        sic.put("vic" + icTP + "f6", vic_f06.isChecked() ? "6" : "default");
+        sic.put("vic" + icTP + "f99", vic_f99.isChecked() ? "99" : "default");
+        sic.put("vic" + icTP + "f88", vic_f88.isChecked() ? "88" : "default");
+        sic.put("vic" + icTP + "f88x", vic_f88x.getText().toString());
+        sic.put("vic" + icTP + "g1", vic_g01.isChecked() ? "1" : "default");
+        sic.put("vic" + icTP + "g2", vic_g02.isChecked() ? "2" : "default");
+        sic.put("vic" + icTP + "g3", vic_g03.isChecked() ? "3" : "default");
+        sic.put("vic" + icTP + "g4", vic_g04.isChecked() ? "4" : "default");
+        sic.put("vic" + icTP + "g5", vic_g05.isChecked() ? "5" : "default");
+        sic.put("vic" + icTP + "g6", vic_g06.isChecked() ? "6" : "default");
+        sic.put("vic" + icTP + "g99", vic_g99.isChecked() ? "99" : "default");
+        sic.put("vic" + icTP + "g88", vic_g88.isChecked() ? "88" : "default");
+        sic.put("vic" + icTP + "g88x", vic_g88x.getText().toString());
 
         /*sic.put("ve0201", ve0201.isChecked() ? "1" : "default");
         sic.put("ve0202", ve0202.isChecked() ? "2" : "default");
@@ -337,6 +438,126 @@ public class SectionICActivity extends Activity {
     }
 
     private boolean formValidation() {
+
+        Toast.makeText(this, "Validating This Section ", Toast.LENGTH_SHORT).show();
+
+        if (vic_a.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(not selected): " + getString(R.string.vic_a), Toast.LENGTH_LONG).show();
+            vic_a02.setError("This data is Required!");
+            Log.i(TAG, "vic_a: This data is Required!");
+            return false;
+        } else {
+            vic_a02.setError(null);
+        }
+
+        // RadioGroup
+        if (vic_b.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(not selected): " + getString(R.string.vic_b), Toast.LENGTH_LONG).show();
+            vic_b99.setError("This data is Required!");
+            Log.i(TAG, "vic_b: This data is Required!");
+            return false;
+        } else {
+            vic_b99.setError(null);
+        }
+
+        // Others
+        if (vic_b88.isChecked() && vic_b88x.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.vic_b) + " - " + getString(R.string.Others), Toast.LENGTH_LONG).show();
+            vic_b88x.setError("This data is Required!");
+            Log.i(TAG, "vic_b88x: This data is Required!");
+            return false;
+        } else {
+            vic_b88x.setError(null);
+        }
+
+        // RadioGroup
+        if (vic_d.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(not selected): " + getString(R.string.vic_d), Toast.LENGTH_LONG).show();
+            vic_d99.setError("This data is Required!");
+            Log.i(TAG, "vic_d: This data is Required!");
+            return false;
+        } else {
+            vic_d99.setError(null);
+        }
+
+        // Others
+        if (vic_d88.isChecked() && vic_d88x.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.vic_d) + " - " + getString(R.string.Others), Toast.LENGTH_LONG).show();
+            vic_d88x.setError("This data is Required!");
+            Log.i(TAG, "vic_d88x: This data is Required!");
+            return false;
+        } else {
+            vic_d88x.setError(null);
+        }
+        // RadioGroup
+        if (vic_e.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(not selected): " + getString(R.string.vic_e), Toast.LENGTH_LONG).show();
+            vic_e88.setError("This data is Required!");
+            Log.i(TAG, "vic_e: This data is Required!");
+            return false;
+        } else {
+            vic_e88.setError(null);
+        }
+
+        // Others
+        if (vic_e88.isChecked() && vic_e88x.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.vic_e) + " - " + getString(R.string.Others), Toast.LENGTH_LONG).show();
+            vic_e88x.setError("This data is Required!");
+            Log.i(TAG, "vic_e88x: This data is Required!");
+            return false;
+        } else {
+            vic_e88x.setError(null);
+        }
+
+        if (!(vic_f01.isChecked()
+                || vic_f02.isChecked()
+                || vic_f03.isChecked()
+                || vic_f04.isChecked()
+                || vic_f05.isChecked()
+                || vic_f06.isChecked()
+                || vic_f88.isChecked()
+        )) {
+            Toast.makeText(this, "ERROR(not selected): " + getString(R.string.vic_f), Toast.LENGTH_LONG).show();
+            vic_f88.setError("This data is Required!");
+            Log.i(TAG, "vic_f8: This data is Required!");
+            return false;
+        } else {
+            vic_f88.setError(null);
+        }
+
+        if (vic_f88.isChecked() && vic_f88x.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.vic_f) + " - " + getString(R.string.Others), Toast.LENGTH_LONG).show();
+            vic_f88x.setError("This data is Required!");
+            Log.i(TAG, "vic_f88x: This data is Required!");
+            return false;
+        } else {
+            vic_f88x.setError(null);
+        }
+        if (!(vic_g01.isChecked()
+                || vic_g02.isChecked()
+                || vic_g03.isChecked()
+                || vic_g04.isChecked()
+                || vic_g05.isChecked()
+                || vic_g06.isChecked()
+                || vic_g88.isChecked()
+        )) {
+            Toast.makeText(this, "ERROR(not selected): " + getString(R.string.vic_g), Toast.LENGTH_LONG).show();
+            vic_g88.setError("This data is Required!");
+            Log.i(TAG, "vic_g8: This data is Required!");
+            return false;
+        } else {
+            vic_g88.setError(null);
+        }
+
+        if (vic_g88.isChecked() && vic_g88x.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.vic_g) + " - " + getString(R.string.Others), Toast.LENGTH_LONG).show();
+            vic_g88x.setError("This data is Required!");
+            Log.i(TAG, "vic_g88x: This data is Required!");
+            return false;
+        } else {
+            vic_g88x.setError(null);
+        }
+
 
         return true;
     }

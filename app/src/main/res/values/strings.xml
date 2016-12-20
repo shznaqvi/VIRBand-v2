@@ -17,6 +17,11 @@
 
     <string name="Yes"> ہاں </string>
     <string name="No"> نہیں </string>
+
+    <string name="J_Yes"> جی ہاں </string>
+    <string name="J_No"> جی نہیں </string>
+    <string name="NotAvailable"> دستیاب نہیں ہے </string>
+
     <string name="DNK"> معلوم نہیں </string>
     <string name="Others"> دیگر (وضاحت کریں۔۔۔) </string>
     <string name="end_interview"> اختتام </string>
@@ -33,6 +38,8 @@
     <string name="sectionB"> B.	 انڈیکس چائلڈ کی تفصیلات</string>
     <string name="sectionC"> C.	 جوابدہندہ کی تفصیلات</string>
     <string name="sectionD"> D. شناختی تفصیلات </string>
+    <string name="sectionG"> G. شناختی تفصیلات </string>
+    <string name="sectionH"> H. تفصیلات </string>
 
 
     <string name="title_activity_splashscreen">SplashscreenActivity</string>
@@ -40,7 +47,7 @@
     <string name="dummy_content">DUMMY\nCONTENT</string>
 
     <string name="AreaCode">علاقہ</string>
-    <string name="childCount">پانچ سال سے کم عمر بچوں کی تعداد (بشمول منتخب بچےکے)</string>
+    <string name="childCount">دو سال سے کم عمر بچوں کی تعداد (بشمول منتخب بچےکے)</string>
 
     <string name="va01"> علاقہ کوڈ </string>
     <string name="va101"> پہلوان گوٹھ </string>
@@ -359,5 +366,36 @@
     <string name="vic01g5"> الٹے بازو پر </string>
     <string name="vic01g6"> پیچھے /پچھواڑی پر </string>
     <string name="vic01g7"> معلوم نہیں/ نہیں یاد </string>
+
+    <string name="vh01"> نام </string>
+    <string name="vh02"> جنس </string>
+    <string name="vh0201"> بچہ </string>
+    <string name="vh0202"> بچی </string>
+    <string name="vh03"> تاریخ پیدائش </string>
+    <string name="vh04"> عمر </string>
+    <string name="vh04d"> دن </string>
+    <string name="vh04m"> مہینہ </string>
+    <string name="vh04y"> سال </string>
+    <string name="vh05"> جوابدہندہ کا نام </string>
+    <string name="vh06"> جوابدہندہ کا بچے سے کیا رشتہ ہے </string>
+    <string name="vh0601"> والدہ </string>
+    <string name="vh0602"> والد </string>
+    <string name="vh0603"> دادی/نانی </string>
+    <string name="vh0604"> دادا/نانا </string>
+    <string name="vh0605"> خالہ/پھپھو/چچی/مامی </string>
+    <string name="vh0606"> ماموں/ چچا/ پھوپھا/خالو </string>
+    <string name="vh0607"> بھائی </string>
+    <string name="vh0608"> بہن </string>
+    <string name="vh07"> والدہ کا نام </string>
+    <string name="vh08"> والد کا نام </string>
+    <string name="vh09"> جائے پیدائش </string>
+    <string name="vh0901"> سرکاری ہسپتال </string>
+    <string name="vh0902"> نجی ہسپتال </string>
+    <string name="vh0903"> میٹرنٹی ہوم (ٹی بی اے یا ایل ایچ وی کا گھر) </string>
+    <string name="vh0904"> گھر پر </string>
+    <string name="vh0909"> دیگر (دیگر کی وضاحت کریں) </string>
+    <string name="vh10"> بچے کو حفاظتی ٹیکے لگائے گئے </string>
+    <string name="vh11"> کیا آپ کے پاس اس بچے کا ویکسینیشن کارڈ ہے </string>
+    <string name="vh12"> ویکسینیشن کارڈ دیکھا </string>
 
 </resources>

@@ -139,7 +139,7 @@ public class MainActivity extends Activity {
     }
 
     public void openG(View v) {
-        Intent iG = new Intent(this, SectionGActivity.class);
+        Intent iG = new Intent(this, SectionGHActivity.class);
         startActivity(iG);
     }
 
