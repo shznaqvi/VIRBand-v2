@@ -39,39 +39,39 @@ import org.json.JSONObject; /**
         this.UID = jsonObject.getString(singleOCs.COLUMN_NAME_UID);
         this.formDate = jsonObject.getString(singleOCs.COLUMN_NAME_FORM_DATE);
         this.areacode = jsonObject.getString(singleOCs.COLUMN_NAME_AREA_CODE);
-        this.subareacode = jsonObject.getString("subareacode");
-        this.household = jsonObject.getString("household");
-        this.childName = jsonObject.getString("childName");
-        this.sH = jsonObject.getString("sH");
-        this.sOC01 = jsonObject.getString("sOC01");
-        this.sOC02 = jsonObject.getString("sOC02");
-        this.sOC03 = jsonObject.getString("sOC03");
-        this.sOC04 = jsonObject.getString("sOC04");
-        this.sOC05 = jsonObject.getString("sOC05");
-        this.sOC06 = jsonObject.getString("sOC06");
-        this.deviceID = jsonObject.getString("deviceID");
-        this.synced = jsonObject.getString("synced");
-        this.synced_date = jsonObject.getString("synced_date");
+        this.subareacode = jsonObject.getString(singleOCs.COLUMN_NAME_SUBAREA_CODE);
+        this.household = jsonObject.getString(singleOCs.COLUMN_NAME_HOUSEHOLD);
+        this.childName = jsonObject.getString(singleOCs.COLUMN_NAME_CHILDNAME);
+        this.sH = jsonObject.getString(singleOCs.COLUMN_NAME_SH);
+        this.sOC01 = jsonObject.getString(singleOCs.COLUMN_NAME_SOC01);
+        this.sOC02 = jsonObject.getString(singleOCs.COLUMN_NAME_SOC02);
+        this.sOC03 = jsonObject.getString(singleOCs.COLUMN_NAME_SOC03);
+        this.sOC04 = jsonObject.getString(singleOCs.COLUMN_NAME_SOC04);
+        this.sOC05 = jsonObject.getString(singleOCs.COLUMN_NAME_SOC05);
+        this.sOC06 = jsonObject.getString(singleOCs.COLUMN_NAME_SOC06);
+        this.deviceID = jsonObject.getString(singleOCs.COLUMN_NAME_DEVICE_ID);
+        this.synced = jsonObject.getString(singleOCs.COLUMN_NAME_SYNCED);
+        this.synced_date = jsonObject.getString(singleOCs.COLUMN_NAME_SYNCED_DATE);
 
         return this;
     }
 
     public OCsContract Hydrate(Cursor cursor) {
-        this.formDate = cursor.getString(cursor.getColumnIndex("formDate"));
-        this.areacode = cursor.getString(cursor.getColumnIndex("areacode"));
-        this.subareacode = cursor.getString(cursor.getColumnIndex("subareacode"));
-        this.household = cursor.getString(cursor.getColumnIndex("household"));
-        this.childName = cursor.getString(cursor.getColumnIndex("childName"));
-        this.sH = cursor.getString(cursor.getColumnIndex("sH"));
-        this.sOC01 = cursor.getString(cursor.getColumnIndex("sOC01"));
-        this.sOC02 = cursor.getString(cursor.getColumnIndex("sOC02"));
-        this.sOC03 = cursor.getString(cursor.getColumnIndex("sOC03"));
-        this.sOC04 = cursor.getString(cursor.getColumnIndex("sOC04"));
-        this.sOC05 = cursor.getString(cursor.getColumnIndex("sOC05"));
-        this.sOC06 = cursor.getString(cursor.getColumnIndex("sOC06"));
-        this.deviceID = cursor.getString(cursor.getColumnIndex("deviceID"));
-        this.synced = cursor.getString(cursor.getColumnIndex("synced"));
-        this.synced_date = cursor.getString(cursor.getColumnIndex("synced_date"));
+        this.formDate = cursor.getString(cursor.getColumnIndex(singleOCs.COLUMN_NAME_FORM_DATE));
+        this.areacode = cursor.getString(cursor.getColumnIndex(singleOCs.COLUMN_NAME_AREA_CODE));
+        this.subareacode = cursor.getString(cursor.getColumnIndex(singleOCs.COLUMN_NAME_SUBAREA_CODE));
+        this.household = cursor.getString(cursor.getColumnIndex(singleOCs.COLUMN_NAME_HOUSEHOLD));
+        this.childName = cursor.getString(cursor.getColumnIndex(singleOCs.COLUMN_NAME_CHILDNAME));
+        this.sH = cursor.getString(cursor.getColumnIndex(singleOCs.COLUMN_NAME_SH));
+        this.sOC01 = cursor.getString(cursor.getColumnIndex(singleOCs.COLUMN_NAME_SOC01));
+        this.sOC02 = cursor.getString(cursor.getColumnIndex(singleOCs.COLUMN_NAME_SOC02));
+        this.sOC03 = cursor.getString(cursor.getColumnIndex(singleOCs.COLUMN_NAME_SOC03));
+        this.sOC04 = cursor.getString(cursor.getColumnIndex(singleOCs.COLUMN_NAME_SOC04));
+        this.sOC05 = cursor.getString(cursor.getColumnIndex(singleOCs.COLUMN_NAME_SOC05));
+        this.sOC06 = cursor.getString(cursor.getColumnIndex(singleOCs.COLUMN_NAME_SOC06));
+        this.deviceID = cursor.getString(cursor.getColumnIndex(singleOCs.COLUMN_NAME_DEVICE_ID));
+        this.synced = cursor.getString(cursor.getColumnIndex(singleOCs.COLUMN_NAME_SYNCED));
+        this.synced_date = cursor.getString(cursor.getColumnIndex(singleOCs.COLUMN_NAME_SYNCED_DATE));
 
         return this;
     }
