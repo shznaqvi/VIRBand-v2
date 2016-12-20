@@ -76,11 +76,11 @@ import org.json.JSONObject; /**
         return this;
     }
 
-    public String get_ID() {
+    public String getID() {
         return _ID;
     }
 
-    public void set_ID(String _ID) {
+    public void setID(String _ID) {
         this._ID = _ID;
     }
 

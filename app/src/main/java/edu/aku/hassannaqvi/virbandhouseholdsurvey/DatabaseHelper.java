@@ -1,6 +1,5 @@
 package edu.aku.hassannaqvi.virbandhouseholdsurvey;
 
-import android.app.Application;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -9,7 +8,6 @@ import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
-import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -20,6 +18,7 @@ import java.util.Collection;
 import java.util.Date;
 
 import edu.aku.hassannaqvi.virbandhouseholdsurvey.FormsContract.singleForm;
+import edu.aku.hassannaqvi.virbandhouseholdsurvey.OCsContract.singleOCs;
 import edu.aku.hassannaqvi.virbandhouseholdsurvey.UsersContract.singleUser;
 
 /**
@@ -69,10 +68,34 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             + singleForm.COLUMN_NAME_SIC06 + " TEXT,"
             + singleForm.COLUMN_NAME_CHILDNAME + " TEXT"
             + " );";
+
+    private static final String SQL_CREATE_OCS = "CREATE TABLE "
+            + singleOCs.TABLE_NAME + "("
+            + singleOCs._ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+            + singleOCs.COLUMN_NAME_UID + " TEXT,"
+            + singleOCs.COLUMN_NAME_DEVICE_ID + " TEXT,"
+            + singleOCs.COLUMN_NAME_PROJECT_NAME + " TEXT,"
+            + singleOCs.COLUMN_NAME_SYNCED + " TEXT,"
+            + singleOCs.COLUMN_NAME_SYNCED_DATE + " TEXT,"
+            + singleOCs.COLUMN_NAME_FORM_DATE + " TEXT,"
+            + singleOCs.COLUMN_NAME_AREA_CODE + " TEXT,"
+            + singleOCs.COLUMN_NAME_SUBAREA_CODE + " TEXT,"
+            + singleOCs.COLUMN_NAME_HOUSEHOLD + " TEXT,"
+            + singleOCs.COLUMN_NAME_SH + " TEXT,"
+            + singleOCs.COLUMN_NAME_SOC01 + " TEXT,"
+            + singleOCs.COLUMN_NAME_SOC02 + " TEXT,"
+            + singleOCs.COLUMN_NAME_SOC03 + " TEXT,"
+            + singleOCs.COLUMN_NAME_SOC04 + " TEXT,"
+            + singleOCs.COLUMN_NAME_SOC05 + " TEXT,"
+            + singleOCs.COLUMN_NAME_SOC06 + " TEXT,"
+            + singleOCs.COLUMN_NAME_CHILDNAME + " TEXT"
+            + " );";
     private static final String SQL_DELETE_USERS =
             "DROP TABLE IF EXISTS " + singleUser.TABLE_NAME;
     private static final String SQL_DELETE_FORMS =
             "DROP TABLE IF EXISTS " + singleForm.TABLE_NAME;
+    private static final String SQL_DELETE_OCS =
+            "DROP TABLE IF EXISTS " + singleOCs.TABLE_NAME;
     private final String TAG = "DatabaseHelper";
     public String spDateT = new SimpleDateFormat("dd-MM-yy").format(new Date().getTime());
 
@@ -88,6 +111,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         db.execSQL(SQL_CREATE_USERS);
         db.execSQL(SQL_CREATE_FORMS);
+        db.execSQL(SQL_CREATE_OCS);
 
     }
 
@@ -199,6 +223,38 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return newRowId;
     }
 
+    public Long addOC(OCsContract oc) {
+
+        // Gets the data repository in write mode
+        SQLiteDatabase db = this.getWritableDatabase();
+
+// Create a new map of values, where column names are the keys
+        ContentValues values = new ContentValues();
+        values.put(singleOCs.COLUMN_NAME_DEVICE_ID, oc.getDeviceID());
+        values.put(singleOCs.COLUMN_NAME_FORM_DATE, oc.getFormDate());
+        values.put(singleOCs.COLUMN_NAME_AREA_CODE, oc.getAreacode());
+        values.put(singleOCs.COLUMN_NAME_SUBAREA_CODE, oc.getSubareacode());
+        values.put(singleOCs.COLUMN_NAME_HOUSEHOLD, oc.getHousehold());
+        values.put(singleOCs.COLUMN_NAME_CHILDNAME, oc.getChildName());
+        values.put(singleOCs.COLUMN_NAME_SH, oc.getsH() == null ? "" : oc.getsH());
+        values.put(singleOCs.COLUMN_NAME_SOC01, oc.getsOC01() == null ? "" : oc.getsOC01());
+        values.put(singleOCs.COLUMN_NAME_SOC02, oc.getsOC02() == null ? "" : oc.getsOC02());
+        values.put(singleOCs.COLUMN_NAME_SOC03, oc.getsOC03() == null ? "" : oc.getsOC03());
+        values.put(singleOCs.COLUMN_NAME_SOC04, oc.getsOC04() == null ? "" : oc.getsOC04());
+        values.put(singleOCs.COLUMN_NAME_SOC05, oc.getsOC05() == null ? "" : oc.getsOC05());
+        values.put(singleOCs.COLUMN_NAME_SOC06, oc.getsOC06() == null ? "" : oc.getsOC06());
+
+
+        // Insert the new row, returning the primary key value of the new row
+        long newRowId;
+        newRowId = db.insert(
+                singleOCs.TABLE_NAME,
+                singleOCs.COLUMN_NAME_NULLABLE,
+                values);
+
+        return newRowId;
+    }
+
     public int updateSC() {
 
         SQLiteDatabase db = this.getReadableDatabase();
@@ -298,6 +354,44 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 selectionArgs);
         return count;
     }
+public int updateSOC(int tp) {
+
+        SQLiteDatabase db = this.getReadableDatabase();
+
+// New value for one column
+        ContentValues values = new ContentValues();
+
+        switch (tp) {
+            case 1:
+                values.put(singleOCs.COLUMN_NAME_SOC01, MainApp.oc.getsOC01());
+                break;
+            case 2:
+                values.put(singleOCs.COLUMN_NAME_SOC02, MainApp.oc.getsOC02());
+                break;
+            case 3:
+                values.put(singleOCs.COLUMN_NAME_SOC03, MainApp.oc.getsOC03());
+                break;
+            case 4:
+                values.put(singleOCs.COLUMN_NAME_SOC04, MainApp.oc.getsOC04());
+                break;
+            case 5:
+                values.put(singleOCs.COLUMN_NAME_SOC05, MainApp.oc.getsOC05());
+                break;
+            case 6:
+                values.put(singleOCs.COLUMN_NAME_SOC06, MainApp.oc.getsOC06());
+                break;
+        }
+
+        // Which row to update, based on the ID
+        String selection = singleForm._ID + " = ?";
+        String[] selectionArgs = {String.valueOf(MainApp.oc.getID())};
+
+        int count = db.update(singleForm.TABLE_NAME,
+                values,
+                selection,
+                selectionArgs);
+        return count;
+    }
 
     public int updateEnd() {
         SQLiteDatabase db = this.getReadableDatabase();
@@ -344,7 +438,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 singleForm._ID,
                 singleForm.COLUMN_NAME_UID,
                 singleForm.COLUMN_NAME_PROJECT_NAME,
-                //singleForm.COLUMN_NAME_SURVEY_TYPE,
                 singleForm.COLUMN_NAME_DEVICE_ID,
                 singleForm.COLUMN_NAME_GPS_LAT,
                 singleForm.COLUMN_NAME_GPS_LNG,
@@ -359,7 +452,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 singleForm.COLUMN_NAME_HOUSEHOLD,
                 singleForm.COLUMN_NAME_CHILDNAME,
                 singleForm.COLUMN_NAME_ISTATUS,
-                //singleForm.COLUMN_NAME_SA,
                 singleForm.COLUMN_NAME_SB,
                 singleForm.COLUMN_NAME_SC,
                 singleForm.COLUMN_NAME_SD,
@@ -403,6 +495,62 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             }
         }
         return allFC;
+    }
+public Collection<OCsContract> getAllOCs() {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = null;
+        String[] columns = {
+                singleOCs._ID,
+                singleOCs.COLUMN_NAME_UID,
+                singleOCs.COLUMN_NAME_PROJECT_NAME,
+                singleOCs.COLUMN_NAME_DEVICE_ID,
+                singleOCs.COLUMN_NAME_SYNCED,
+                singleOCs.COLUMN_NAME_SYNCED_DATE,
+                singleOCs.COLUMN_NAME_FORM_DATE,
+                singleOCs.COLUMN_NAME_AREA_CODE,
+                singleOCs.COLUMN_NAME_SUBAREA_CODE,
+                singleOCs.COLUMN_NAME_HOUSEHOLD,
+                singleOCs.COLUMN_NAME_CHILDNAME,
+                singleOCs.COLUMN_NAME_SH,
+                singleOCs.COLUMN_NAME_SOC01,
+                singleOCs.COLUMN_NAME_SOC02,
+                singleOCs.COLUMN_NAME_SOC03,
+                singleOCs.COLUMN_NAME_SOC04,
+                singleOCs.COLUMN_NAME_SOC05,
+                singleOCs.COLUMN_NAME_SOC06
+        };
+        String whereClause = null;
+        String[] whereArgs = null;
+        String groupBy = null;
+        String having = null;
+
+        String orderBy =
+                singleOCs._ID + " ASC";
+
+        Collection<OCsContract> allOC = new ArrayList<OCsContract>();
+        try {
+            c = db.query(
+                    singleOCs.TABLE_NAME,  // The table to query
+                    columns,                   // The columns to return
+                    whereClause,               // The columns for the WHERE clause
+                    whereArgs,                 // The values for the WHERE clause
+                    groupBy,                   // don't group the rows
+                    having,                    // don't filter by row groups
+                    orderBy                    // The sort order
+            );
+            while (c.moveToNext()) {
+                OCsContract oc = new OCsContract();
+                allOC.add(oc.Hydrate(c));
+            }
+        } finally {
+            if (c != null) {
+                c.close();
+            }
+            if (db != null) {
+                db.close();
+            }
+        }
+        return allOC;
     }
 
     public Collection<FormsContract> getTodayForms() {
@@ -450,9 +598,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     db.close();
                 }
             }
-        }
-        catch (SQLException e){
-            Log.e(e.getMessage(),"Error");
+        } catch (SQLException e) {
+            Log.e(e.getMessage(), "Error");
         }
 
 
