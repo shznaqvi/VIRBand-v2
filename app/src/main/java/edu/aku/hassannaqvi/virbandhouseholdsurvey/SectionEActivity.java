@@ -1188,6 +1188,10 @@ public class SectionEActivity extends Activity {
                 : "default");
         se.put("ve1488x", ve1488x.getText().toString());
         se.put("ve15", ve1501.isChecked() ? "1" : ve1502.isChecked() ? "2" : ve1503.isChecked() ? "3" : ve1599.isChecked() ? "99" : "default");
+
+        MainApp.gotoOC = !ve1301.isChecked();
+
+
         se.put("ve1601", ve1601.isChecked() ? "1" : "default");
         se.put("ve1602", ve1602.isChecked() ? "2" : "default");
         se.put("ve1603", ve1603.isChecked() ? "3" : "default");

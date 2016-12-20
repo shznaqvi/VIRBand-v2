@@ -43,7 +43,7 @@
         <activity android:name=".SectionDActivity" />
         <activity android:name=".SectionEActivity" />
         <activity android:name=".SectionICActivity" />
-        <activity android:name=".SectionGActivity"></activity>
+        <activity android:name=".SectionGHActivity"></activity>
     </application>
 
 </manifest>

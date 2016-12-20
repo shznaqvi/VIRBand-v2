@@ -289,10 +289,16 @@ public class SectionICActivity extends Activity {
                     }
                     startActivity(repSec);
                 } else {
-                    Toast.makeText(this, "Starting Form Ending Section", Toast.LENGTH_SHORT).show();
-                    Intent endSec = new Intent(this, EndingActivity.class);
-                    endSec.putExtra("complete", false);
-                    startActivity(endSec);
+                    if (MainApp.gotoIM) {
+                        Toast.makeText(this, "Starting Form Other Child Section", Toast.LENGTH_SHORT).show();
+                        Intent ghSec = new Intent(this, SectionGHActivity.class);
+                        startActivity(ghSec);
+                    } else {
+                        Toast.makeText(this, "Starting Form Ending Section", Toast.LENGTH_SHORT).show();
+                        Intent endSec = new Intent(this, EndingActivity.class);
+                        endSec.putExtra("complete", false);
+                        startActivity(endSec);
+                    }
                 }
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();

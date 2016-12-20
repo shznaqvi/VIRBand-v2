@@ -48,6 +48,8 @@ public class MainApp extends Application {
     public static int loginFieldArea = -1;
     public static String child_name = "TEST";
     public static boolean gotoIM = true;
+    public static boolean gotoOC = true;
+
 
     public static FormsContract fc;
     public static OCsContract oc;
