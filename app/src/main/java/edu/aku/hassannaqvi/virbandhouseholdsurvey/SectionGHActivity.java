@@ -202,9 +202,9 @@ public class SectionGHActivity extends Activity {
             }
             if (UpdateDB()) {
                 Toast.makeText(this, "Starting Closing Section", Toast.LENGTH_SHORT).show();
-                //Intent endSec = new Intent(this, EndingActivity.class);
-                //endSec.putExtra("complete", false);
-                //startActivity(endSec);
+                Intent endSec = new Intent(this, EndingActivity.class);
+                endSec.putExtra("complete", false);
+                startActivity(endSec);
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
             }
@@ -225,8 +225,9 @@ public class SectionGHActivity extends Activity {
 
                 finish();
 
-                Intent secIC = new Intent(this, SectionICActivity.class);
-                startActivity(secIC);
+                Intent endSec = new Intent(this, EndingActivity.class);
+                endSec.putExtra("complete", false);
+                startActivity(endSec);
 
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();

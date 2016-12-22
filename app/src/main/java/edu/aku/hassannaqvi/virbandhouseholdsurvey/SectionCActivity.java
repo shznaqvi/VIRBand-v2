@@ -163,6 +163,34 @@ public class SectionCActivity extends Activity {
             }
         });
 
+
+        vc03.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                if (vc0301.isChecked()){
+                    vc1101.setEnabled(false);
+                    vc1103.setEnabled(false);
+                    vc1105.setEnabled(false);
+                    vc1107.setEnabled(false);
+
+                    vc1102.setEnabled(true);
+                    vc1104.setEnabled(true);
+                    vc1106.setEnabled(true);
+                    vc1108.setEnabled(true);
+                }else {
+                    vc1102.setEnabled(false);
+                    vc1104.setEnabled(false);
+                    vc1106.setEnabled(false);
+                    vc1108.setEnabled(false);
+
+                    vc1101.setEnabled(true);
+                    vc1103.setEnabled(true);
+                    vc1105.setEnabled(true);
+                    vc1107.setEnabled(true);
+                }
+            }
+        });
+
     }
 
     @OnClick(R.id.btn_End)
