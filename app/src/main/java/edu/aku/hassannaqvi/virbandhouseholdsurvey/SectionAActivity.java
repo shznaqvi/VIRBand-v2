@@ -209,6 +209,8 @@ public class SectionAActivity extends Activity {
         MainApp.fc.setAreacode(String.valueOf(MainApp.areaCode));
         MainApp.fc.setSubareacode(subAreaCode.getText().toString());
         MainApp.fc.setHousehold(household.getText().toString());
+        MainApp.fc.setChildName(vb01.getText().toString());
+        MainApp.fc.setChildCount(childCount.getText().toString());
 
         JSONObject sB = new JSONObject();
 

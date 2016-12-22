@@ -51,6 +51,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             + singleForm.COLUMN_NAME_AREA_CODE + " TEXT,"
             + singleForm.COLUMN_NAME_SUBAREA_CODE + " TEXT,"
             + singleForm.COLUMN_NAME_HOUSEHOLD + " TEXT,"
+            + singleForm.COLUMN_NAME_CHILDCOUNT + " TEXT,"
             + singleForm.COLUMN_NAME_ISTATUS + " TEXT,"
 
 //            + singleForm.COLUMN_NAME_SA + " TEXT,"
@@ -200,6 +201,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(singleForm.COLUMN_NAME_SUBAREA_CODE, fc.getSubareacode());
         values.put(singleForm.COLUMN_NAME_HOUSEHOLD, fc.getHousehold());
         values.put(singleForm.COLUMN_NAME_CHILDNAME, fc.getChildName());
+        values.put(singleForm.COLUMN_NAME_CHILDCOUNT, fc.getChildCount());
         values.put(singleForm.COLUMN_NAME_ISTATUS, fc.getIstatus());
         //values.put(singleForm.COLUMN_NAME_SA, fc.getsA());
         values.put(singleForm.COLUMN_NAME_SB, fc.getsB() == null ? "" : fc.getsB());
@@ -454,6 +456,7 @@ public int updateSOC(int tp) {
                 singleForm.COLUMN_NAME_SUBAREA_CODE,
                 singleForm.COLUMN_NAME_HOUSEHOLD,
                 singleForm.COLUMN_NAME_CHILDNAME,
+                singleForm.COLUMN_NAME_CHILDCOUNT,
                 singleForm.COLUMN_NAME_ISTATUS,
                 singleForm.COLUMN_NAME_SB,
                 singleForm.COLUMN_NAME_SC,

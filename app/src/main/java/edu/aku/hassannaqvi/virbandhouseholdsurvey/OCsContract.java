@@ -8,7 +8,7 @@ import org.json.JSONObject; /**
  * Created by hassan.naqvi on 11/30/2016.
  */
 
-        public class OCsContract {
+public class OCsContract {
 
     private final String projectName = "VIRBand Household Survey";
     //private final String surveyType = "SN";
@@ -225,6 +225,32 @@ import org.json.JSONObject; /**
         this.synced_date = synced_date;
     }
 
+    public JSONObject toJSONObject() throws JSONException {
+
+        JSONObject json = new JSONObject();
+
+        json.put(OCsContract.singleOCs._ID, this._ID == null ? JSONObject.NULL : this._ID);
+        json.put(singleOCs.COLUMN_NAME_UID, this.UID == null ? JSONObject.NULL : this.UID);
+        json.put(singleOCs.COLUMN_NAME_UUID, this.UUID == null ? JSONObject.NULL : this.UUID);
+        json.put(singleOCs.COLUMN_NAME_PROJECT_NAME, this.projectName == null ? JSONObject.NULL : this.projectName);
+        json.put(singleOCs.COLUMN_NAME_DEVICE_ID, this.deviceID == null ? JSONObject.NULL : this.deviceID);
+        json.put(singleOCs.COLUMN_NAME_FORM_DATE, this.formDate == null ? JSONObject.NULL : this.formDate);
+        json.put(singleOCs.COLUMN_NAME_AREA_CODE, this.areacode == null ? JSONObject.NULL : this.areacode);
+        json.put(singleOCs.COLUMN_NAME_SUBAREA_CODE, this.subareacode == null ? JSONObject.NULL : this.subareacode);
+        json.put(singleOCs.COLUMN_NAME_HOUSEHOLD, this.household == null ? JSONObject.NULL : this.household);
+        json.put(singleOCs.COLUMN_NAME_CHILDNAME, this.childName == null ? JSONObject.NULL : this.childName);
+        json.put(singleOCs.COLUMN_NAME_SG, this.sG == null ? JSONObject.NULL : this.sG);
+        json.put(singleOCs.COLUMN_NAME_SOC01, this.sOC01 == null ? JSONObject.NULL : this.sOC01);
+        json.put(singleOCs.COLUMN_NAME_SOC02, this.sOC02 == null ? JSONObject.NULL : this.sOC02);
+        json.put(singleOCs.COLUMN_NAME_SOC03, this.sOC03 == null ? JSONObject.NULL : this.sOC03);
+        json.put(singleOCs.COLUMN_NAME_SOC04, this.sOC04 == null ? JSONObject.NULL : this.sOC04);
+        json.put(singleOCs.COLUMN_NAME_SOC05, this.sOC05 == null ? JSONObject.NULL : this.sOC05);
+        json.put(singleOCs.COLUMN_NAME_SOC06, this.sOC06 == null ? JSONObject.NULL : this.sOC06);
+
+
+
+        return json;
+    }
 
     public static abstract class singleOCs implements BaseColumns {
 

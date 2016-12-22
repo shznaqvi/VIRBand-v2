@@ -57,6 +57,7 @@ public class MainApp extends Application {
     public static String areaCode;
     public static boolean isParent = false;
     public static long ageindays;
+    public static int ocCount = 0;
     protected LocationManager locationManager;
     Location location;
 

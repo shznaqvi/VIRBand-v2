@@ -162,7 +162,7 @@ public class MainActivity extends Activity {
     public void syncServer(View view) {
 
         String formsUrl = MainApp._HOST_URL + "virband/api/forms.php";
-        String imsUrl = MainApp._HOST_URL + "virband/api/ims.php";
+        String ocsUrl = MainApp._HOST_URL + "virband/api/ocs.php";
 
         // Require permissions INTERNET & ACCESS_NETWORK_STATE
         ConnectivityManager connMgr = (ConnectivityManager)
@@ -173,7 +173,7 @@ public class MainActivity extends Activity {
             new SyncForms(this).execute(formsUrl);
 
             Toast.makeText(getApplicationContext(), "Syncing IMs", Toast.LENGTH_SHORT).show();
-            //new SyncIMs(this).execute(imsUrl);
+            new SyncOCs(this).execute(ocsUrl);
 
             SharedPreferences syncPref = getSharedPreferences("SyncInfo", Context.MODE_PRIVATE);
             SharedPreferences.Editor editor = syncPref.edit();

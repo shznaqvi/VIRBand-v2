@@ -289,7 +289,7 @@ public class SectionICActivity extends Activity {
                     }
                     startActivity(repSec);
                 } else {
-                    if (MainApp.gotoIM) {
+                    if (MainApp.gotoOC && MainApp.ocCount > 0) {
                         Toast.makeText(this, "Starting Form Other Child Section", Toast.LENGTH_SHORT).show();
                         Intent ghSec = new Intent(this, SectionGHActivity.class);
                         startActivity(ghSec);
@@ -312,7 +312,7 @@ public class SectionICActivity extends Activity {
         if (ic) {
             updcount = db.updateSIC(icTP);
         } else {
-            // updcount = db.updateSOC(icTP);
+            updcount = db.updateSOC(icTP);
         }
 
         if (updcount == 1) {
@@ -404,6 +404,7 @@ public class SectionICActivity extends Activity {
                 : ve0388.isChecked() ? "88"
                 : "default");*/
 
+        if(ic){
         switch (icTP) {
 
             case 1:
@@ -432,6 +433,36 @@ public class SectionICActivity extends Activity {
             default:
                 break;
 
+        }} else {
+            switch (icTP) {
+
+                case 1:
+                    MainApp.oc.setsOC01(String.valueOf(sic));
+                    break;
+
+                case 2:
+                    MainApp.oc.setsOC02(String.valueOf(sic));
+                    break;
+
+                case 3:
+                    MainApp.oc.setsOC03(String.valueOf(sic));
+                    break;
+
+                case 4:
+                    MainApp.oc.setsOC04(String.valueOf(sic));
+                    break;
+
+                case 5:
+                    MainApp.oc.setsOC05(String.valueOf(sic));
+                    break;
+
+                case 6:
+                    MainApp.oc.setsOC06(String.valueOf(sic));
+                    break;
+                default:
+                    break;
+
+            }
         }
 
         Toast.makeText(this, "Validation Successful! - Saving Draft...", Toast.LENGTH_SHORT).show();

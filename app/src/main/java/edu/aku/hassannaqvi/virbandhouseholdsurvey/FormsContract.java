@@ -21,7 +21,8 @@ public class FormsContract {
     private String areacode = "0000"; // Area Code
     private String subareacode = ""; // Cluster
     private String household = ""; // Household number
-    private String childName = ""; // Household number
+    private String childName = ""; // Child Name
+    private String childCount = ""; // Child Code
     private String istatus = ""; // Interview Status
     //private String sA = "";
     private String sB = "";
@@ -112,6 +113,14 @@ public class FormsContract {
 
     public void setChildName(String childName) {
         this.childName = childName;
+    }
+
+    public String getChildCount() {
+        return childCount;
+    }
+
+    public void setChildCount(String childCount) {
+        this.childCount = childCount;
     }
 
     public String getIstatus() {
@@ -268,6 +277,7 @@ public class FormsContract {
         this.subareacode = jsonObject.getString("subareacode");
         this.household = jsonObject.getString("household");
         this.childName = jsonObject.getString("childname");
+        this.childCount = jsonObject.getString("childcount");
         this.istatus = jsonObject.getString("istatus");
         //this.sA = jsonObject.getString("sA");
         this.sB = jsonObject.getString("sB");
@@ -299,6 +309,7 @@ public class FormsContract {
         this.subareacode = cursor.getString(cursor.getColumnIndex(singleForm.COLUMN_NAME_SUBAREA_CODE));
         this.household = cursor.getString(cursor.getColumnIndex(singleForm.COLUMN_NAME_HOUSEHOLD));
         this.childName = cursor.getString(cursor.getColumnIndex(singleForm.COLUMN_NAME_CHILDNAME));
+        this.childCount = cursor.getString(cursor.getColumnIndex(singleForm.COLUMN_NAME_CHILDCOUNT));
         this.istatus = cursor.getString(cursor.getColumnIndex(singleForm.COLUMN_NAME_ISTATUS));
         //this.sA = cursor.getString(cursor.getColumnIndex(singleForm.COLUMN_NAME_SA));
         this.sB = cursor.getString(cursor.getColumnIndex(singleForm.COLUMN_NAME_SB));
@@ -344,6 +355,7 @@ public class FormsContract {
         json.put(singleForm.COLUMN_NAME_AREA_CODE, this.subareacode == null ? JSONObject.NULL : this.subareacode);
         json.put(singleForm.COLUMN_NAME_HOUSEHOLD, this.household == null ? JSONObject.NULL : this.household);
         json.put(singleForm.COLUMN_NAME_CHILDNAME, this.childName == null ? JSONObject.NULL : this.childName);
+        json.put(singleForm.COLUMN_NAME_CHILDCOUNT, this.childCount == null ? JSONObject.NULL : this.childCount);
         json.put(singleForm.COLUMN_NAME_ISTATUS, this.istatus == null ? JSONObject.NULL : this.istatus);
 
         //json.put(singleForm.COLUMN_NAME_SA, this.sA == null?JSONObject.NULL:this.sA);
@@ -383,6 +395,7 @@ public class FormsContract {
         public static final String COLUMN_NAME_SUBAREA_CODE = "subarea";
         public static final String COLUMN_NAME_HOUSEHOLD = "household";
         public static final String COLUMN_NAME_CHILDNAME = "childname";
+        public static final String COLUMN_NAME_CHILDCOUNT = "childcount";
         public static final String COLUMN_NAME_ISTATUS = "istatus";
 
 //        public static final String COLUMN_NAME_SA = "sa";
