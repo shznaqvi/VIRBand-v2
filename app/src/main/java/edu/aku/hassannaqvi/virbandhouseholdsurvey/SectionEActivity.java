@@ -1026,7 +1026,7 @@ public class SectionEActivity extends Activity {
             if (UpdateDB()) {
                 if(MainApp.gotoIM) {
                     Toast.makeText(this, "Starting Next Section", Toast.LENGTH_SHORT).show();
-                    Intent secNext = new Intent(this, SectionEActivity.class);
+                    Intent secNext = new Intent(this, SectionGHActivity.class);
                     startActivity(secNext);
                 } else {
                     Toast.makeText(this, "Starting Form Ending Section", Toast.LENGTH_SHORT).show();
