@@ -358,7 +358,7 @@
             android:id="@+id/ve04b88x"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/Others" />
+            android:hint="@string/Others" />
 </LinearLayout>
 </LinearLayout>
         <TextView
@@ -412,7 +412,7 @@
                 android:id="@+id/ve0588"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/Others" />
+                android:hint="@string/Others" />
         </RadioGroup>
 
         <EditText
@@ -478,7 +478,7 @@
             android:id="@+id/ve0688x"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/Others" />
+            android:hint="@string/Others" />
 </LinearLayout>
         <TextView
             android:layout_width="match_parent"
@@ -533,7 +533,7 @@
             android:id="@+id/ve0788x"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/Others" />
+            android:hint="@string/Others" />
 
 
         <TextView
@@ -631,7 +631,7 @@
             android:id="@+id/ve08a88x"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/Others" />
+            android:hint="@string/Others" />
 </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
@@ -682,7 +682,7 @@
                 android:id="@+id/ve08b88"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/DNK" />
+                android:text="@string/Others" />
 
         </RadioGroup>
 
@@ -691,7 +691,7 @@
             android:id="@+id/ve08b88x"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/Others" />
+            android:hint="@string/Others" />
 </LinearLayout>
         </LinearLayout>
 
@@ -1515,7 +1515,7 @@
             android:id="@+id/ve2388x"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/Others" />
+            android:hint="@string/Others" />
 
 
         <TextView
@@ -1602,7 +1602,7 @@
             android:id="@+id/ve24a88x"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/Others"
+            android:hint="@string/Others"
 
             />
 </LinearLayout>
@@ -1750,7 +1750,7 @@
             android:id="@+id/ve25a88x"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/Others" />
+            android:hint="@string/Others" />
 </LinearLayout>
         <LinearLayout
             android:layout_width="wrap_content"

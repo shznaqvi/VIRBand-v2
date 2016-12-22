@@ -37,7 +37,7 @@ public class EndingActivity extends Activity {
         setContentView(R.layout.activity_ending);
         ButterKnife.bind(this);
 
-        istatusa.setEnabled(getIntent().getBooleanExtra("complete", false));
+        istatusa.setEnabled(!(getIntent().getBooleanExtra("complete", false)));
 
     }
 
@@ -52,6 +52,9 @@ public class EndingActivity extends Activity {
             }
             if (UpdateDB()) {
                 Toast.makeText(this, "Closing Form!", Toast.LENGTH_SHORT).show();
+
+                finish();
+
                 Intent endSec = new Intent(this, MainActivity.class);
                 MainApp.child_name = "TEST";
                 startActivity(endSec);
