@@ -185,6 +185,7 @@
         <EditText
             android:id="@+id/vc0788x"
             style="@style/textInput"
+            android:visibility="gone"
             android:digits="qwertyuiopasdfghjklzxcvbnm QWERTYUIOPASDFGHJKLZXCVBNM01234567890!#()-.,"
             android:hint="@string/Others"
             android:inputType="text"
@@ -234,6 +235,8 @@
             <RadioButton
                 android:id="@+id/vc0902"
                 style="@style/radiobutton"
+                android:layout_weight="@null"
+                android:layout_width="match_parent"
                 android:text="@string/vc0902" />
 
             <RadioButton
@@ -277,6 +280,7 @@
         <EditText
             android:id="@+id/vc0988x"
             style="@style/textInput"
+            android:visibility="gone"
             android:digits="qwertyuiopasdfghjklzxcvbnm QWERTYUIOPASDFGHJKLZXCVBNM01234567890!#()-.,"
             android:hint="@string/Others"
             android:inputType="text"
@@ -410,6 +414,7 @@
         <EditText
             android:id="@+id/vc1188x"
             style="@style/textInput"
+            android:visibility="gone"
             android:digits="qwertyuiopasdfghjklzxcvbnm QWERTYUIOPASDFGHJKLZXCVBNM01234567890!#()-.,"
             android:hint="@string/Others"
             android:inputType="text"

@@ -177,7 +177,9 @@ public class SectionCActivity extends Activity {
                     vc1104.setEnabled(true);
                     vc1106.setEnabled(true);
                     vc1108.setEnabled(true);
-                }else {
+
+                }
+                else {
                     vc1102.setEnabled(false);
                     vc1104.setEnabled(false);
                     vc1106.setEnabled(false);
@@ -187,6 +189,28 @@ public class SectionCActivity extends Activity {
                     vc1103.setEnabled(true);
                     vc1105.setEnabled(true);
                     vc1107.setEnabled(true);
+                }
+
+                if(vc1001.isChecked()){
+                    vc1101.setEnabled(false);
+                    vc1102.setEnabled(false);
+                }
+            }
+        });
+
+        vc10.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                if (vc1001.isChecked()){
+                    vc1101.setEnabled(false);
+                    vc1102.setEnabled(false);
+                }else {
+                    if (vc0301.isChecked()){
+                        vc1102.setEnabled(true);
+                    }
+                    else {
+                        vc1101.setEnabled(true);
+                    }
                 }
             }
         });
@@ -453,6 +477,11 @@ public class SectionCActivity extends Activity {
 
 
         return true;
+    }
+
+    @Override
+    public void onBackPressed() {
+        Toast.makeText(getApplicationContext(),"You Can't go back",Toast.LENGTH_LONG).show();
     }
 
 

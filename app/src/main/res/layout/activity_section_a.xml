@@ -67,7 +67,7 @@
             style="@style/textInput"
             android:hint="@string/household"
             android:inputType="text"
-            android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"
+            android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890-"
             android:maxLength="5" />
 
         <TextView
@@ -300,6 +300,7 @@
         <EditText
             android:id="@+id/vb0788x"
             style="@style/textInput"
+            android:visibility="gone"
             android:digits="qwertyuiopasdfghjklzxcvbnm QWERTYUIOPASDFGHJKLZXCVBNM"
             android:hint="@string/Others"
             android:inputType="text"
