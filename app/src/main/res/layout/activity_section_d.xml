@@ -112,6 +112,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/vd0188x"
+            android:visibility="gone"
             android:hint="@string/Others"
             />
     </LinearLayout>
@@ -206,6 +207,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/vd0288x"
+            android:visibility="gone"
             android:hint="@string/Others"
             />
 
@@ -281,17 +283,16 @@
             <RadioButton
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/vd0388"
-                android:text="@string/Others"
+                android:id="@+id/vd0399"
+                android:text="@string/DNK"
                 />
 
             <RadioButton
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/vd0399"
-                android:text="@string/DNK"
+                android:id="@+id/vd0388"
+                android:text="@string/Others"
                 />
-
 
         </RadioGroup>
 
@@ -299,6 +300,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/vd0388x"
+            android:visibility="gone"
             android:hint="@string/Others"
             />
 
@@ -451,6 +453,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/vd0588x"
+            android:visibility="gone"
             android:hint="@string/Others"
             />
 
