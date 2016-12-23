@@ -236,6 +236,7 @@ public class SectionAActivity extends Activity {
         }
 
 
+
         sB.put("vb05", vb05.getText().toString());
         sB.put("vb06", vb06.getText().toString());
         sB.put("vb07", vb0701.isChecked() ? "1" : vb0702.isChecked() ? "2" : vb0703.isChecked() ? "3"
@@ -422,4 +423,5 @@ public class SectionAActivity extends Activity {
 
         Toast.makeText(this, "GPS set", Toast.LENGTH_SHORT).show();
     }
+
 }

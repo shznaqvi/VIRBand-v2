@@ -22,6 +22,7 @@ public class FormsContract {
     private String subareacode = ""; // Cluster
     private String household = ""; // Household number
     private String childName = ""; // Child Name
+    private static String childN = ""; // Child Name
     private String childCount = ""; // Child Code
     private String istatus = ""; // Interview Status
     //private String sA = "";
@@ -111,8 +112,13 @@ public class FormsContract {
         return childName;
     }
 
+    public static String getChildN() {
+        return childN;
+    }
+
     public void setChildName(String childName) {
         this.childName = childName;
+        this.childN = childName;
     }
 
     public String getChildCount() {

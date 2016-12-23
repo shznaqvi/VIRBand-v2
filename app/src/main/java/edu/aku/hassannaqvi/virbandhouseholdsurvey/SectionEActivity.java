@@ -538,11 +538,21 @@ public class SectionEActivity extends Activity {
     @BindView(R.id.ve25a88x)
     EditText ve25a88x;
 
+    @BindView(R.id.ve13Text)
+    TextView ve13Text;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_section_e);
         ButterKnife.bind(this);
+
+//        String childName = getString(R.string.ve13_a) +""+ FormsContract.getChildN()+""+getString(R.string.ve13_b);
+
+        ve13Text.setText(ve13Text.getText().toString().replace("Test",FormsContract.getChildN()));
+
+
+
 
         ve01.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
@@ -668,6 +678,20 @@ public class SectionEActivity extends Activity {
                     fldGrpve12a.setVisibility(View.VISIBLE);
                     ve12a.clearCheck();
                     ve12a88x.setText(null);
+                }
+            }
+        });
+
+        ve13.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                if (ve1301.isChecked() || ve1399.isChecked() ) {
+                    fldGrpve14.setVisibility(View.GONE);
+                    ve1488x.setText(null);
+                } else {
+                    fldGrpve14.setVisibility(View.VISIBLE);
+                    ve14.clearCheck();
+                    ve1488x.setText(null);
                 }
             }
         });
@@ -1856,6 +1880,11 @@ public class SectionEActivity extends Activity {
         }
 
         return true;
+    }
+
+    @Override
+    public void onBackPressed() {
+        Toast.makeText(getApplicationContext(),"You Can't go back",Toast.LENGTH_LONG).show();
     }
 
 

@@ -50,7 +50,6 @@ public class MainApp extends Application {
     public static boolean gotoIM = true;
     public static boolean gotoOC = true;
 
-
     public static FormsContract fc;
     public static OCsContract oc;
     public static String userName = "0000";
