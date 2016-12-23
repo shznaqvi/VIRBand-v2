@@ -547,6 +547,7 @@ public class SectionICActivity extends Activity {
                 || vic_f05.isChecked()
                 || vic_f06.isChecked()
                 || vic_f88.isChecked()
+                || vic_f99.isChecked()
         )) {
             Toast.makeText(this, "ERROR(not selected): " + getString(R.string.vic_f), Toast.LENGTH_LONG).show();
             vic_f88.setError("This data is Required!");
@@ -571,12 +572,14 @@ public class SectionICActivity extends Activity {
                 || vic_g05.isChecked()
                 || vic_g06.isChecked()
                 || vic_g88.isChecked()
+                || vic_g99.isChecked()
         )) {
             Toast.makeText(this, "ERROR(not selected): " + getString(R.string.vic_g), Toast.LENGTH_LONG).show();
             vic_g88.setError("This data is Required!");
             Log.i(TAG, "vic_g8: This data is Required!");
             return false;
         } else {
+            vic_g88.setError(null);
             vic_g88.setError(null);
         }
 

@@ -26,8 +26,6 @@
             tools:typeface="serif"
             android:id="@+id/vic"/>
 
-
-
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -53,6 +51,37 @@
                 android:text="@string/No" />
 
         </RadioGroup>
+
+     <LinearLayout
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:id="@+id/fldGrpDOV"
+         android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/vic_c" />
+
+        <DatePicker
+            android:id="@+id/vic_c"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:calendarViewShown="false"
+            android:datePickerMode="spinner"
+            android:paddingTop="8dp"
+            android:spinnersShown="true" />
+     </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/vic_c"
+
+            />
         <RadioGroup
             android:id="@+id/vic_b"
             android:layout_width="match_parent"
@@ -117,46 +146,14 @@
 
 
         </RadioGroup>
+
+
         <EditText
             android:id="@+id/vic_b88x"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:visibility="gone"
             android:hint="@string/Others" />
-     <LinearLayout
-         android:layout_width="match_parent"
-         android:layout_height="wrap_content"
-         android:id="@+id/fldGrpDOV"
-         android:orientation="vertical">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="@string/vic_c" />
-
-        <DatePicker
-            android:id="@+id/vic_c"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:calendarViewShown="false"
-            android:datePickerMode="spinner"
-            android:paddingTop="8dp"
-            android:spinnersShown="true" />
-     </LinearLayout>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="@string/vic_c"
-
-            />
-
-
-
-
-
-
 
         <TextView
             android:layout_width="match_parent"
@@ -203,13 +200,14 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:id="@+id/vic_d88x"
+    android:visibility="gone"
     android:hint="@string/Others"
     />
 
 <TextView
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:text="@string/vic_e1"
+    android:text="@string/vic_e"
     android:layout_marginTop="16dp"
     />
 
@@ -253,7 +251,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/vic_e88x"
-            android:text="@string/Others"
+            android:visibility="gone"
+            android:hint="@string/Others"
             />
 
 
@@ -323,84 +322,86 @@
         android:text="@string/Others"
         />
 
-<EditText
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:id="@+id/vic_f88x"
-    android:hint="@string/Others"
-    />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/vic_f88x"
+            android:visibility="gone"
+            android:hint="@string/Others"
+            />
 
 
 
-<TextView
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:text="@string/vic_g"
-     android:layout_marginTop="16dp"
-    />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/vic_g"
+             android:layout_marginTop="16dp"
+            />
 
-<CheckBox
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:id="@+id/vic_g01"
-    android:text="@string/vic_g1"
-    />
+        <CheckBox
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/vic_g01"
+            android:text="@string/vic_g1"
+            />
 
-<CheckBox
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:id="@+id/vic_g02"
-    android:text="@string/vic_g2"
-    />
+        <CheckBox
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/vic_g02"
+            android:text="@string/vic_g2"
+            />
 
-<CheckBox
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:id="@+id/vic_g03"
-    android:text="@string/vic_g3"
-    />
+        <CheckBox
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/vic_g03"
+            android:text="@string/vic_g3"
+            />
 
-<CheckBox
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:id="@+id/vic_g04"
-    android:text="@string/vic_g4"
-    />
+        <CheckBox
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/vic_g04"
+            android:text="@string/vic_g4"
+            />
 
-<CheckBox
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:id="@+id/vic_g05"
-    android:text="@string/vic_g5"
-    />
+        <CheckBox
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/vic_g05"
+            android:text="@string/vic_g5"
+            />
 
-<CheckBox
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:id="@+id/vic_g06"
-    android:text="@string/vic_g6"
-    />
+        <CheckBox
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/vic_g06"
+            android:text="@string/vic_g6"
+            />
 
-<CheckBox
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:id="@+id/vic_g99"
-    android:text="@string/DNK"
-    />
+        <CheckBox
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/vic_g99"
+            android:text="@string/DNK"
+            />
 
-<CheckBox
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:id="@+id/vic_g88"
-    android:text="@string/Others"
-    />
+        <CheckBox
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/vic_g88"
+            android:text="@string/Others"
+            />
 
-<EditText
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:id="@+id/vic_g88x"
-    android:hint="@string/Others"
-    />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/vic_g88x"
+            android:visibility="gone"
+            android:hint="@string/Others"
+            />
 
         <LinearLayout
             android:layout_width="wrap_content"

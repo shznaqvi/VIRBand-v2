@@ -228,6 +228,7 @@ public class SectionAActivity extends Activity {
             Date date2 = cal.getTime();
             long diff = date1.getTime() - date2.getTime();
             MainApp.ageindays = (int) TimeUnit.DAYS.convert(diff, TimeUnit.MILLISECONDS);
+
         } else {
             int m2days = (int) (Integer.valueOf(vb04m.getText().toString()) * 30.4375);
             int y2days = (Integer.valueOf(vb04y.getText().toString()) * 365);
@@ -343,7 +344,7 @@ public class SectionAActivity extends Activity {
             Log.i(TAG, "vbAgeDOB: This data is Required!");
             return false;
         } else {
-            vbAge.setError(null);
+                vbAge.setError(null);
         }
         if (vbAge.isChecked() && (vb04d.getText().toString().isEmpty() || vb04m.getText().toString().isEmpty() || vb04y.getText().toString().isEmpty())) {
             Toast.makeText(this, "ERROR(incomplete): " + getString(R.string.vb04), Toast.LENGTH_LONG).show();
