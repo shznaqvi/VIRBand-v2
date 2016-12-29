@@ -189,6 +189,11 @@ public class SectionGHActivity extends Activity {
                 }
             }
         });
+
+
+        vg03.setMaxDate(new Date().getTime());
+        vg03.setMinDate((long) (new Date().getTime() - ((MainApp.MILLISECONDS_IN_YEAR * 2.5)+ MainApp.MILLISECONDS_IN_DAY)));
+
     }
 
     @OnClick(R.id.btn_End)
@@ -324,7 +329,7 @@ public class SectionGHActivity extends Activity {
 
     private boolean formValidation() {
 
-        // Child Name 
+        // Child Name
         if (vg01.getText().toString().isEmpty()) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.vg01), Toast.LENGTH_LONG).show();
             vg01.setError("This data is Required!");
@@ -353,19 +358,24 @@ public class SectionGHActivity extends Activity {
         } else {
             vgAge.setError(null);
         }
+
+
+//        Age Validation
+
         if (vgAge.isChecked() && (vg04d.getText().toString().isEmpty() || vg04m.getText().toString().isEmpty() || vg04y.getText().toString().isEmpty())) {
             Toast.makeText(this, "ERROR(incomplete): " + getString(R.string.vg04), Toast.LENGTH_LONG).show();
             vg04d.setError("Age not given");
             Log.i(TAG, "vg04: Age no given");
             return false;
-        } else if (vgAge.isChecked() && (Integer.valueOf(vg04d.getText().toString()) > MainApp.DAYS_LIMIT
-                || Integer.valueOf(vg04m.getText().toString()) > MainApp.MONTHS_UPPER_LIMIT
-                || Integer.valueOf(vg04m.getText().toString()) < MainApp.MONTHS_LOWER_LIMIT)) {
-            Toast.makeText(this, "ERROR(invalid): " + getString(R.string.vg04), Toast.LENGTH_LONG).show();
+        }
+        else if(vgAge.isChecked() && (new utility().dobValidation(Integer.valueOf(vg04y.getText().toString()),Integer.valueOf(vg04m.getText().toString()),
+                Integer.valueOf(vg04d.getText().toString())))){
+            Toast.makeText(this, "ERROR(invalid): " + getString(R.string.vb04), Toast.LENGTH_LONG).show();
             vg04m.setError("This is invalid");
             Log.i(TAG, "This is invalid");
             return false;
-        } else {
+        }
+        else {
             vg04d.setError(null);
         }
 

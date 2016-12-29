@@ -388,10 +388,10 @@ public int updateSOC(int tp) {
         }
 
         // Which row to update, based on the ID
-        String selection = singleForm._ID + " = ?";
+        String selection = singleOCs._ID + " = ?";
         String[] selectionArgs = {String.valueOf(MainApp.oc.getID())};
 
-        int count = db.update(singleForm.TABLE_NAME,
+        int count = db.update(singleOCs.TABLE_NAME,
                 values,
                 selection,
                 selectionArgs);

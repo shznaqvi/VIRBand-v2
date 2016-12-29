@@ -130,6 +130,12 @@ public class SectionICActivity extends Activity {
     EditText vic_g88x;
     @BindView(R.id.fldGrpDOV)
     LinearLayout fldGrpDov;
+    @BindView(R.id.fldGrpvic01)
+    LinearLayout fldGrpvic01;
+    @BindView(R.id.fldGrpvic02)
+    LinearLayout fldGrpvic02;
+    @BindView(R.id.fldGrpvic03)
+    LinearLayout fldGrpvic03;
 
     private int tp = 0;
 
@@ -139,7 +145,8 @@ public class SectionICActivity extends Activity {
         setContentView(R.layout.activity_section_ic);
         ButterKnife.bind(this);
 
-        icTP = getIntent().getIntExtra("icTP", 1);
+        icTP = getIntent().getIntExtra("icTP", 0);
+        icTP += 1;
         ic = getIntent().getBooleanExtra("ic", false);
         switch (icTP) {
             case 1:
@@ -171,9 +178,13 @@ public class SectionICActivity extends Activity {
                 //DOV.setMinDate(d.getTime() + VIRBandApp.MILLISECONDS_IN_DAY);
                 break;
         }
-        vic_c.setMinDate(new Date().getTime() - (MainApp.MILLISECONDS_IN_DAY * (MainApp.ageindays)));
-        vic_c.setMaxDate(new Date().getTime() + MainApp.MILLISECONDS_IN_DAY);
 
+        try {
+            vic_c.setMinDate(new Date().getTime() - (MainApp.MILLISECONDS_IN_DAY * (MainApp.ageindays) - MainApp.MILLISECONDS_IN_DAY));
+            vic_c.setMaxDate(new Date().getTime() + MainApp.MILLISECONDS_IN_DAY);
+        } catch (Exception e) {
+            Toast.makeText(this, "Error in opening Activity", Toast.LENGTH_LONG).show();
+        }
         vic_b.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
@@ -243,6 +254,58 @@ public class SectionICActivity extends Activity {
             }
         });
 
+//        For Checking of ques 1
+
+//        fldGrpvic01.setVisibility(View.GONE);
+//        fldGrpvic02.setVisibility(View.GONE);
+//        fldGrpvic03.setVisibility(View.GONE);
+
+        vic_a.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+
+                if (vic_a01.isChecked()){
+
+                    fldGrpvic01.setVisibility(View.VISIBLE);
+                    fldGrpvic03.setVisibility(View.VISIBLE);
+                    fldGrpvic02.setVisibility(View.GONE);
+
+                    vic_b.clearCheck();vic_b88x.setText(null);
+                    vic_d.clearCheck();vic_d88x.setText(null);
+                    vic_e.clearCheck();vic_e88x.setText(null);
+
+                    vic_f01.setChecked(false);vic_f02.setChecked(false);vic_f03.setChecked(false);vic_f04.setChecked(false);
+                    vic_f05.setChecked(false);vic_f06.setChecked(false);vic_f99.setChecked(false);vic_f88.setChecked(false);
+                    vic_f88x.setText(null);
+
+                    vic_g01.setChecked(false);vic_g02.setChecked(false);vic_g03.setChecked(false);vic_g04.setChecked(false);
+                    vic_g05.setChecked(false);vic_g06.setChecked(false);vic_g99.setChecked(false);vic_g88.setChecked(false);
+                    vic_g88x.setText(null);
+
+
+                }else {
+                    fldGrpvic01.setVisibility(View.GONE);
+                    fldGrpvic02.setVisibility(View.VISIBLE);
+                    fldGrpvic03.setVisibility(View.GONE);
+
+                    vic_b.clearCheck();vic_b88x.setText(null);
+                    vic_d.clearCheck();vic_d88x.setText(null);
+                    vic_e.clearCheck();vic_e88x.setText(null);
+
+                    vic_f01.setChecked(false);vic_f02.setChecked(false);vic_f03.setChecked(false);vic_f04.setChecked(false);
+                    vic_f05.setChecked(false);vic_f06.setChecked(false);vic_f99.setChecked(false);vic_f88.setChecked(false);
+                    vic_f88x.setText(null);
+
+                    vic_g01.setChecked(false);vic_g02.setChecked(false);vic_g03.setChecked(false);vic_g04.setChecked(false);
+                    vic_g05.setChecked(false);vic_g06.setChecked(false);vic_g99.setChecked(false);vic_g88.setChecked(false);
+                    vic_g88x.setText(null);
+                }
+
+            }
+        });
+
+//        End
+
     }
 
     @OnClick(R.id.btn_End)
@@ -291,8 +354,12 @@ public class SectionICActivity extends Activity {
                 } else {
                     if (MainApp.gotoOC && MainApp.ocCount > 0) {
                         Toast.makeText(this, "Starting Form Other Child Section", Toast.LENGTH_SHORT).show();
+
+                        MainApp.ocCount-=1;
+
                         Intent ghSec = new Intent(this, SectionGHActivity.class);
                         startActivity(ghSec);
+
                     } else {
                         Toast.makeText(this, "Starting Form Ending Section", Toast.LENGTH_SHORT).show();
                         Intent endSec = new Intent(this, EndingActivity.class);
@@ -404,36 +471,40 @@ public class SectionICActivity extends Activity {
                 : ve0388.isChecked() ? "88"
                 : "default");*/
 
-        if(ic){
-        switch (icTP) {
+        if (ic) {
+            switch (icTP) {
 
-            case 1:
-                MainApp.fc.setsIC01(String.valueOf(sic));
-                break;
+                case 1:
+                    MainApp.fc.setsIC01(String.valueOf(sic));
+                    break;
 
-            case 2:
-                MainApp.fc.setsIC02(String.valueOf(sic));
-                break;
+                case 2:
+                    MainApp.fc.setsIC02(String.valueOf(sic));
+                    break;
 
-            case 3:
-                MainApp.fc.setsIC03(String.valueOf(sic));
-                break;
+                case 3:
+                    MainApp.fc.setsIC03(String.valueOf(sic));
+                    break;
 
-            case 4:
-                MainApp.fc.setsIC04(String.valueOf(sic));
-                break;
+                case 4:
+                    MainApp.fc.setsIC04(String.valueOf(sic));
+                    break;
 
-            case 5:
-                MainApp.fc.setsIC05(String.valueOf(sic));
-                break;
+                case 5:
+                    MainApp.fc.setsIC05(String.valueOf(sic));
+                    break;
 
-            case 6:
-                MainApp.fc.setsIC06(String.valueOf(sic));
-                break;
-            default:
-                break;
+                case 6:
+                    MainApp.fc.setsIC06(String.valueOf(sic));
+                    break;
+                default:
+                    break;
 
-        }} else {
+            }
+        } else {
+
+            MainApp.oc = new OCsContract();
+
             switch (icTP) {
 
                 case 1:
@@ -481,124 +552,132 @@ public class SectionICActivity extends Activity {
             vic_a02.setError(null);
         }
 
-        // RadioGroup
-        if (vic_b.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "ERROR(not selected): " + getString(R.string.vic_b), Toast.LENGTH_LONG).show();
-            vic_b99.setError("This data is Required!");
-            Log.i(TAG, "vic_b: This data is Required!");
-            return false;
-        } else {
-            vic_b99.setError(null);
-        }
+        if(vic_a01.isChecked()) {
 
-        // Others
-        if (vic_b88.isChecked() && vic_b88x.getText().toString().isEmpty()) {
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.vic_b) + " - " + getString(R.string.Others), Toast.LENGTH_LONG).show();
-            vic_b88x.setError("This data is Required!");
-            Log.i(TAG, "vic_b88x: This data is Required!");
-            return false;
-        } else {
-            vic_b88x.setError(null);
-        }
+            // RadioGroup
+            if (vic_b.getCheckedRadioButtonId() == -1) {
+                Toast.makeText(this, "ERROR(not selected): " + getString(R.string.vic_b), Toast.LENGTH_LONG).show();
+                vic_b99.setError("This data is Required!");
+                Log.i(TAG, "vic_b: This data is Required!");
+                return false;
+            } else {
+                vic_b99.setError(null);
+            }
 
-        // RadioGroup
-        if (vic_d.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "ERROR(not selected): " + getString(R.string.vic_d), Toast.LENGTH_LONG).show();
-            vic_d99.setError("This data is Required!");
-            Log.i(TAG, "vic_d: This data is Required!");
-            return false;
-        } else {
-            vic_d99.setError(null);
-        }
+            // Others
+            if (vic_b88.isChecked() && vic_b88x.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.vic_b) + " - " + getString(R.string.Others), Toast.LENGTH_LONG).show();
+                vic_b88x.setError("This data is Required!");
+                Log.i(TAG, "vic_b88x: This data is Required!");
+                return false;
+            } else {
+                vic_b88x.setError(null);
+            }
 
-        // Others
-        if (vic_d88.isChecked() && vic_d88x.getText().toString().isEmpty()) {
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.vic_d) + " - " + getString(R.string.Others), Toast.LENGTH_LONG).show();
-            vic_d88x.setError("This data is Required!");
-            Log.i(TAG, "vic_d88x: This data is Required!");
-            return false;
-        } else {
-            vic_d88x.setError(null);
-        }
-        // RadioGroup
-        if (vic_e.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "ERROR(not selected): " + getString(R.string.vic_e), Toast.LENGTH_LONG).show();
-            vic_e88.setError("This data is Required!");
-            Log.i(TAG, "vic_e: This data is Required!");
-            return false;
-        } else {
-            vic_e88.setError(null);
-        }
+            // RadioGroup
+            if (vic_d.getCheckedRadioButtonId() == -1) {
+                Toast.makeText(this, "ERROR(not selected): " + getString(R.string.vic_d), Toast.LENGTH_LONG).show();
+                vic_d99.setError("This data is Required!");
+                Log.i(TAG, "vic_d: This data is Required!");
+                return false;
+            } else {
+                vic_d99.setError(null);
+            }
 
-        // Others
-        if (vic_e88.isChecked() && vic_e88x.getText().toString().isEmpty()) {
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.vic_e) + " - " + getString(R.string.Others), Toast.LENGTH_LONG).show();
-            vic_e88x.setError("This data is Required!");
-            Log.i(TAG, "vic_e88x: This data is Required!");
-            return false;
-        } else {
-            vic_e88x.setError(null);
-        }
+            // Others
+            if (vic_d88.isChecked() && vic_d88x.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.vic_d) + " - " + getString(R.string.Others), Toast.LENGTH_LONG).show();
+                vic_d88x.setError("This data is Required!");
+                Log.i(TAG, "vic_d88x: This data is Required!");
+                return false;
+            } else {
+                vic_d88x.setError(null);
+            }
 
-        if (!(vic_f01.isChecked()
-                || vic_f02.isChecked()
-                || vic_f03.isChecked()
-                || vic_f04.isChecked()
-                || vic_f05.isChecked()
-                || vic_f06.isChecked()
-                || vic_f88.isChecked()
-                || vic_f99.isChecked()
-        )) {
-            Toast.makeText(this, "ERROR(not selected): " + getString(R.string.vic_f), Toast.LENGTH_LONG).show();
-            vic_f88.setError("This data is Required!");
-            Log.i(TAG, "vic_f8: This data is Required!");
-            return false;
-        } else {
-            vic_f88.setError(null);
-        }
 
-        if (vic_f88.isChecked() && vic_f88x.getText().toString().isEmpty()) {
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.vic_f) + " - " + getString(R.string.Others), Toast.LENGTH_LONG).show();
-            vic_f88x.setError("This data is Required!");
-            Log.i(TAG, "vic_f88x: This data is Required!");
-            return false;
-        } else {
-            vic_f88x.setError(null);
-        }
-        if (!(vic_g01.isChecked()
-                || vic_g02.isChecked()
-                || vic_g03.isChecked()
-                || vic_g04.isChecked()
-                || vic_g05.isChecked()
-                || vic_g06.isChecked()
-                || vic_g88.isChecked()
-                || vic_g99.isChecked()
-        )) {
-            Toast.makeText(this, "ERROR(not selected): " + getString(R.string.vic_g), Toast.LENGTH_LONG).show();
-            vic_g88.setError("This data is Required!");
-            Log.i(TAG, "vic_g8: This data is Required!");
-            return false;
-        } else {
-            vic_g88.setError(null);
-            vic_g88.setError(null);
-        }
+            if (!(vic_f01.isChecked()
+                    || vic_f02.isChecked()
+                    || vic_f03.isChecked()
+                    || vic_f04.isChecked()
+                    || vic_f05.isChecked()
+                    || vic_f06.isChecked()
+                    || vic_f88.isChecked()
+                    || vic_f99.isChecked()
+            )) {
+                Toast.makeText(this, "ERROR(not selected): " + getString(R.string.vic_f), Toast.LENGTH_LONG).show();
+                vic_f88.setError("This data is Required!");
+                Log.i(TAG, "vic_f8: This data is Required!");
+                return false;
+            } else {
+                vic_f88.setError(null);
+            }
 
-        if (vic_g88.isChecked() && vic_g88x.getText().toString().isEmpty()) {
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.vic_g) + " - " + getString(R.string.Others), Toast.LENGTH_LONG).show();
-            vic_g88x.setError("This data is Required!");
-            Log.i(TAG, "vic_g88x: This data is Required!");
-            return false;
-        } else {
-            vic_g88x.setError(null);
-        }
+            if (vic_f88.isChecked() && vic_f88x.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.vic_f) + " - " + getString(R.string.Others), Toast.LENGTH_LONG).show();
+                vic_f88x.setError("This data is Required!");
+                Log.i(TAG, "vic_f88x: This data is Required!");
+                return false;
+            } else {
+                vic_f88x.setError(null);
+            }
+            if (!(vic_g01.isChecked()
+                    || vic_g02.isChecked()
+                    || vic_g03.isChecked()
+                    || vic_g04.isChecked()
+                    || vic_g05.isChecked()
+                    || vic_g06.isChecked()
+                    || vic_g88.isChecked()
+                    || vic_g99.isChecked()
+            )) {
+                Toast.makeText(this, "ERROR(not selected): " + getString(R.string.vic_g), Toast.LENGTH_LONG).show();
+                vic_g88.setError("This data is Required!");
+                Log.i(TAG, "vic_g8: This data is Required!");
+                return false;
+            } else {
+                vic_g88.setError(null);
+                vic_g88.setError(null);
+            }
 
+            if (vic_g88.isChecked() && vic_g88x.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.vic_g) + " - " + getString(R.string.Others), Toast.LENGTH_LONG).show();
+                vic_g88x.setError("This data is Required!");
+                Log.i(TAG, "vic_g88x: This data is Required!");
+                return false;
+            } else {
+                vic_g88x.setError(null);
+            }
+
+        }
+        else {
+
+            // RadioGroup
+            if (vic_e.getCheckedRadioButtonId() == -1) {
+                Toast.makeText(this, "ERROR(not selected): " + getString(R.string.vic_e), Toast.LENGTH_LONG).show();
+                vic_e88.setError("This data is Required!");
+                Log.i(TAG, "vic_e: This data is Required!");
+                return false;
+            } else {
+                vic_e88.setError(null);
+            }
+
+            // Others
+            if (vic_e88.isChecked() && vic_e88x.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.vic_e) + " - " + getString(R.string.Others), Toast.LENGTH_LONG).show();
+                vic_e88x.setError("This data is Required!");
+                Log.i(TAG, "vic_e88x: This data is Required!");
+                return false;
+            } else {
+                vic_e88x.setError(null);
+            }
+
+        }
 
         return true;
     }
 
     @Override
     public void onBackPressed() {
-        Toast.makeText(getApplicationContext(),"You Can't go back",Toast.LENGTH_LONG).show();
+        Toast.makeText(getApplicationContext(), "You Can't go back", Toast.LENGTH_LONG).show();
     }
 
 

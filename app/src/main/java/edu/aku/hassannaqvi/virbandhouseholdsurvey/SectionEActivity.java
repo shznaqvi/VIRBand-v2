@@ -1051,6 +1051,9 @@ public class SectionEActivity extends Activity {
                 if(MainApp.gotoIM) {
                     Toast.makeText(this, "Starting Next Section", Toast.LENGTH_SHORT).show();
                     Intent secNext = new Intent(this, SectionICActivity.class);
+
+                    secNext.putExtra("ic",true);
+
                     startActivity(secNext);
                 } else {
                     Toast.makeText(this, "Starting Form Ending Section", Toast.LENGTH_SHORT).show();
@@ -1213,7 +1216,7 @@ public class SectionEActivity extends Activity {
         se.put("ve1488x", ve1488x.getText().toString());
         se.put("ve15", ve1501.isChecked() ? "1" : ve1502.isChecked() ? "2" : ve1503.isChecked() ? "3" : ve1599.isChecked() ? "99" : "default");
 
-        MainApp.gotoOC = !ve1301.isChecked();
+        MainApp.gotoOC = ve1501.isChecked();
 
 
         se.put("ve1601", ve1601.isChecked() ? "1" : "default");

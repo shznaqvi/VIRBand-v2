@@ -55,7 +55,7 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
     private static final String[] DUMMY_CREDENTIALS = new String[]{
             "dmu@aku:aku?dmu", "bar@example.com:world",
             "amj@tvi:amja12345", "sf@tvi:sfsf12345", "fa@tvi:fafa12345",
-            "ss:ssss12345", "fd:fdfd12345", "mf:mfmf12345", "zl:zlzl12345", "sa:sasa12345"};
+            "ss:ssss12345", "fd:fdfd12345", "mf:mfmf12345", "zl:zlzl12345", "sa:sasa12345", "sm:smsm12345"};
     // District Spinner
     public ArrayList<String> lables;
     public ArrayList<String> values;
@@ -396,7 +396,10 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
             showProgress(false);
 
             if (success) {
+
                 MainApp.userName = mEmailView.getText().toString();
+
+                MainApp.admin = MainApp.userName.contains("@");
 
                 Intent i = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(i);
