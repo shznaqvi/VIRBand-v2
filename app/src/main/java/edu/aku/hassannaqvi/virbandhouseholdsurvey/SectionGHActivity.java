@@ -230,8 +230,8 @@ public class SectionGHActivity extends Activity {
 
                 finish();
 
-                Intent endSec = new Intent(this, EndingActivity.class);
-                endSec.putExtra("complete", false);
+                Intent endSec = new Intent(this, SectionICActivity.class);
+                endSec.putExtra("ic",true);
                 startActivity(endSec);
 
             } else {
