@@ -21,29 +21,39 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity" />
+        <activity android:name=".MainActivity"
+            android:screenOrientation="portrait"/>
         <activity android:name=".AndroidDatabaseManager" />
         <activity
             android:name=".LoginActivity"
-            android:label="@string/title_activity_login" />
+            android:label="@string/title_activity_login"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".SplashscreenActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/app_name"
-            android:theme="@style/FullscreenTheme">
+            android:theme="@style/FullscreenTheme"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SectionAActivity" />
-        <activity android:name=".SectionCActivity" />
-        <activity android:name=".EndingActivity" />
-        <activity android:name=".SectionDActivity" />
-        <activity android:name=".SectionEActivity" />
-        <activity android:name=".SectionICActivity" />
-        <activity android:name=".SectionGHActivity"></activity>
+        <activity android:name=".SectionAActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".SectionCActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".EndingActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".SectionDActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".SectionEActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".SectionICActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".SectionGHActivity"
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>

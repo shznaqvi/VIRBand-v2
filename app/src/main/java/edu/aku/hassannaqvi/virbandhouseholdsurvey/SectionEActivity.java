@@ -1050,7 +1050,10 @@ public class SectionEActivity extends Activity {
             if (UpdateDB()) {
                 if(MainApp.gotoIM) {
                     Toast.makeText(this, "Starting Next Section", Toast.LENGTH_SHORT).show();
-                    Intent secNext = new Intent(this, SectionGHActivity.class);
+                    Intent secNext = new Intent(this, SectionICActivity.class);
+
+                    secNext.putExtra("ic",true);
+
                     startActivity(secNext);
                 } else {
                     Toast.makeText(this, "Starting Form Ending Section", Toast.LENGTH_SHORT).show();
@@ -1213,7 +1216,7 @@ public class SectionEActivity extends Activity {
         se.put("ve1488x", ve1488x.getText().toString());
         se.put("ve15", ve1501.isChecked() ? "1" : ve1502.isChecked() ? "2" : ve1503.isChecked() ? "3" : ve1599.isChecked() ? "99" : "default");
 
-        MainApp.gotoOC = !ve1301.isChecked();
+        MainApp.gotoOC = ve1501.isChecked();
 
 
         se.put("ve1601", ve1601.isChecked() ? "1" : "default");
@@ -1322,7 +1325,7 @@ public class SectionEActivity extends Activity {
             ve0102.setError(null);
         }
 
-        if (ve0102.isChecked()) {
+        if (ve0101.isChecked()) {
 
             if (!(ve0201.isChecked()
                     || ve0202.isChecked()
@@ -1463,23 +1466,26 @@ public class SectionEActivity extends Activity {
         }
 
 
-        if (ve06.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "ERROR(not selected): " + getString(R.string.ve06), Toast.LENGTH_LONG).show();
-            ve0699.setError("This data is Required!");
-            Log.i(TAG, "ve06: This data is Required!");
-            return false;
-        } else {
-            ve0699.setError(null);
-        }
+        if(!(ve0599.isChecked())) {
 
-        // Others
-        if (ve0688.isChecked() && ve0688x.getText().toString().isEmpty()) {
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.ve06) + " - " + getString(R.string.Others), Toast.LENGTH_LONG).show();
-            ve0688x.setError("This data is Required!");
-            Log.i(TAG, "ve0688x: This data is Required!");
-            return false;
-        } else {
-            ve0688x.setError(null);
+            if (ve06.getCheckedRadioButtonId() == -1) {
+                Toast.makeText(this, "ERROR(not selected): " + getString(R.string.ve06), Toast.LENGTH_LONG).show();
+                ve0699.setError("This data is Required!");
+                Log.i(TAG, "ve06: This data is Required!");
+                return false;
+            } else {
+                ve0699.setError(null);
+            }
+
+            // Others
+            if (ve0688.isChecked() && ve0688x.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.ve06) + " - " + getString(R.string.Others), Toast.LENGTH_LONG).show();
+                ve0688x.setError("This data is Required!");
+                Log.i(TAG, "ve0688x: This data is Required!");
+                return false;
+            } else {
+                ve0688x.setError(null);
+            }
         }
 
 

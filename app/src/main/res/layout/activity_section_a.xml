@@ -47,7 +47,8 @@
         <!-- Sub Area Code -->
         <TextView
             style="@style/labels"
-            android:text="@string/subAreaCode" />
+            android:text="@string/subAreaCode"
+            android:id="@+id/textView" />
 
         <EditText
             android:id="@+id/subAreaCode"
@@ -221,7 +222,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:digits="10"
+                    android:digits="012"
                     android:hint="@string/vb04y"
                     android:inputType="number"
                     android:maxLength="1" />

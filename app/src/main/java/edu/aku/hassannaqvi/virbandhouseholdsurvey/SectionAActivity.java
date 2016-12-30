@@ -39,7 +39,6 @@ public class SectionAActivity extends Activity {
     public static ArrayList<String> lables;
     public static ArrayList<String> values;
 
-
     String dtToday = new SimpleDateFormat("dd-MM-yy HH:mm").format(new Date().getTime());
 
     @BindView(R.id.activity_seaction_a)
@@ -120,7 +119,7 @@ public class SectionAActivity extends Activity {
         values.add("02");
         areaCode.setText(getString(R.string.AreaCode) + ": " + lables.get(values.indexOf(String.valueOf(MainApp.areaCode))));
         vb03.setMaxDate(new Date().getTime());
-        vb03.setMinDate(new Date().getTime() - (MainApp.MILLISECONDS_IN_YEAR * 2));
+        vb03.setMinDate((long) (new Date().getTime() - ((MainApp.MILLISECONDS_IN_YEAR * 2.5)+ MainApp.MILLISECONDS_IN_DAY)));
 
         vbAgeDob.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
@@ -187,7 +186,7 @@ public class SectionAActivity extends Activity {
 
 //                Toast.makeText(getApplicationContext(),""+household.getText().toString().length(),Toast.LENGTH_LONG).show();
 
-                finish();
+//                finish();
 
                 Intent secB = new Intent(this, SectionCActivity.class);
                 startActivity(secB);
@@ -211,6 +210,8 @@ public class SectionAActivity extends Activity {
         MainApp.fc.setHousehold(household.getText().toString());
         MainApp.fc.setChildName(vb01.getText().toString());
         MainApp.fc.setChildCount(childCount.getText().toString());
+
+        MainApp.ocCount = Integer.parseInt(childCount.getText().toString()) - 1;
 
         JSONObject sB = new JSONObject();
 
@@ -347,6 +348,11 @@ public class SectionAActivity extends Activity {
         } else {
                 vbAge.setError(null);
         }
+
+
+//        Age Validation
+
+
         if (vbAge.isChecked() && (vb04d.getText().toString().isEmpty() || vb04m.getText().toString().isEmpty() || vb04y.getText().toString().isEmpty())) {
             Toast.makeText(this, "ERROR(incomplete): " + getString(R.string.vb04), Toast.LENGTH_LONG).show();
             vb04d.setError("Age not given");
@@ -354,16 +360,42 @@ public class SectionAActivity extends Activity {
             return false;
         }
 
-        else if (vbAge.isChecked() && (Integer.valueOf(vb04d.getText().toString()) > MainApp.DAYS_LIMIT
-                || Integer.valueOf(vb04m.getText().toString()) > MainApp.MONTHS_UPPER_LIMIT
-                || Integer.valueOf(vb04m.getText().toString()) < MainApp.MONTHS_LOWER_LIMIT)) {
+        else if(vbAge.isChecked() && (new utility().dobValidation(Integer.valueOf(vb04y.getText().toString()),Integer.valueOf(vb04m.getText().toString()),
+                Integer.valueOf(vb04d.getText().toString())))){
             Toast.makeText(this, "ERROR(invalid): " + getString(R.string.vb04), Toast.LENGTH_LONG).show();
             vb04m.setError("This is invalid");
             Log.i(TAG, "This is invalid");
             return false;
-        } else {
+        }
+        else {
             vb04d.setError(null);
         }
+
+//        if (vbDob.isChecked()) {
+//            Calendar cal = Calendar.getInstance();
+//            cal.set(vb03.getYear(), vb03.getMonth(), vb03.getDayOfMonth());
+//            Date date1 = new Date();
+//            Date date2 = cal.getTime();
+//            long diff = date1.getTime() - date2.getTime();
+//            MainApp.ageindays = (int) TimeUnit.DAYS.convert(diff, TimeUnit.MILLISECONDS);
+//
+//            noOfDays = (int) TimeUnit.DAYS.convert(diff, TimeUnit.MILLISECONDS);
+//            year = noOfDays/365;
+//            noOfDays=noOfDays%365;
+//
+//            month = noOfDays/30;
+//            noOfDays=noOfDays%30;
+//        }
+//
+//        if(vbDob.isChecked() && (new utility().dobValidation(year,month,noOfDays))){
+//            Toast.makeText(this, "ERROR(invalid): " + getString(R.string.vb03), Toast.LENGTH_LONG).show();
+////            vb03.setError("This is invalid");
+//            Log.i(TAG, "This is invalid");
+//            return false;
+//        }
+//        else {
+//            vb04d.setError(null);
+//        }
 
         // Father's Name 08
         if (vb05.getText().toString().isEmpty()) {
