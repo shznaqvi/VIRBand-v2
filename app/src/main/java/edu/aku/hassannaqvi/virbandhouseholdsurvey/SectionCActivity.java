@@ -397,11 +397,29 @@ public class SectionCActivity extends Activity {
             vc0601.setError(null);
         }
 
+        if (vc0601.getText().toString().trim().length() < 7) {
+            Toast.makeText(this, "ERROR: " + getString(R.string.vc0601), Toast.LENGTH_LONG).show();
+            vc0601.setError("PTCL No is 8 digit!");
+            Log.i(TAG, "vc06: PTCL No is 8 digit!");
+            return false;
+        } else {
+            vc0601.setError(null);
+        }
+
         // Mobile
         if (vc0602.getText().toString().isEmpty()) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.vc0602), Toast.LENGTH_LONG).show();
             vc0602.setError("This data is Required!");
             Log.i(TAG, "vc06: This data is Required!");
+            return false;
+        } else {
+            vc0602.setError(null);
+        }
+
+        if (vc0602.getText().toString().trim().length() < 10) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.vc0602), Toast.LENGTH_LONG).show();
+            vc0602.setError("Mobile No is 11 digit!");
+            Log.i(TAG, "vc06: Mobile No is 11 digit!");
             return false;
         } else {
             vc0602.setError(null);
@@ -488,10 +506,10 @@ public class SectionCActivity extends Activity {
         return true;
     }
 
-//    @Override
-//    public void onBackPressed() {
-//        Toast.makeText(getApplicationContext(),"You Can't go back",Toast.LENGTH_LONG).show();
-//    }
+    @Override
+    public void onBackPressed() {
+        Toast.makeText(getApplicationContext(),"You Can't go back",Toast.LENGTH_LONG).show();
+    }
 
 
 }

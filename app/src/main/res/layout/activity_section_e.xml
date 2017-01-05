@@ -1814,6 +1814,40 @@
                 android:visibility="gone" />
         </LinearLayout>
 
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/vg12" />
+
+
+        <RadioGroup
+            android:id="@+id/vf01"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/vf101"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/Yes" />
+
+            <RadioButton
+                android:id="@+id/vf102"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/No" />
+
+            <RadioButton
+                android:id="@+id/vf103"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/NotAvailable" />
+
+        </RadioGroup>
+
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
