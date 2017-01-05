@@ -541,6 +541,15 @@ public class SectionEActivity extends Activity {
     @BindView(R.id.ve13Text)
     TextView ve13Text;
 
+    @BindView(R.id.vf01)
+    RadioGroup vf01;
+    @BindView(R.id.vf101)
+    RadioButton vf101;
+    @BindView(R.id.vf102)
+    RadioButton vf102;
+    @BindView(R.id.vf103)
+    RadioButton vf103;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -1307,6 +1316,8 @@ public class SectionEActivity extends Activity {
                 : "default");
         se.put("ve25a88x", ve25a88x.getText().toString());
 
+        se.put("vf01", vf101.isChecked() ? "1" : vf102.isChecked() ? "2" : vf103.isChecked() ? "3" : "default");
+
         MainApp.fc.setsE(String.valueOf(se));
 
         Toast.makeText(this, "Validation Successful! - Saving Draft...", Toast.LENGTH_SHORT).show();
@@ -1884,6 +1895,16 @@ public class SectionEActivity extends Activity {
                 ve25a88x.setError(null);
             }
         }
+
+        if (vf01.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(not selected): " + getString(R.string.vg12), Toast.LENGTH_LONG).show();
+            vf103.setError("This data is Required!");
+            Log.i(TAG, "vg12: This data is Required!");
+            return false;
+        } else {
+            vf103.setError(null);
+        }
+
 
         return true;
     }

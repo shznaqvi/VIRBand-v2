@@ -186,7 +186,7 @@ public class SectionAActivity extends Activity {
 
 //                Toast.makeText(getApplicationContext(),""+household.getText().toString().length(),Toast.LENGTH_LONG).show();
 
-//                finish();
+                finish();
 
                 Intent secB = new Intent(this, SectionCActivity.class);
                 startActivity(secB);
@@ -313,6 +313,15 @@ public class SectionAActivity extends Activity {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.childCount), Toast.LENGTH_LONG).show();
             childCount.setError("This data is Required!");
             Log.i(TAG, "childCount: This data is Required!");
+            return false;
+        } else {
+            childCount.setError(null);
+        }
+
+        if (Integer.parseInt(childCount.getText().toString()) < 0) {
+            Toast.makeText(this, "ERROR: " + getString(R.string.childCount), Toast.LENGTH_LONG).show();
+            childCount.setError("Number of child is greater then 0!");
+            Log.i(TAG, "childCount: Number of child is greater then 0!");
             return false;
         } else {
             childCount.setError(null);
