@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.DatePicker;
@@ -13,6 +14,7 @@ import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.ScrollView;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -110,24 +112,24 @@ public class SectionICActivity extends Activity {
     CheckBox vic_f88;
     @BindView(R.id.vic_f88x)
     EditText vic_f88x;
-    @BindView(R.id.vic_g01)
-    CheckBox vic_g01;
-    @BindView(R.id.vic_g02)
-    CheckBox vic_g02;
-    @BindView(R.id.vic_g03)
-    CheckBox vic_g03;
-    @BindView(R.id.vic_g04)
-    CheckBox vic_g04;
-    @BindView(R.id.vic_g05)
-    CheckBox vic_g05;
-    @BindView(R.id.vic_g06)
-    CheckBox vic_g06;
-    @BindView(R.id.vic_g99)
-    CheckBox vic_g99;
-    @BindView(R.id.vic_g88)
-    CheckBox vic_g88;
-    @BindView(R.id.vic_g88x)
-    EditText vic_g88x;
+    //    @BindView(R.id.vic_g01)
+//    CheckBox vic_g01;
+//    @BindView(R.id.vic_g02)
+//    CheckBox vic_g02;
+//    @BindView(R.id.vic_g03)
+//    CheckBox vic_g03;
+//    @BindView(R.id.vic_g04)
+//    CheckBox vic_g04;
+//    @BindView(R.id.vic_g05)
+//    CheckBox vic_g05;
+//    @BindView(R.id.vic_g06)
+//    CheckBox vic_g06;
+//    @BindView(R.id.vic_g99)
+//    CheckBox vic_g99;
+//    @BindView(R.id.vic_g88)
+//    CheckBox vic_g88;
+//    @BindView(R.id.vic_g88x)
+//    EditText vic_g88x;
     @BindView(R.id.fldGrpDOV)
     LinearLayout fldGrpDov;
     @BindView(R.id.fldGrpvic01)
@@ -137,7 +139,23 @@ public class SectionICActivity extends Activity {
     @BindView(R.id.fldGrpvic03)
     LinearLayout fldGrpvic03;
 
+    @BindView(R.id.vic_f01g)
+    Spinner vic_f01g;
+    @BindView(R.id.vic_f02g)
+    Spinner vic_f02g;
+    @BindView(R.id.vic_f03g)
+    Spinner vic_f03g;
+    @BindView(R.id.vic_f04g)
+    Spinner vic_f04g;
+    @BindView(R.id.vic_f05g)
+    Spinner vic_f05g;
+    @BindView(R.id.vic_f06g)
+    Spinner vic_f06g;
+
     private int tp = 0;
+
+
+    ArrayAdapter<CharSequence> adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -179,12 +197,10 @@ public class SectionICActivity extends Activity {
                 break;
         }
 
-        try {
-            vic_c.setMinDate(new Date().getTime() - (MainApp.MILLISECONDS_IN_DAY * (MainApp.ageindays) - MainApp.MILLISECONDS_IN_DAY));
-            vic_c.setMaxDate(new Date().getTime() + MainApp.MILLISECONDS_IN_DAY);
-        } catch (Exception e) {
-            Toast.makeText(this, "Error in opening Activity", Toast.LENGTH_LONG).show();
-        }
+
+        vic_c.setMinDate((long) (new Date().getTime() - ((MainApp.MILLISECONDS_IN_YEAR * 2.5) + MainApp.MILLISECONDS_IN_DAY)));
+        vic_c.setMaxDate(new Date().getTime() + MainApp.MILLISECONDS_IN_DAY);
+
         vic_b.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
@@ -227,7 +243,6 @@ public class SectionICActivity extends Activity {
                 }
             }
         });
-
         vic_f88.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
@@ -241,18 +256,19 @@ public class SectionICActivity extends Activity {
             }
         });
 
-        vic_g88.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                if (b) {
-                    vic_g88x.setVisibility(View.VISIBLE);
-                } else {
-                    vic_g88x.setVisibility(View.GONE);
-                    vic_g88x.setText(null);
 
-                }
-            }
-        });
+//        vic_g88.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+//            @Override
+//            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+//                if (b) {
+//                    vic_g88x.setVisibility(View.VISIBLE);
+//                } else {
+//                    vic_g88x.setVisibility(View.GONE);
+//                    vic_g88x.setText(null);
+//
+//                }
+//            }
+//        });
 
 //        For Checking of ques 1
 
@@ -264,47 +280,148 @@ public class SectionICActivity extends Activity {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
 
-                if (vic_a01.isChecked()){
+                if (vic_a01.isChecked()) {
 
                     fldGrpvic01.setVisibility(View.VISIBLE);
                     fldGrpvic03.setVisibility(View.VISIBLE);
                     fldGrpvic02.setVisibility(View.GONE);
 
-                    vic_b.clearCheck();vic_b88x.setText(null);
-                    vic_d.clearCheck();vic_d88x.setText(null);
-                    vic_e.clearCheck();vic_e88x.setText(null);
+                    vic_b.clearCheck();
+                    vic_b88x.setText(null);
+                    vic_d.clearCheck();
+                    vic_d88x.setText(null);
+                    vic_e.clearCheck();
+                    vic_e88x.setText(null);
 
-                    vic_f01.setChecked(false);vic_f02.setChecked(false);vic_f03.setChecked(false);vic_f04.setChecked(false);
-                    vic_f05.setChecked(false);vic_f06.setChecked(false);vic_f99.setChecked(false);vic_f88.setChecked(false);
+                    vic_f01.setChecked(false);
+                    vic_f02.setChecked(false);
+                    vic_f03.setChecked(false);
+                    vic_f04.setChecked(false);
+                    vic_f05.setChecked(false);
+                    vic_f06.setChecked(false);
+                    vic_f99.setChecked(false);
+                    vic_f88.setChecked(false);
                     vic_f88x.setText(null);
 
-                    vic_g01.setChecked(false);vic_g02.setChecked(false);vic_g03.setChecked(false);vic_g04.setChecked(false);
-                    vic_g05.setChecked(false);vic_g06.setChecked(false);vic_g99.setChecked(false);vic_g88.setChecked(false);
-                    vic_g88x.setText(null);
+//                    vic_g01.setChecked(false);vic_g02.setChecked(false);vic_g03.setChecked(false);vic_g04.setChecked(false);
+//                    vic_g05.setChecked(false);vic_g06.setChecked(false);vic_g99.setChecked(false);vic_g88.setChecked(false);
+//                    vic_g88x.setText(null);
 
 
-                }else {
+                } else {
                     fldGrpvic01.setVisibility(View.GONE);
                     fldGrpvic02.setVisibility(View.VISIBLE);
                     fldGrpvic03.setVisibility(View.GONE);
 
-                    vic_b.clearCheck();vic_b88x.setText(null);
-                    vic_d.clearCheck();vic_d88x.setText(null);
-                    vic_e.clearCheck();vic_e88x.setText(null);
+                    vic_b.clearCheck();
+                    vic_b88x.setText(null);
+                    vic_d.clearCheck();
+                    vic_d88x.setText(null);
+                    vic_e.clearCheck();
+                    vic_e88x.setText(null);
 
-                    vic_f01.setChecked(false);vic_f02.setChecked(false);vic_f03.setChecked(false);vic_f04.setChecked(false);
-                    vic_f05.setChecked(false);vic_f06.setChecked(false);vic_f99.setChecked(false);vic_f88.setChecked(false);
+                    vic_f01.setChecked(false);
+                    vic_f02.setChecked(false);
+                    vic_f03.setChecked(false);
+                    vic_f04.setChecked(false);
+                    vic_f05.setChecked(false);
+                    vic_f06.setChecked(false);
+                    vic_f99.setChecked(false);
+                    vic_f88.setChecked(false);
                     vic_f88x.setText(null);
 
-                    vic_g01.setChecked(false);vic_g02.setChecked(false);vic_g03.setChecked(false);vic_g04.setChecked(false);
-                    vic_g05.setChecked(false);vic_g06.setChecked(false);vic_g99.setChecked(false);vic_g88.setChecked(false);
-                    vic_g88x.setText(null);
+//                    vic_g01.setChecked(false);vic_g02.setChecked(false);vic_g03.setChecked(false);vic_g04.setChecked(false);
+//                    vic_g05.setChecked(false);vic_g06.setChecked(false);vic_g99.setChecked(false);vic_g88.setChecked(false);
+//                    vic_g88x.setText(null);
                 }
 
             }
         });
 
 //        End
+
+
+//        Spinner Start
+
+        adapter = ArrayAdapter.createFromResource(this, R.array.vic_g, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        vic_f01g.setAdapter(adapter);
+        vic_f01.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (b) {
+                    vic_f01g.setVisibility(View.VISIBLE);
+                } else {
+                    vic_f01g.setVisibility(View.GONE);
+                }
+            }
+        });
+
+
+        vic_f02g.setAdapter(adapter);
+        vic_f02.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (b) {
+                    vic_f02g.setVisibility(View.VISIBLE);
+                } else {
+                    vic_f02g.setVisibility(View.GONE);
+                }
+            }
+        });
+
+        vic_f03g.setAdapter(adapter);
+        vic_f03.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (b) {
+                    vic_f03g.setVisibility(View.VISIBLE);
+                } else {
+                    vic_f03g.setVisibility(View.GONE);
+                }
+            }
+        });
+
+        vic_f04g.setAdapter(adapter);
+        vic_f04.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (b) {
+                    vic_f04g.setVisibility(View.VISIBLE);
+                } else {
+                    vic_f04g.setVisibility(View.GONE);
+                }
+            }
+        });
+
+        vic_f05g.setAdapter(adapter);
+        vic_f05.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (b) {
+                    vic_f05g.setVisibility(View.VISIBLE);
+                } else {
+                    vic_f05g.setVisibility(View.GONE);
+                }
+            }
+        });
+
+        vic_f06g.setAdapter(adapter);
+        vic_f06.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (b) {
+                    vic_f06g.setVisibility(View.VISIBLE);
+                } else {
+                    vic_f06g.setVisibility(View.GONE);
+                }
+            }
+        });
+
+
+//        end
+
 
     }
 
@@ -334,6 +451,7 @@ public class SectionICActivity extends Activity {
     @OnClick(R.id.btn_Continue)
     void onBtnContinueClick() {
         Toast.makeText(this, "Processing This Section", Toast.LENGTH_SHORT).show();
+
         if (formValidation()) {
             try {
                 SaveDraft();
@@ -355,7 +473,7 @@ public class SectionICActivity extends Activity {
                     if (MainApp.gotoOC && MainApp.ocCount > 0) {
                         Toast.makeText(this, "Starting Form Other Child Section", Toast.LENGTH_SHORT).show();
 
-                        MainApp.ocCount-=1;
+                        MainApp.ocCount -= 1;
 
                         Intent ghSec = new Intent(this, SectionGHActivity.class);
                         startActivity(ghSec);
@@ -403,8 +521,11 @@ public class SectionICActivity extends Activity {
 
         JSONObject sic = new JSONObject();
 
-        sic.put("vic" + icTP + "a", vic_a01.isChecked() ? "1" : vic_a02.isChecked() ? "2" : "default");
-        sic.put("vic" + icTP + "b", vic_b01.isChecked() ? "1"
+        String icCheck = ic ? "vic" : "voc";
+
+        sic.put(icCheck + icTP + "a", vic_a01.isChecked() ? "1" : vic_a02.isChecked() ? "2" : "default");
+
+        sic.put(icCheck + icTP + "b", vic_b01.isChecked() ? "1"
                 : vic_b02.isChecked() ? "2"
                 : vic_b03.isChecked() ? "3" :
                 vic_b04.isChecked() ? "4" :
@@ -415,39 +536,47 @@ public class SectionICActivity extends Activity {
                                                         vic_b99.isChecked() ? "99" :
                                                                 "default"
         );
-        sic.put("vic" + icTP + "b88x", vic_b88x.getText().toString());
-        sic.put("vic" + icTP + "c", vic_b01.isChecked() ? DOV : "");
+        sic.put(icCheck + icTP + "b88x", vic_b88x.getText().toString());
+        sic.put(icCheck + icTP + "c", vic_b01.isChecked() ? DOV : "");
 
-        sic.put("vic" + icTP + "d", vic_d01.isChecked() ? "1" :
+        sic.put(icCheck + icTP + "d", vic_d01.isChecked() ? "1" :
                 vic_d02.isChecked() ? "2" :
                         vic_d88.isChecked() ? "88" :
                                 vic_d99.isChecked() ? "99" :
                                         "default");
-        sic.put("vic" + icTP + "d88x", vic_d88x.getText().toString());
-        sic.put("vic" + icTP + "e", vic_e01.isChecked() ? "1"
+        sic.put(icCheck + icTP + "d88x", vic_d88x.getText().toString());
+        sic.put(icCheck + icTP + "e", vic_e01.isChecked() ? "1"
                 : vic_e02.isChecked() ? "2"
                 : vic_e03.isChecked() ? "3"
                 : vic_e88.isChecked() ? "88"
                 : "default");
-        sic.put("vic" + icTP + "e88x", vic_e88x.getText().toString());
-        sic.put("vic" + icTP + "f1", vic_f01.isChecked() ? "1" : "default");
-        sic.put("vic" + icTP + "f2", vic_f02.isChecked() ? "2" : "default");
-        sic.put("vic" + icTP + "f3", vic_f03.isChecked() ? "3" : "default");
-        sic.put("vic" + icTP + "f4", vic_f04.isChecked() ? "4" : "default");
-        sic.put("vic" + icTP + "f5", vic_f05.isChecked() ? "5" : "default");
-        sic.put("vic" + icTP + "f6", vic_f06.isChecked() ? "6" : "default");
-        sic.put("vic" + icTP + "f99", vic_f99.isChecked() ? "99" : "default");
-        sic.put("vic" + icTP + "f88", vic_f88.isChecked() ? "88" : "default");
-        sic.put("vic" + icTP + "f88x", vic_f88x.getText().toString());
-        sic.put("vic" + icTP + "g1", vic_g01.isChecked() ? "1" : "default");
-        sic.put("vic" + icTP + "g2", vic_g02.isChecked() ? "2" : "default");
-        sic.put("vic" + icTP + "g3", vic_g03.isChecked() ? "3" : "default");
-        sic.put("vic" + icTP + "g4", vic_g04.isChecked() ? "4" : "default");
-        sic.put("vic" + icTP + "g5", vic_g05.isChecked() ? "5" : "default");
-        sic.put("vic" + icTP + "g6", vic_g06.isChecked() ? "6" : "default");
-        sic.put("vic" + icTP + "g99", vic_g99.isChecked() ? "99" : "default");
-        sic.put("vic" + icTP + "g88", vic_g88.isChecked() ? "88" : "default");
-        sic.put("vic" + icTP + "g88x", vic_g88x.getText().toString());
+        sic.put(icCheck + icTP + "e88x", vic_e88x.getText().toString());
+        sic.put(icCheck + icTP + "f1", vic_f01.isChecked() ? "1" : "default");
+        sic.put(icCheck + icTP + "f2", vic_f02.isChecked() ? "2" : "default");
+        sic.put(icCheck + icTP + "f3", vic_f03.isChecked() ? "3" : "default");
+        sic.put(icCheck + icTP + "f4", vic_f04.isChecked() ? "4" : "default");
+        sic.put(icCheck + icTP + "f5", vic_f05.isChecked() ? "5" : "default");
+        sic.put(icCheck + icTP + "f6", vic_f06.isChecked() ? "6" : "default");
+
+        sic.put(icCheck + icTP + "f1g", vic_f01.isChecked() ? getResources().getStringArray(R.array.vic_g_value)[vic_f01g.getSelectedItemPosition()] : "default");
+        sic.put(icCheck + icTP + "f2g", vic_f02.isChecked() ? getResources().getStringArray(R.array.vic_g_value)[vic_f02g.getSelectedItemPosition()] : "default");
+        sic.put(icCheck + icTP + "f3g", vic_f03.isChecked() ? getResources().getStringArray(R.array.vic_g_value)[vic_f03g.getSelectedItemPosition()] : "default");
+        sic.put(icCheck + icTP + "f4g", vic_f04.isChecked() ? getResources().getStringArray(R.array.vic_g_value)[vic_f04g.getSelectedItemPosition()] : "default");
+        sic.put(icCheck + icTP + "f5g", vic_f05.isChecked() ? getResources().getStringArray(R.array.vic_g_value)[vic_f05g.getSelectedItemPosition()] : "default");
+        sic.put(icCheck + icTP + "f6g", vic_f06.isChecked() ? getResources().getStringArray(R.array.vic_g_value)[vic_f06g.getSelectedItemPosition()] : "default");
+
+        sic.put(icCheck + icTP + "f99", vic_f99.isChecked() ? "99" : "default");
+        sic.put(icCheck + icTP + "f88", vic_f88.isChecked() ? "88" : "default");
+        sic.put(icCheck + icTP + "f88x", vic_f88x.getText().toString());
+//        sic.put(icCheck + icTP + "g1", vic_g01.isChecked() ? "1" : "default");
+//        sic.put(icCheck + icTP + "g2", vic_g02.isChecked() ? "2" : "default");
+//        sic.put(icCheck + icTP + "g3", vic_g03.isChecked() ? "3" : "default");
+//        sic.put(icCheck + icTP + "g4", vic_g04.isChecked() ? "4" : "default");
+//        sic.put(icCheck + icTP + "g5", vic_g05.isChecked() ? "5" : "default");
+//        sic.put(icCheck + icTP + "g6", vic_g06.isChecked() ? "6" : "default");
+//        sic.put(icCheck + icTP + "g99", vic_g99.isChecked() ? "99" : "default");
+//        sic.put(icCheck + icTP + "g88", vic_g88.isChecked() ? "88" : "default");
+//        sic.put(icCheck + icTP + "g88x", vic_g88x.getText().toString());
 
         /*sic.put("ve0201", ve0201.isChecked() ? "1" : "default");
         sic.put("ve0202", ve0202.isChecked() ? "2" : "default");
@@ -552,7 +681,7 @@ public class SectionICActivity extends Activity {
             vic_a02.setError(null);
         }
 
-        if(vic_a01.isChecked()) {
+        if (vic_a01.isChecked()) {
 
             // RadioGroup
             if (vic_b.getCheckedRadioButtonId() == -1) {
@@ -612,6 +741,25 @@ public class SectionICActivity extends Activity {
                 vic_f88.setError(null);
             }
 
+
+            //        Spinner Validation
+
+            if ((vic_f01.isChecked() && vic_f01g.getSelectedItemId() == 0)
+                    || (vic_f02.isChecked() && vic_f02g.getSelectedItemId() == 0)
+                    || (vic_f03.isChecked() && vic_f03g.getSelectedItemId() == 0)
+                    || (vic_f04.isChecked() && vic_f04g.getSelectedItemId() == 0)
+                    || (vic_f05.isChecked() && vic_f05g.getSelectedItemId() == 0)
+                    || (vic_f06.isChecked() && vic_f06g.getSelectedItemId() == 0)
+                    ) {
+                Toast.makeText(this, "ERROR: " + getString(R.string.vic_f), Toast.LENGTH_LONG).show();
+                vic_f88.setError("This data is Required!");
+                Log.i(TAG, "vic_f8: Spinner data is Required!");
+                return false;
+            } else {
+                vic_f88.setError(null);
+            }
+
+
             if (vic_f88.isChecked() && vic_f88x.getText().toString().isEmpty()) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.vic_f) + " - " + getString(R.string.Others), Toast.LENGTH_LONG).show();
                 vic_f88x.setError("This data is Required!");
@@ -620,35 +768,34 @@ public class SectionICActivity extends Activity {
             } else {
                 vic_f88x.setError(null);
             }
-            if (!(vic_g01.isChecked()
-                    || vic_g02.isChecked()
-                    || vic_g03.isChecked()
-                    || vic_g04.isChecked()
-                    || vic_g05.isChecked()
-                    || vic_g06.isChecked()
-                    || vic_g88.isChecked()
-                    || vic_g99.isChecked()
-            )) {
-                Toast.makeText(this, "ERROR(not selected): " + getString(R.string.vic_g), Toast.LENGTH_LONG).show();
-                vic_g88.setError("This data is Required!");
-                Log.i(TAG, "vic_g8: This data is Required!");
-                return false;
-            } else {
-                vic_g88.setError(null);
-                vic_g88.setError(null);
-            }
+//            if (!(vic_g01.isChecked()
+//                    || vic_g02.isChecked()
+//                    || vic_g03.isChecked()
+//                    || vic_g04.isChecked()
+//                    || vic_g05.isChecked()
+//                    || vic_g06.isChecked()
+//                    || vic_g88.isChecked()
+//                    || vic_g99.isChecked()
+//            )) {
+//                Toast.makeText(this, "ERROR(not selected): " + getString(R.string.vic_g), Toast.LENGTH_LONG).show();
+//                vic_g88.setError("This data is Required!");
+//                Log.i(TAG, "vic_g8: This data is Required!");
+//                return false;
+//            } else {
+//                vic_g88.setError(null);
+//                vic_g88.setError(null);
+//            }
+//
+//            if (vic_g88.isChecked() && vic_g88x.getText().toString().isEmpty()) {
+//                Toast.makeText(this, "ERROR(empty): " + getString(R.string.vic_g) + " - " + getString(R.string.Others), Toast.LENGTH_LONG).show();
+//                vic_g88x.setError("This data is Required!");
+//                Log.i(TAG, "vic_g88x: This data is Required!");
+//                return false;
+//            } else {
+//                vic_g88x.setError(null);
+//            }
 
-            if (vic_g88.isChecked() && vic_g88x.getText().toString().isEmpty()) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.vic_g) + " - " + getString(R.string.Others), Toast.LENGTH_LONG).show();
-                vic_g88x.setError("This data is Required!");
-                Log.i(TAG, "vic_g88x: This data is Required!");
-                return false;
-            } else {
-                vic_g88x.setError(null);
-            }
-
-        }
-        else {
+        } else {
 
             // RadioGroup
             if (vic_e.getCheckedRadioButtonId() == -1) {
@@ -671,6 +818,7 @@ public class SectionICActivity extends Activity {
             }
 
         }
+
 
         return true;
     }

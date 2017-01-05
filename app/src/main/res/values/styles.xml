@@ -17,7 +17,7 @@
     </style>
 
     <style name="SpinnerItemText">
-        <item name="android:textSize">36sp</item>
+        <item name="android:textSize">25sp</item>
         <item name="android:typeface">serif</item>
     </style>
 
@@ -78,7 +78,7 @@
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_marginBottom">16dp</item>
-        <item name="android:textSize">36sp</item>
+        <item name="android:textSize">25sp</item>
         <item name="android:typeface">serif</item>
         <item name="android:textColor">#ff0000</item>
         <item name="android:background">@color/dullWhileOverlay</item>
@@ -89,14 +89,14 @@
 
     <style name="spinnerItemStyle">
         <item name="android:padding">10dp</item>
-        <item name="android:textSize">36sp</item>
+        <item name="android:textSize">25sp</item>
         <item name="android:typeface">serif</item>
         <item name="android:textColor">#FFFFFF</item>
     </style>
 
     <style name="spinnerDropDownItemStyle">
         <item name="android:padding">20dp</item>
-        <item name="android:textSize">36sp</item>
+        <item name="android:textSize">25sp</item>
         <item name="android:typeface">serif</item>
         <item name="android:textColor">#FFFFFF</item>
     </style>

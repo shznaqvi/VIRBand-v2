@@ -358,13 +358,7 @@
     <string name="vic_f6"> آئی پی وی </string>
     <string name="vic_f7"> معلوم نہیں/ نہیں یاد </string>
     <string name="vic_g"> بچے کے جسم میں کہاں لگائی /دی گئی </string>
-    <string name="vic_g1"> منہ میں قطرے </string>
-    <string name="vic_g2"> سیدھے بازو پر </string>
-    <string name="vic_g3"> سیدھی والی ران میں </string>
-    <string name="vic_g4"> الٹی والی ران میں </string>
-    <string name="vic_g5"> الٹے بازو پر </string>
-    <string name="vic_g6"> پیچھے /پچھواڑی پر </string>
-    <string name="vic_g7"> معلوم نہیں/ نہیں یاد </string>
+
 
     <string name="vg01"> نام </string>
     <string name="vg02"> جنس </string>
@@ -396,5 +390,27 @@
     <string name="vg10"> بچے کو حفاظتی ٹیکے لگائے گئے </string>
     <string name="vg11"> کیا آپ کے پاس اس بچے کا ویکسینیشن کارڈ ہے </string>
     <string name="vg12"> ویکسینیشن کارڈ دیکھا </string>
+
+
+
+  <string-array name="vic_g">
+    <item></item>
+    <item name="vic_g1"> منہ میں قطرے </item>
+    <item name="vic_g2"> سیدھے بازو پر </item>
+    <item name="vic_g3"> سیدھی والی ران میں </item>
+    <item name="vic_g4"> الٹی والی ران میں </item>
+    <item name="vic_g5"> الٹے بازو پر </item>
+    <item name="vic_g6"> پیچھے /پچھواڑی پر </item>
+  </string-array>
+
+  <string-array name="vic_g_value">
+    <item>0</item>
+    <item name="vic_g1">1</item>
+    <item name="vic_g2">2</item>
+    <item name="vic_g3">3</item>
+    <item name="vic_g4">4</item>
+    <item name="vic_g5">5</item>
+    <item name="vic_g6">6</item>
+  </string-array>
 
 </resources>

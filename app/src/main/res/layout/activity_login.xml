@@ -74,7 +74,9 @@
                 android:padding="4px"
                 android:singleLine="true"
                 android:textAlignment="center"
-                android:textColor="#efefef" />
+                android:textColor="#efefef"
+
+                />
 
             <EditText
                 android:id="@+id/password"
@@ -88,7 +90,9 @@
                 android:inputType="textPassword"
                 android:maxLines="1"
                 android:singleLine="true"
-                android:textAlignment="center" />
+                android:textAlignment="center"
+
+                />
 
             <Spinner
                 android:id="@+id/spUC"

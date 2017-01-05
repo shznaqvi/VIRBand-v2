@@ -261,6 +261,10 @@ public class SectionCActivity extends Activity {
                 finish();
 
                 Intent secNext = new Intent(this, SectionDActivity.class);
+
+                MainApp.isParent = vc1101.isChecked() || vc1102.isChecked() ? true : false;
+
+
                 startActivity(secNext);
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
