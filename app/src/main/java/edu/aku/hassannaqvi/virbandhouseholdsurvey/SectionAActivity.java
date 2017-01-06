@@ -286,6 +286,29 @@ public class SectionAActivity extends Activity {
         } else {
             subAreaCode.setError(null);
         }
+
+        if (Integer.parseInt(MainApp.areaCode) == 1 && ((Integer.parseInt(subAreaCode.getText().toString()) < 1)
+                                                                    || Integer.parseInt(subAreaCode.getText().toString()) > 13)){
+            Toast.makeText(this, "ERROR: " + getString(R.string.subAreaCode), Toast.LENGTH_LONG).show();
+            subAreaCode.setError("Cluster in range from 1 - 13");
+            Log.i(TAG, "vbSubAreaCode: Cluster in range from 1 - 13!");
+            return false;
+        }
+        else {
+            subAreaCode.setError(null);
+        }
+
+        if (Integer.parseInt(MainApp.areaCode) == 2 && ((Integer.parseInt(subAreaCode.getText().toString()) < 14)
+                || Integer.parseInt(subAreaCode.getText().toString()) > 20)){
+            Toast.makeText(this, "ERROR: " + getString(R.string.subAreaCode), Toast.LENGTH_LONG).show();
+            subAreaCode.setError("Cluster in range from 14 - 20");
+            Log.i(TAG, "vbSubAreaCode: Cluster in range from 1 - 13!");
+            return false;
+        }else {
+            subAreaCode.setError(null);
+        }
+
+
         if (household.getText().toString().isEmpty()) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.household), Toast.LENGTH_LONG).show();
             household.setError("This data is Required!");
@@ -318,7 +341,7 @@ public class SectionAActivity extends Activity {
             childCount.setError(null);
         }
 
-        if (Integer.parseInt(childCount.getText().toString()) < 0) {
+        if (Integer.parseInt(childCount.getText().toString()) < 1) {
             Toast.makeText(this, "ERROR: " + getString(R.string.childCount), Toast.LENGTH_LONG).show();
             childCount.setError("Number of child is greater then 0!");
             Log.i(TAG, "childCount: Number of child is greater then 0!");

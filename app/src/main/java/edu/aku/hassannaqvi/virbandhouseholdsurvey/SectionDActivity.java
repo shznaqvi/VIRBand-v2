@@ -150,15 +150,24 @@ public class SectionDActivity extends Activity {
     @BindView(R.id.vd0606)
     RadioButton vd0606;
 
+    Boolean flag;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_section_d);
         ButterKnife.bind(this);
 
-        if (MainApp.isParent) {
+//        if (MainApp.isParent) {
+//            fldGrpvd01.setVisibility(View.VISIBLE);
+//            MainApp.isParent = false;
+//        }
+
+        if(MainApp.isParent){
+            fldGrpvd01.setVisibility(View.GONE);
+        }
+        else {
             fldGrpvd01.setVisibility(View.VISIBLE);
-            MainApp.isParent = false;
         }
 
         vd01.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
@@ -341,7 +350,8 @@ public class SectionDActivity extends Activity {
     private boolean formValidation() {
         Toast.makeText(this, "Validating This Section ", Toast.LENGTH_SHORT).show();
 
-        if (MainApp.isParent) {
+        if (!MainApp.isParent) {
+
             if (vd01.getCheckedRadioButtonId() == -1) {
                 Toast.makeText(this, "ERROR(not selected): " + getString(R.string.vd01), Toast.LENGTH_LONG).show();
                 vd0188.setError("This data is Required!");
