@@ -341,7 +341,7 @@ public class SectionAActivity extends Activity {
             childCount.setError(null);
         }
 
-        if (Integer.parseInt(childCount.getText().toString()) < 0) {
+        if (Integer.parseInt(childCount.getText().toString()) < 1) {
             Toast.makeText(this, "ERROR: " + getString(R.string.childCount), Toast.LENGTH_LONG).show();
             childCount.setError("Number of child is greater then 0!");
             Log.i(TAG, "childCount: Number of child is greater then 0!");
