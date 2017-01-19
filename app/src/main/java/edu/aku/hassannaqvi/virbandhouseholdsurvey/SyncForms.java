@@ -57,6 +57,20 @@ public class SyncForms extends AsyncTask<String, Void, String> {
     protected String doInBackground(String... urls) {
 
         String line = "No Response";
+        DatabaseHelper db = new DatabaseHelper(mContext);
+        JSONArray jsonSync = new JSONArray();
+        Collection<FormsContract> forms = db.getAllForms();
+        Log.d(TAG, String.valueOf(forms.size()));
+        for (FormsContract fc : forms) {
+
+            try {
+                jsonSync.put(fc.toJSONObject());
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+
+        }
+        longInfo(jsonSync.toString().replace("\uFEFF", "") + "\n");
         try {
             return downloadUrl(urls[0]);
         } catch (IOException e) {
