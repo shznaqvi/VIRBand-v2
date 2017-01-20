@@ -256,6 +256,7 @@
             android:digits="qwertyuiopasdfghjklzxcvbnm QWERTYUIOPASDFGHJKLZXCVBNM"
             android:hint="@string/Others"
             android:inputType="text"
+            android:visibility="gone"
             android:maxLength="255" />
 
         <!--PARENTS NAME-->
