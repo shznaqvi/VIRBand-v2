@@ -632,7 +632,7 @@ public class SectionICActivity extends Activity {
             }
         } else {
 
-            MainApp.oc = new OCsContract();
+//            MainApp.oc = new OCsContract();
 
             switch (icTP) {
 
