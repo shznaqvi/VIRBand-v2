@@ -231,7 +231,7 @@ public class SectionGHActivity extends Activity {
                 finish();
 
                 Intent endSec = new Intent(this, SectionICActivity.class);
-                endSec.putExtra("ic",true);
+                endSec.putExtra("ic", false);
                 startActivity(endSec);
 
             } else {
