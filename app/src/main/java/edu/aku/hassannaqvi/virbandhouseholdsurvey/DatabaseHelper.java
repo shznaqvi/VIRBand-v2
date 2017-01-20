@@ -369,6 +369,7 @@ public int updateSOC(int tp) {
         switch (tp) {
             case 1:
                 values.put(singleOCs.COLUMN_NAME_SOC01, MainApp.oc.getsOC01());
+                values.put(singleOCs.COLUMN_NAME_UID, MainApp.oc.getUID());
                 break;
             case 2:
                 values.put(singleOCs.COLUMN_NAME_SOC02, MainApp.oc.getsOC02());
@@ -386,7 +387,6 @@ public int updateSOC(int tp) {
                 values.put(singleOCs.COLUMN_NAME_SOC06, MainApp.oc.getsOC06());
                 break;
         }
-
         // Which row to update, based on the ID
         String selection = singleOCs._ID + " = ?";
         String[] selectionArgs = {String.valueOf(MainApp.oc.getID())};

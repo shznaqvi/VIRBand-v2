@@ -48,7 +48,9 @@ public class SyncOCs extends AsyncTask<String, Void, String> {
         super.onPreExecute();
         pd = new ProgressDialog(mContext);
         pd.setTitle("Please wait... Processing Forms");
-        pd.show();
+        if (pd != null) {
+            pd.show();
+        }
 
     }
 
@@ -57,6 +59,23 @@ public class SyncOCs extends AsyncTask<String, Void, String> {
     protected String doInBackground(String... urls) {
 
         String line = "No Response";
+        /*============*/
+        JSONArray jsonSync = new JSONArray();
+
+
+        DatabaseHelper db = new DatabaseHelper(mContext);
+        Collection<OCsContract> ocs = db.getAllOCs();
+        Log.d(TAG, String.valueOf(ocs.size()));
+        for (OCsContract oc : ocs) {
+            try {
+                jsonSync.put(oc.toJSONObject());
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
+        longInfo(jsonSync.toString().replace("\uFEFF", "") + "\n");
+
+        /*============*/
         try {
             return downloadUrl(urls[0]);
         } catch (IOException e) {
@@ -80,14 +99,18 @@ public class SyncOCs extends AsyncTask<String, Void, String> {
 
             pd.setMessage(json.length() + " forms synced.");
             pd.setTitle("Done uploading forms data");
-            pd.show();
+            if (pd != null) {
+                pd.show();
+            }
         } catch (JSONException e) {
             e.printStackTrace();
             Toast.makeText(mContext, "Failed Sync " + result, Toast.LENGTH_SHORT).show();
 
             pd.setMessage(result);
             pd.setTitle("Forms Sync Failed");
-            pd.show();
+            if (pd != null) {
+                pd.show();
+            }
 
         }
 

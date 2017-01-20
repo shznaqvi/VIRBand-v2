@@ -48,7 +48,9 @@ public class SyncForms extends AsyncTask<String, Void, String> {
         super.onPreExecute();
         pd = new ProgressDialog(mContext);
         pd.setTitle("Please wait... Processing Forms");
-        pd.show();
+        if (pd != null) {
+            pd.show();
+        }
 
     }
 
@@ -94,14 +96,18 @@ public class SyncForms extends AsyncTask<String, Void, String> {
 
             pd.setMessage(json.length() + " forms synced.");
             pd.setTitle("Done uploading forms data");
-            pd.show();
+            if (pd != null) {
+                pd.show();
+            }
         } catch (JSONException e) {
             e.printStackTrace();
             Toast.makeText(mContext, "Failed Sync " + result, Toast.LENGTH_SHORT).show();
 
             pd.setMessage(result);
             pd.setTitle("Forms Sync Failed");
-            pd.show();
+            if (pd != null) {
+                pd.show();
+            }
 
         }
 
