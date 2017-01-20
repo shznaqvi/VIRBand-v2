@@ -151,11 +151,8 @@ public class SectionICActivity extends Activity {
     Spinner vic_f05g;
     @BindView(R.id.vic_f06g)
     Spinner vic_f06g;
-
-    private int tp = 0;
-
-
     ArrayAdapter<CharSequence> adapter;
+    private int tp = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -632,7 +629,7 @@ public class SectionICActivity extends Activity {
             }
         } else {
 
-//            MainApp.oc = new OCsContract();
+            //MainApp.oc = new OCsContract();
 
             switch (icTP) {
 
