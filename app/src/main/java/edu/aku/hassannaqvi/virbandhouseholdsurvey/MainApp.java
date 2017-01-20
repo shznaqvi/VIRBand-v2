@@ -98,8 +98,6 @@ public class MainApp extends Application {
 
     public void showGPSCoordinates(View v) {
         showCurrentLocation();
-
-
     }
 
     protected boolean isBetterLocation(Location location, Location currentBestLocation) {
