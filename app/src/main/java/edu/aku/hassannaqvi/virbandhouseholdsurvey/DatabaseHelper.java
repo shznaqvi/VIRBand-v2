@@ -32,7 +32,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             + singleUser.ROW_USERNAME + " TEXT,"
             + singleUser.ROW_PASSWORD + " TEXT );";
     private static final String DATABASE_NAME = "virband.db";
-    private static final int DATABASE_VERSION = 1;
+    private static final int DATABASE_VERSION = 2;
     private static final String SQL_CREATE_FORMS = "CREATE TABLE "
             + singleForm.TABLE_NAME + "("
             + singleForm._ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
