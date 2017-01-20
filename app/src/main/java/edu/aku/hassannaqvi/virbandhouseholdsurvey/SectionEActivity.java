@@ -1296,15 +1296,21 @@ public class SectionEActivity extends Activity {
         se.put("ve24a04", ve24a04.isChecked() ? "4" : "default");
         se.put("ve24a99", ve24a99.isChecked() ? "99" : "default");
         se.put("ve24a88", ve24a88.isChecked() ? "88" : "default");
-
         se.put("ve24a88x", ve24a88x.getText().toString());
+        se.put("ve24b01", ve24b01.isChecked() ? "1" : "default");
+        se.put("ve24b02", ve24b02.isChecked() ? "2" : "default");
+        se.put("ve24b03", ve24b03.isChecked() ? "3" : "default");
+        se.put("ve24b04", ve24b04.isChecked() ? "4" : "default");
+        se.put("ve24b99", ve24b99.isChecked() ? "99" : "default");
+        se.put("ve24b88", ve24b88.isChecked() ? "88" : "default");
+        se.put("ve24b88x", ve24b88x.getText().toString());
         se.put("ve25a01", ve25a01.isChecked() ? "1" : "default");
         se.put("ve25a02", ve25a02.isChecked() ? "2" : "default");
         se.put("ve25a03", ve25a03.isChecked() ? "3" : "default");
         se.put("ve25a04", ve25a04.isChecked() ? "4" : "default");
         se.put("ve25a99", ve25a99.isChecked() ? "99" : "default");
         se.put("ve25a88", ve25a88.isChecked() ? "88" : "default");
-        se.put("ve24b88x", ve24b88x.getText().toString());
+        se.put("ve25a88x", ve25a88x.getText().toString());
         se.put("ve25", ve2501.isChecked() ? "1" : ve2502.isChecked() ? "2" : ve2599.isChecked() ? "99" : "default");
         se.put("ve25a", ve25a01.isChecked() ? "1"
                 : ve25a02.isChecked() ? "2"
