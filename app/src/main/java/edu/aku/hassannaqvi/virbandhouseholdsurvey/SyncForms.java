@@ -35,6 +35,7 @@ public class SyncForms extends AsyncTask<String, Void, String> {
         mContext = context;
     }
 
+
     public static void longInfo(String str) {
         if (str.length() > 4000) {
             Log.i("TAG: ", str.substring(0, 4000));
@@ -48,9 +49,8 @@ public class SyncForms extends AsyncTask<String, Void, String> {
         super.onPreExecute();
         pd = new ProgressDialog(mContext);
         pd.setTitle("Please wait... Processing Forms");
-        if (pd != null) {
-            pd.show();
-        }
+        pd.show();
+
 
     }
 
