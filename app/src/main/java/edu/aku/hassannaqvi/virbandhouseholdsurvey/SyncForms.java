@@ -25,7 +25,7 @@ import java.util.Collection;
 /**
  * Created by hassan.naqvi on 7/26/2016.
  */
-public class SyncForms extends AsyncTask<String, Void, String> {
+public class SyncForms extends AsyncTask<Void, Void, String> {
 
     private static final String TAG = "SyncForms";
     private Context mContext;
@@ -56,7 +56,7 @@ public class SyncForms extends AsyncTask<String, Void, String> {
 
 
     @Override
-    protected String doInBackground(String... urls) {
+    protected String doInBackground(Void... params) {
 
         String line = "No Response";
         DatabaseHelper db = new DatabaseHelper(mContext);
@@ -74,7 +74,7 @@ public class SyncForms extends AsyncTask<String, Void, String> {
         }
         longInfo(jsonSync.toString().replace("\uFEFF", "") + "\n");
         try {
-            return downloadUrl(urls[0]);
+            return downloadUrl(MainApp._HOST_URL + "virband/api/forms.php");
         } catch (IOException e) {
             return "Unable to upload data. Server may be down.";
         }

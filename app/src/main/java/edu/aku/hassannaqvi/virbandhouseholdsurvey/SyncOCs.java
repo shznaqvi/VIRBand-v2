@@ -25,7 +25,7 @@ import java.util.Collection;
 /**
  * Created by hassan.naqvi on 7/26/2016.
  */
-public class SyncOCs extends AsyncTask<String, Void, String> {
+public class SyncOCs extends AsyncTask<Void, Void, String> {
 
     private static final String TAG = "SyncForms";
     private Context mContext;
@@ -56,7 +56,7 @@ public class SyncOCs extends AsyncTask<String, Void, String> {
 
 
     @Override
-    protected String doInBackground(String... urls) {
+    protected String doInBackground(Void... params) {
 
         String line = "No Response";
         /*============*/
@@ -77,7 +77,7 @@ public class SyncOCs extends AsyncTask<String, Void, String> {
 
         /*============*/
         try {
-            return downloadUrl(urls[0]);
+            return downloadUrl(MainApp._HOST_URL + "virband/api/ocs.php");
         } catch (IOException e) {
             return "Unable to upload data. Server may be down.";
         }
