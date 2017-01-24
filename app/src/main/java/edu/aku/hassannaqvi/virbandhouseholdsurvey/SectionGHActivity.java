@@ -271,7 +271,7 @@ public class SectionGHActivity extends Activity {
         MainApp.oc.setAreacode(String.valueOf(MainApp.areaCode));
         MainApp.oc.setSubareacode(MainApp.fc.getSubareacode());
         MainApp.oc.setHousehold(MainApp.fc.getHousehold());
-        MainApp.oc.setChildName(MainApp.fc.getChildName());
+        MainApp.oc.setChildName(MainApp.oc.getChildName());
 
 
         JSONObject sG = new JSONObject();
