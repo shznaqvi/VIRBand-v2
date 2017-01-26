@@ -73,7 +73,7 @@ public class SyncOCs extends AsyncTask<Void, Void, String> {
             for (int i = 0; i < json.length(); i++) {
                 JSONObject jsonObject = new JSONObject(json.getString(i));
                 if (jsonObject.getString("status").equals("1")) {
-                    db.updateSyncedOCs(jsonObject.getString("id"));
+                    //   db.updateSyncedOCs(jsonObject.getString("id"));
                     sSynced++;
                 }
             }
@@ -101,7 +101,7 @@ public class SyncOCs extends AsyncTask<Void, Void, String> {
         // web page content.
         //int len = 500;
         DatabaseHelper db = new DatabaseHelper(mContext);
-        Collection<OCsContract> ocs = db.getUnsyncedOCs();
+        Collection<OCsContract> ocs = db.getAllOCs();
         Log.d(TAG, String.valueOf(ocs.size()));
         if (ocs.size() > 0) {
             try {
