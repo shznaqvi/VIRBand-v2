@@ -101,7 +101,7 @@ public class SyncForms extends AsyncTask<Void, Void, String> {
         // web page content.
         //int len = 500;
         DatabaseHelper db = new DatabaseHelper(mContext);
-        Collection<FormsContract> forms = db.getAllForms();
+        Collection<FormsContract> forms = db.getUnsyncedForms();
         Log.d(TAG, String.valueOf(forms.size()));
         if (forms.size() > 0) {
             try {

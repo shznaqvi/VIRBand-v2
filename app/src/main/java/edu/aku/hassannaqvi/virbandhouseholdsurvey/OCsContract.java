@@ -268,7 +268,6 @@ public class OCsContract {
         public static final String COLUMN_NAME_SUBAREA_CODE = "subarea";
         public static final String COLUMN_NAME_HOUSEHOLD = "household";
         public static final String COLUMN_NAME_CHILDNAME = "childname";
-
         public static final String COLUMN_NAME_SG = "sg";
         public static final String COLUMN_NAME_SOC01 = "soc01";
         public static final String COLUMN_NAME_SOC02 = "soc02";
