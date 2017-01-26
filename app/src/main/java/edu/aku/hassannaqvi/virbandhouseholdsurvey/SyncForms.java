@@ -73,7 +73,7 @@ public class SyncForms extends AsyncTask<Void, Void, String> {
             for (int i = 0; i < json.length(); i++) {
                 JSONObject jsonObject = new JSONObject(json.getString(i));
                 if (jsonObject.getString("status").equals("1")) {
-                    db.updateForms(jsonObject.getString("id"));
+                    db.updateSyncedForms(jsonObject.getString("id"));
                     sSynced++;
                 }
             }
@@ -101,7 +101,7 @@ public class SyncForms extends AsyncTask<Void, Void, String> {
         // web page content.
         //int len = 500;
         DatabaseHelper db = new DatabaseHelper(mContext);
-        Collection<FormsContract> forms = db.getUnsyncedForms();
+        Collection<FormsContract> forms = db.getAllForms();
         Log.d(TAG, String.valueOf(forms.size()));
         if (forms.size() > 0) {
             try {
@@ -174,4 +174,6 @@ public class SyncForms extends AsyncTask<Void, Void, String> {
         reader.read(buffer);
         return new String(buffer);
     }*/
+
+
 }
