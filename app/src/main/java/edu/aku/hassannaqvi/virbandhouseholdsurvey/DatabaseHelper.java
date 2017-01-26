@@ -226,6 +226,25 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return newRowId;
     }
 
+    public void updateSyncedForms(String id) {
+        SQLiteDatabase db = this.getReadableDatabase();
+
+// New value for one column
+        ContentValues values = new ContentValues();
+        values.put(singleForm.COLUMN_NAME_SYNCED, true);
+        values.put(singleForm.COLUMN_NAME_SYNCED_DATE, new Date().toString());
+
+// Which row to update, based on the title
+        String where = singleForm._ID + " LIKE ?";
+        String[] whereArgs = {id};
+
+        int count = db.update(
+                singleForm.TABLE_NAME,
+                values,
+                where,
+                whereArgs);
+    }
+
     public Long addOC(OCsContract oc) {
 
         // Gets the data repository in write mode
@@ -258,6 +277,25 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 values);
 
         return newRowId;
+    }
+
+    public void updateSyncedOCs(String id) {
+        SQLiteDatabase db = this.getReadableDatabase();
+
+// New value for one column
+        ContentValues values = new ContentValues();
+        values.put(singleOCs.COLUMN_NAME_SYNCED, true);
+        values.put(singleOCs.COLUMN_NAME_SYNCED_DATE, new Date().toString());
+
+// Which row to update, based on the title
+        String where = singleOCs._ID + " LIKE ?";
+        String[] whereArgs = {id};
+
+        int count = db.update(
+                singleOCs.TABLE_NAME,
+                values,
+                where,
+                whereArgs);
     }
 
     public int updateSC() {
@@ -502,6 +540,74 @@ public int updateSOC(int tp) {
         }
         return allFC;
     }
+
+    public Collection<FormsContract> getUnsyncedForms() {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = null;
+        String[] columns = {
+                singleForm._ID,
+                singleForm.COLUMN_NAME_UID,
+                singleForm.COLUMN_NAME_PROJECT_NAME,
+                singleForm.COLUMN_NAME_DEVICE_ID,
+                singleForm.COLUMN_NAME_GPS_LAT,
+                singleForm.COLUMN_NAME_GPS_LNG,
+                singleForm.COLUMN_NAME_GPS_ACC,
+                singleForm.COLUMN_NAME_GPS_TIME,
+                singleForm.COLUMN_NAME_SYNCED,
+                singleForm.COLUMN_NAME_SYNCED_DATE,
+                singleForm.COLUMN_NAME_FORM_DATE,
+                singleForm.COLUMN_NAME_INTERVIEWER,
+                singleForm.COLUMN_NAME_AREA_CODE,
+                singleForm.COLUMN_NAME_SUBAREA_CODE,
+                singleForm.COLUMN_NAME_HOUSEHOLD,
+                singleForm.COLUMN_NAME_CHILDNAME,
+                singleForm.COLUMN_NAME_CHILDCOUNT,
+                singleForm.COLUMN_NAME_ISTATUS,
+                singleForm.COLUMN_NAME_SB,
+                singleForm.COLUMN_NAME_SC,
+                singleForm.COLUMN_NAME_SD,
+                singleForm.COLUMN_NAME_SE,
+                singleForm.COLUMN_NAME_SIC01,
+                singleForm.COLUMN_NAME_SIC02,
+                singleForm.COLUMN_NAME_SIC03,
+                singleForm.COLUMN_NAME_SIC04,
+                singleForm.COLUMN_NAME_SIC05,
+                singleForm.COLUMN_NAME_SIC06
+        };
+        String whereClause = singleForm.COLUMN_NAME_SYNCED + " <> ?";
+        String[] whereArgs = {"1"};
+        String groupBy = null;
+        String having = null;
+
+        String orderBy =
+                singleForm._ID + " ASC";
+
+        Collection<FormsContract> allFC = new ArrayList<FormsContract>();
+        try {
+            c = db.query(
+                    singleForm.TABLE_NAME,  // The table to query
+                    columns,                   // The columns to return
+                    whereClause,               // The columns for the WHERE clause
+                    whereArgs,                 // The values for the WHERE clause
+                    groupBy,                   // don't group the rows
+                    having,                    // don't filter by row groups
+                    orderBy                    // The sort order
+            );
+            while (c.moveToNext()) {
+                FormsContract fc = new FormsContract();
+                allFC.add(fc.Hydrate(c));
+            }
+        } finally {
+            if (c != null) {
+                c.close();
+            }
+            if (db != null) {
+                db.close();
+            }
+        }
+        return allFC;
+    }
+
 public Collection<OCsContract> getAllOCs() {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = null;
@@ -558,6 +664,67 @@ public Collection<OCsContract> getAllOCs() {
         }
         return allOC;
     }
+
+    public Collection<OCsContract> getUnsyncedOCs() {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = null;
+        String[] columns = {
+                singleOCs._ID,
+                singleOCs.COLUMN_NAME_UID,
+                singleOCs.COLUMN_NAME_PROJECT_NAME,
+                singleOCs.COLUMN_NAME_DEVICE_ID,
+                singleOCs.COLUMN_NAME_SYNCED,
+                singleOCs.COLUMN_NAME_SYNCED_DATE,
+                singleOCs.COLUMN_NAME_FORM_DATE,
+                singleOCs.COLUMN_NAME_AREA_CODE,
+                singleOCs.COLUMN_NAME_SUBAREA_CODE,
+                singleOCs.COLUMN_NAME_HOUSEHOLD,
+                singleOCs.COLUMN_NAME_CHILDNAME,
+                singleOCs.COLUMN_NAME_SG,
+                singleOCs.COLUMN_NAME_SOC01,
+                singleOCs.COLUMN_NAME_SOC02,
+                singleOCs.COLUMN_NAME_SOC03,
+                singleOCs.COLUMN_NAME_SOC04,
+                singleOCs.COLUMN_NAME_SOC05,
+                singleOCs.COLUMN_NAME_SOC06
+        };
+        String whereClause = singleOCs.COLUMN_NAME_SYNCED + " != ?";
+        String[] whereArgs = new String[]{"1"};
+        String groupBy = null;
+        String having = null;
+
+        String orderBy =
+                singleOCs._ID + " ASC";
+
+        Collection<OCsContract> allOC = new ArrayList<OCsContract>();
+        try {
+            c = db.query(
+                    singleOCs.TABLE_NAME,  // The table to query
+                    columns,                   // The columns to return
+                    whereClause,               // The columns for the WHERE clause
+                    whereArgs,                 // The values for the WHERE clause
+                    groupBy,                   // don't group the rows
+                    having,                    // don't filter by row groups
+                    orderBy                    // The sort order
+            );
+            while (c.moveToNext()) {
+                OCsContract oc = new OCsContract();
+                allOC.add(oc.Hydrate(c));
+            }
+        } finally {
+            if (c != null) {
+                c.close();
+            }
+            if (db != null) {
+                db.close();
+            }
+
+
+        }
+        return allOC;
+    }
+
+
 
     public Collection<FormsContract> getTodayForms() {
 
