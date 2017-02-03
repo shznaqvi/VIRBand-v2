@@ -282,11 +282,11 @@
                     android:text="@string/vic_f1" />
 
                 <Spinner
-                    android:visibility="gone"
                     android:id="@+id/vic_f01g"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"></Spinner>
+                    android:layout_weight="1"
+                    android:visibility="gone"></Spinner>
 
 
             </LinearLayout>
@@ -305,11 +305,11 @@
                     android:text="@string/vic_f2" />
 
                 <Spinner
-                    android:visibility="gone"
                     android:id="@+id/vic_f02g"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"></Spinner>
+                    android:layout_weight="1"
+                    android:visibility="gone"></Spinner>
 
 
             </LinearLayout>
@@ -327,11 +327,11 @@
                     android:text="@string/vic_f3" />
 
                 <Spinner
-                    android:visibility="gone"
                     android:id="@+id/vic_f03g"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"></Spinner>
+                    android:layout_weight="1"
+                    android:visibility="gone"></Spinner>
 
 
             </LinearLayout>
@@ -349,11 +349,11 @@
                     android:text="@string/vic_f4" />
 
                 <Spinner
-                    android:visibility="gone"
                     android:id="@+id/vic_f04g"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"></Spinner>
+                    android:layout_weight="1"
+                    android:visibility="gone"></Spinner>
 
 
             </LinearLayout>
@@ -371,11 +371,11 @@
                     android:text="@string/vic_f5" />
 
                 <Spinner
-                    android:visibility="gone"
                     android:id="@+id/vic_f05g"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"></Spinner>
+                    android:layout_weight="1"
+                    android:visibility="gone"></Spinner>
 
 
             </LinearLayout>
@@ -394,20 +394,34 @@
 
 
                 <Spinner
-                    android:visibility="gone"
                     android:id="@+id/vic_f06g"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"></Spinner>
+                    android:layout_weight="1"
+                    android:visibility="gone"></Spinner>
 
 
             </LinearLayout>
 
-            <CheckBox
-                android:id="@+id/vic_f99"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/DNK" />
+                android:orientation="horizontal">
+
+                <CheckBox
+                    android:id="@+id/vic_f99"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/DNK" />
+
+                <Spinner
+                    android:id="@+id/vic_f99g"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:visibility="gone"></Spinner>
+
+            </LinearLayout>
 
             <CheckBox
                 android:id="@+id/vic_f88"

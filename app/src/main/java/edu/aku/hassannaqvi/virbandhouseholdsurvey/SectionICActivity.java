@@ -151,6 +151,8 @@ public class SectionICActivity extends Activity {
     Spinner vic_f05g;
     @BindView(R.id.vic_f06g)
     Spinner vic_f06g;
+    @BindView(R.id.vic_f99g)
+    Spinner vic_f99g;
     ArrayAdapter<CharSequence> adapter;
     private int tp = 0;
 
@@ -318,6 +320,7 @@ public class SectionICActivity extends Activity {
                     vic_f06.setChecked(false);
                     vic_f06g.setSelection(0);
                     vic_f99.setChecked(false);
+                    vic_f99g.setSelection(0);
                     vic_f88.setChecked(false);
                     vic_f88x.setText(null);
                     vic_f88.setChecked(false);
@@ -420,6 +423,19 @@ public class SectionICActivity extends Activity {
                     vic_f06g.setVisibility(View.GONE);
                     vic_f06g.setSelection(0);
 
+                }
+            }
+        });
+
+        vic_f99g.setAdapter(adapter);
+        vic_f99.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (b) {
+                    vic_f99g.setVisibility(View.VISIBLE);
+                } else {
+                    vic_f99g.setVisibility(View.GONE);
+                    vic_f99g.setSelection(0);
                 }
             }
         });
@@ -561,6 +577,7 @@ public class SectionICActivity extends Activity {
         sic.put(icCheck + icTP + "f4", vic_f04.isChecked() ? "4" : "default");
         sic.put(icCheck + icTP + "f5", vic_f05.isChecked() ? "5" : "default");
         sic.put(icCheck + icTP + "f6", vic_f06.isChecked() ? "6" : "default");
+        sic.put(icCheck + icTP + "f99", vic_f99.isChecked() ? "99" : "default");
 
         sic.put(icCheck + icTP + "f1g", vic_f01.isChecked() ? getResources().getStringArray(R.array.vic_g_value)[vic_f01g.getSelectedItemPosition()] : "default");
         sic.put(icCheck + icTP + "f2g", vic_f02.isChecked() ? getResources().getStringArray(R.array.vic_g_value)[vic_f02g.getSelectedItemPosition()] : "default");
@@ -568,8 +585,8 @@ public class SectionICActivity extends Activity {
         sic.put(icCheck + icTP + "f4g", vic_f04.isChecked() ? getResources().getStringArray(R.array.vic_g_value)[vic_f04g.getSelectedItemPosition()] : "default");
         sic.put(icCheck + icTP + "f5g", vic_f05.isChecked() ? getResources().getStringArray(R.array.vic_g_value)[vic_f05g.getSelectedItemPosition()] : "default");
         sic.put(icCheck + icTP + "f6g", vic_f06.isChecked() ? getResources().getStringArray(R.array.vic_g_value)[vic_f06g.getSelectedItemPosition()] : "default");
+        sic.put(icCheck + icTP + "f99g", vic_f99.isChecked() ? getResources().getStringArray(R.array.vic_g_value)[vic_f99g.getSelectedItemPosition()] : "default");
 
-        sic.put(icCheck + icTP + "f99", vic_f99.isChecked() ? "99" : "default");
         sic.put(icCheck + icTP + "f88", vic_f88.isChecked() ? "88" : "default");
         sic.put(icCheck + icTP + "f88x", vic_f88x.getText().toString());
 //        sic.put(icCheck + icTP + "g1", vic_g01.isChecked() ? "1" : "default");
@@ -754,6 +771,7 @@ public class SectionICActivity extends Activity {
                     || (vic_f04.isChecked() && vic_f04g.getSelectedItemId() == 0)
                     || (vic_f05.isChecked() && vic_f05g.getSelectedItemId() == 0)
                     || (vic_f06.isChecked() && vic_f06g.getSelectedItemId() == 0)
+                    || (vic_f99.isChecked() && vic_f99g.getSelectedItemId() == 0)
                     ) {
                 Toast.makeText(this, "ERROR: " + getString(R.string.vic_f), Toast.LENGTH_LONG).show();
                 vic_f88.setError("This data is Required!");

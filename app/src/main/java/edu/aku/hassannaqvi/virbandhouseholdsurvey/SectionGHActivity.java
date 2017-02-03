@@ -322,6 +322,9 @@ public class SectionGHActivity extends Activity {
         sG.put("vg12", vg1201.isChecked() ? "1" : vg1202.isChecked() ? "2" : vg1203.isChecked() ? "3" : "default");
 
 
+        MainApp.oc.setChildName(vg01.getText().toString());
+
+
         MainApp.oc.setsG(String.valueOf(sG));
 
 
