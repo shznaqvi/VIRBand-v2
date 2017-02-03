@@ -73,7 +73,7 @@ public class SyncOCs extends AsyncTask<Void, Void, String> {
             for (int i = 0; i < json.length(); i++) {
                 JSONObject jsonObject = new JSONObject(json.getString(i));
                 if (jsonObject.getString("status").equals("1")) {
-                    //   db.updateSyncedOCs(jsonObject.getString("id"));
+                    db.updateSyncedOCs(jsonObject.getString("id"));
                     sSynced++;
                 }
             }
@@ -87,7 +87,7 @@ public class SyncOCs extends AsyncTask<Void, Void, String> {
             Toast.makeText(mContext, "Failed Sync " + result, Toast.LENGTH_SHORT).show();
 
             pd.setMessage(result);
-            pd.setTitle("Ocss Sync Failed");
+            pd.setTitle("Ocs Sync Failed");
             pd.show();
 
 
@@ -101,7 +101,7 @@ public class SyncOCs extends AsyncTask<Void, Void, String> {
         // web page content.
         //int len = 500;
         DatabaseHelper db = new DatabaseHelper(mContext);
-        Collection<OCsContract> ocs = db.getAllOCs();
+        Collection<OCsContract> ocs = db.getUnsyncedOCs();
         Log.d(TAG, String.valueOf(ocs.size()));
         if (ocs.size() > 0) {
             try {
@@ -121,9 +121,9 @@ public class SyncOCs extends AsyncTask<Void, Void, String> {
                 try {
                     DataOutputStream wr = new DataOutputStream(conn.getOutputStream());
 
-                    for (OCsContract fc : ocs) {
+                    for (OCsContract oc : ocs) {
 
-                        jsonSync.put(fc.toJSONObject());
+                        jsonSync.put(oc.toJSONObject());
 
                     }
                     wr.writeBytes(jsonSync.toString().replace("\uFEFF", "") + "\n");

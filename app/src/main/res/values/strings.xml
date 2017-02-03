@@ -358,7 +358,12 @@
     <string name="vic_f6"> آئی پی وی </string>
     <string name="vic_f7"> معلوم نہیں/ نہیں یاد </string>
     <string name="vic_g"> بچے کے جسم میں کہاں لگائی /دی گئی </string>
-
+  <string name="vic_g1"> منہ میں قطرے </string>
+  <string name="vic_g2"> سیدھے بازو پر </string>
+  <string name="vic_g3"> سیدھی والی ران میں </string>
+  <string name="vic_g4"> الٹی والی ران میں </string>
+  <string name="vic_g5"> الٹے بازو پر </string>
+  <string name="vic_g6"> پیچھے /پچھواڑی پر </string>
 
     <string name="vg01"> نام </string>
     <string name="vg02"> جنس </string>

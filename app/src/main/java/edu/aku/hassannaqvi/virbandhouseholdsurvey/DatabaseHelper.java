@@ -235,7 +235,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(singleForm.COLUMN_NAME_SYNCED_DATE, new Date().toString());
 
 // Which row to update, based on the title
-        String where = singleForm._ID + " LIKE ?";
+        String where = singleForm._ID + " = ?";
         String[] whereArgs = {id};
 
         int count = db.update(
@@ -288,7 +288,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(singleOCs.COLUMN_NAME_SYNCED_DATE, new Date().toString());
 
 // Which row to update, based on the title
-        String where = singleOCs._ID + " LIKE ?";
+        String where = singleOCs._ID + " = ?";
         String[] whereArgs = {id};
 
         int count = db.update(
@@ -574,8 +574,8 @@ public int updateSOC(int tp) {
                 singleForm.COLUMN_NAME_SIC05,
                 singleForm.COLUMN_NAME_SIC06
         };
-        String whereClause = singleForm.COLUMN_NAME_SYNCED + " is ?";
-        String[] whereArgs = {"null"};
+        String whereClause = singleForm.COLUMN_NAME_SYNCED + " is null";
+        String[] whereArgs = null;
         String groupBy = null;
         String having = null;
 
@@ -672,6 +672,7 @@ public Collection<OCsContract> getAllOCs() {
         String[] columns = {
                 singleOCs._ID,
                 singleOCs.COLUMN_NAME_UID,
+                singleOCs.COLUMN_NAME_UUID,
                 singleOCs.COLUMN_NAME_PROJECT_NAME,
                 singleOCs.COLUMN_NAME_DEVICE_ID,
                 singleOCs.COLUMN_NAME_SYNCED,
@@ -689,8 +690,8 @@ public Collection<OCsContract> getAllOCs() {
                 singleOCs.COLUMN_NAME_SOC05,
                 singleOCs.COLUMN_NAME_SOC06
         };
-        String whereClause = singleOCs.COLUMN_NAME_SYNCED + " is ?";
-        String[] whereArgs = {"null"};
+        String whereClause = singleOCs.COLUMN_NAME_SYNCED + " is null ";
+        String[] whereArgs = null;
         String groupBy = null;
         String having = null;
 

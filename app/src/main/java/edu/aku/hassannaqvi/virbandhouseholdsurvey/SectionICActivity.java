@@ -282,23 +282,13 @@ public class SectionICActivity extends Activity {
                     fldGrpvic01.setVisibility(View.VISIBLE);
                     fldGrpvic03.setVisibility(View.VISIBLE);
                     fldGrpvic02.setVisibility(View.GONE);
-
-                    vic_b.clearCheck();
-                    vic_b88x.setText(null);
-                    vic_d.clearCheck();
-                    vic_d88x.setText(null);
                     vic_e.clearCheck();
                     vic_e88x.setText(null);
 
-                    vic_f01.setChecked(false);
-                    vic_f02.setChecked(false);
-                    vic_f03.setChecked(false);
-                    vic_f04.setChecked(false);
-                    vic_f05.setChecked(false);
-                    vic_f06.setChecked(false);
-                    vic_f99.setChecked(false);
-                    vic_f88.setChecked(false);
-                    vic_f88x.setText(null);
+                  /*  */
+
+
+
 
 //                    vic_g01.setChecked(false);vic_g02.setChecked(false);vic_g03.setChecked(false);vic_g04.setChecked(false);
 //                    vic_g05.setChecked(false);vic_g06.setChecked(false);vic_g99.setChecked(false);vic_g88.setChecked(false);
@@ -310,20 +300,26 @@ public class SectionICActivity extends Activity {
                     fldGrpvic02.setVisibility(View.VISIBLE);
                     fldGrpvic03.setVisibility(View.GONE);
 
+
                     vic_b.clearCheck();
                     vic_b88x.setText(null);
                     vic_d.clearCheck();
                     vic_d88x.setText(null);
-                    vic_e.clearCheck();
-                    vic_e88x.setText(null);
-
                     vic_f01.setChecked(false);
+                    vic_f01g.setSelection(0);
                     vic_f02.setChecked(false);
+                    vic_f02g.setSelection(0);
                     vic_f03.setChecked(false);
+                    vic_f03g.setSelection(0);
                     vic_f04.setChecked(false);
+                    vic_f04g.setSelection(0);
                     vic_f05.setChecked(false);
+                    vic_f05g.setSelection(0);
                     vic_f06.setChecked(false);
+                    vic_f06g.setSelection(0);
                     vic_f99.setChecked(false);
+                    vic_f88.setChecked(false);
+                    vic_f88x.setText(null);
                     vic_f88.setChecked(false);
                     vic_f88x.setText(null);
 
@@ -351,6 +347,8 @@ public class SectionICActivity extends Activity {
                     vic_f01g.setVisibility(View.VISIBLE);
                 } else {
                     vic_f01g.setVisibility(View.GONE);
+                    vic_f01g.setSelection(0);
+
                 }
             }
         });
@@ -364,6 +362,8 @@ public class SectionICActivity extends Activity {
                     vic_f02g.setVisibility(View.VISIBLE);
                 } else {
                     vic_f02g.setVisibility(View.GONE);
+                    vic_f02g.setSelection(0);
+
                 }
             }
         });
@@ -376,6 +376,8 @@ public class SectionICActivity extends Activity {
                     vic_f03g.setVisibility(View.VISIBLE);
                 } else {
                     vic_f03g.setVisibility(View.GONE);
+                    vic_f03g.setSelection(0);
+
                 }
             }
         });
@@ -388,6 +390,8 @@ public class SectionICActivity extends Activity {
                     vic_f04g.setVisibility(View.VISIBLE);
                 } else {
                     vic_f04g.setVisibility(View.GONE);
+                    vic_f04g.setSelection(0);
+
                 }
             }
         });
@@ -400,6 +404,8 @@ public class SectionICActivity extends Activity {
                     vic_f05g.setVisibility(View.VISIBLE);
                 } else {
                     vic_f05g.setVisibility(View.GONE);
+                    vic_f05g.setSelection(0);
+
                 }
             }
         });
@@ -412,6 +418,8 @@ public class SectionICActivity extends Activity {
                     vic_f06g.setVisibility(View.VISIBLE);
                 } else {
                     vic_f06g.setVisibility(View.GONE);
+                    vic_f06g.setSelection(0);
+
                 }
             }
         });
@@ -470,8 +478,7 @@ public class SectionICActivity extends Activity {
                     if (MainApp.gotoOC && MainApp.ocCount > 0) {
                         Toast.makeText(this, "Starting Form Other Child Section", Toast.LENGTH_SHORT).show();
 
-                        MainApp.ocCount -= 1;
-
+                        MainApp.ocCount--;
                         Intent ghSec = new Intent(this, SectionGHActivity.class);
                         startActivity(ghSec);
 
@@ -792,7 +799,9 @@ public class SectionICActivity extends Activity {
 //                vic_g88x.setError(null);
 //            }
 
-        } else {
+        }
+
+        if (vic_a02.isChecked()) {
 
             // RadioGroup
             if (vic_e.getCheckedRadioButtonId() == -1) {

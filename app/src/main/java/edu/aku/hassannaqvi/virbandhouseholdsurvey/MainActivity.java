@@ -30,6 +30,7 @@ public class MainActivity extends Activity {
     TextView recordSummary;
     @BindView(R.id.areaCode)
     EditText areaCode;
+    boolean doubleBackToExitPressedOnce = false;
     private String rSumText = "";
 
     @Override
@@ -127,11 +128,6 @@ public class MainActivity extends Activity {
         Intent iD = new Intent(this, SectionEActivity.class);
         startActivity(iD);
     }
-
-    public void openIC(View v) {
-        Intent iD = new Intent(this, SectionICActivity.class);
-        startActivity(iD);
-    }
 /*
     public void openF(View v) {
         Intent iD = new Intent(this, SectionICActivity.class);
@@ -152,6 +148,11 @@ public class MainActivity extends Activity {
         Intent iEnd = new Intent(this, EndingActivity.class);
         startActivity(iEnd);
     }*/
+
+    public void openIC(View v) {
+        Intent iD = new Intent(this, SectionICActivity.class);
+        startActivity(iD);
+    }
 
     public void openDB(View v) {
         Intent dbmanager = new Intent(getApplicationContext(), AndroidDatabaseManager.class);
@@ -221,4 +222,23 @@ public class MainActivity extends Activity {
             Toast.makeText(this, "No network connection available.", Toast.LENGTH_SHORT).show();
         }
     }
+
+   /* @Override
+    public void onBackPressed() {
+        if (doubleBackToExitPressedOnce) {
+            super.onBackPressed();
+            return;
+        }
+
+        this.doubleBackToExitPressedOnce = true;
+        Toast.makeText(this, "Please click BACK again to exit", Toast.LENGTH_SHORT).show();
+
+        new Handler().postDelayed(new Runnable() {
+
+            @Override
+            public void run() {
+                doubleBackToExitPressedOnce=false;
+            }
+        }, 2500);
+    }*/
 }

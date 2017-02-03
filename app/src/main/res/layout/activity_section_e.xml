@@ -1120,6 +1120,11 @@
 
         </RadioGroup>
 
+        <LinearLayout
+            android:id="@+id/fldGrpve16"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -1186,7 +1191,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:text="@string/ve17" />
-
+        </LinearLayout>
         <RadioGroup
             android:id="@+id/ve17"
             android:layout_width="match_parent"
@@ -1417,6 +1422,11 @@
 
         </RadioGroup>
 
+        <LinearLayout
+            android:id="@+id/fldGrpve21"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -1504,7 +1514,7 @@
                 android:hint="@string/Others"
                 android:visibility="gone" />
         </LinearLayout>
-
+        </LinearLayout>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
