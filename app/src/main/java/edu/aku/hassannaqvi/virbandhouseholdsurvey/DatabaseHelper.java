@@ -574,8 +574,8 @@ public int updateSOC(int tp) {
                 singleForm.COLUMN_NAME_SIC05,
                 singleForm.COLUMN_NAME_SIC06
         };
-        String whereClause = singleForm.COLUMN_NAME_SYNCED + " <> ?";
-        String[] whereArgs = new String[]{"1"};
+        String whereClause = singleForm.COLUMN_NAME_SYNCED + " is null";
+        String[] whereArgs = null;
         String groupBy = null;
         String having = null;
 
@@ -690,8 +690,8 @@ public Collection<OCsContract> getAllOCs() {
                 singleOCs.COLUMN_NAME_SOC05,
                 singleOCs.COLUMN_NAME_SOC06
         };
-        String whereClause = singleOCs.COLUMN_NAME_SYNCED + " <> ? ";
-        String[] whereArgs = new String[]{"1"};
+        String whereClause = singleOCs.COLUMN_NAME_SYNCED + " is null ";
+        String[] whereArgs = null;
         String groupBy = null;
         String having = null;
 

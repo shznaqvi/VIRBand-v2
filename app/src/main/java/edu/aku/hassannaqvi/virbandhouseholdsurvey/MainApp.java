@@ -17,7 +17,7 @@ import android.widget.Toast;
 
 public class MainApp extends Application {
 
-    public static final String _IP = "192.168.1.10"; // Test PHP server
+    public static final String _IP = "192.168.15.10"; // Test PHP server
     public static final Integer _PORT = 8080; // Port - with colon (:)
     public static final String _HOST_URL = "http://" + _IP + ":" + _PORT + "/";
 
