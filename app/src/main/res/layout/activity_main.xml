@@ -49,25 +49,25 @@
             android:onClick="openForm"
             android:text="Open New Form" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
+        <!--<LinearLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:orientation="horizontal">-->
 
-            <EditText
-                android:id="@+id/areaCode"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:hint="PSU No."
-                android:inputType="number" />
+            <!--<EditText-->
+                <!--android:id="@+id/areaCode"-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_weight="1"-->
+                <!--android:hint="PSU No."-->
+                <!--android:inputType="number" />-->
 
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:onClick="CheckCluster"
-                android:text="Check PSU" />
-        </LinearLayout>
+            <!--<Button-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:onClick="CheckCluster"-->
+                <!--android:text="Check PSU" />-->
+        <!--</LinearLayout>-->
 
         <Button
             android:id="@+id/syncServer"
