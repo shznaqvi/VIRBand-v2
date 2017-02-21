@@ -405,7 +405,8 @@
     <item name="vic_g3"> سیدھی والی ران میں </item>
     <item name="vic_g4"> الٹی والی ران میں </item>
     <item name="vic_g5"> الٹے بازو پر </item>
-    <item name="vic_g6"> پیچھے /پچھواڑی پر </item>
+    <item name="vic_g6"> پیچھے/پچھواڑی پر </item>
+    <item name="vic_g99"> معلوم نہیں </item>
   </string-array>
 
   <string-array name="vic_g_value">
@@ -416,6 +417,7 @@
     <item name="vic_g4">4</item>
     <item name="vic_g5">5</item>
     <item name="vic_g6">6</item>
+    <item name="vic_g99">99</item>
   </string-array>
 
 </resources>

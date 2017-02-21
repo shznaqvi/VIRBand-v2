@@ -562,9 +562,7 @@ public class SectionEActivity extends Activity {
 
 //        String childName = getString(R.string.ve13_a) +""+ FormsContract.getChildN()+""+getString(R.string.ve13_b);
 
-        ve13Text.setText(ve13Text.getText().toString().replace("Test",FormsContract.getChildN()));
-
-
+        ve13Text.setText(ve13Text.getText().toString().replace("Test", FormsContract.getChildN()));
 
 
         ve01.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
@@ -668,7 +666,7 @@ public class SectionEActivity extends Activity {
                 if (ve0901.isChecked()) {
                     fldGrpve10.setVisibility(View.VISIBLE);
                 } else {
-                     fldGrpve10.setVisibility(View.GONE);
+                    fldGrpve10.setVisibility(View.GONE);
                     ve1001.setChecked(false);
                     ve1002.setChecked(false);
                     ve1003.setChecked(false);
@@ -697,7 +695,7 @@ public class SectionEActivity extends Activity {
         ve13.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
-                if (ve1301.isChecked() || ve1399.isChecked() ) {
+                if (ve1301.isChecked() || ve1399.isChecked()) {
                     fldGrpve14.setVisibility(View.GONE);
                     fldGrpve16.setVisibility(View.VISIBLE);
                     fldGrpve21.setVisibility(View.VISIBLE);
@@ -1101,10 +1099,10 @@ public class SectionEActivity extends Activity {
                 e.printStackTrace();
             }
             if (UpdateDB()) {
-                if(MainApp.gotoIM) {
+                if (MainApp.gotoIM) {
                     Toast.makeText(this, "Starting Next Section", Toast.LENGTH_SHORT).show();
                     Intent secNext = new Intent(this, SectionICActivity.class);
-                    secNext.putExtra("ic",true);
+                    secNext.putExtra("ic", true);
 
                     startActivity(secNext);
                 } else if (MainApp.gotoOC) {
@@ -1533,7 +1531,7 @@ public class SectionEActivity extends Activity {
         }
 
 
-        if(!(ve0599.isChecked())) {
+        if (!(ve0599.isChecked())) {
 
             if (ve06.getCheckedRadioButtonId() == -1) {
                 Toast.makeText(this, "ERROR(not selected): " + getString(R.string.ve06), Toast.LENGTH_LONG).show();
@@ -1706,7 +1704,7 @@ public class SectionEActivity extends Activity {
         } else {
             ve1202.setError(null);
         }
-        
+
         if (ve1202.isChecked()) {
 
             if (ve12a.getCheckedRadioButtonId() == -1) {
@@ -1767,7 +1765,8 @@ public class SectionEActivity extends Activity {
         } else {
             ve1599.setError(null);
         }
-        if (ve1302.isChecked()) {
+
+        if ((ve1502.isChecked() || ve1599.isChecked()) && ((ve1302.isChecked() || ve1399.isChecked()))) {
 
             if (!(ve1601.isChecked()
                     || ve1602.isChecked()
@@ -1785,78 +1784,80 @@ public class SectionEActivity extends Activity {
             } else {
                 ve1688.setError(null);
             }
-        }
-        if (ve17.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "ERROR(not selected): " + getString(R.string.ve17), Toast.LENGTH_LONG).show();
-            ve1788.setError("This data is Required!");
-            Log.i(TAG, "ve178: This data is Required!");
-            return false;
-        } else {
-            ve1788.setError(null);
-        }
-        if (ve18.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "ERROR(not selected): " + getString(R.string.ve18), Toast.LENGTH_LONG).show();
-            ve1888.setError("This data is Required!");
-            Log.i(TAG, "ve188: This data is Required!");
-            return false;
-        } else {
-            ve1888.setError(null);
-        }
-        if (ve19.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "ERROR(not selected): " + getString(R.string.ve19), Toast.LENGTH_LONG).show();
-            ve1988.setError("This data is Required!");
-            Log.i(TAG, "ve198: This data is Required!");
-            return false;
-        } else {
-            ve1988.setError(null);
-        }
-        if (ve20.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "ERROR(not selected): " + getString(R.string.ve20), Toast.LENGTH_LONG).show();
-            ve2007.setError("This data is Required!");
-            Log.i(TAG, "ve208: This data is Required!");
-            return false;
-        } else {
-            ve2007.setError(null);
-        }
-        if (ve1302.isChecked()) {
 
-            if (ve21.getCheckedRadioButtonId() == -1) {
-                Toast.makeText(this, "ERROR(not selected): " + getString(R.string.ve21), Toast.LENGTH_LONG).show();
-                ve2199.setError("This data is Required!");
-                Log.i(TAG, "ve21: This data is Required!");
+            if (ve17.getCheckedRadioButtonId() == -1) {
+                Toast.makeText(this, "ERROR(not selected): " + getString(R.string.ve17), Toast.LENGTH_LONG).show();
+                ve1788.setError("This data is Required!");
+                Log.i(TAG, "ve178: This data is Required!");
                 return false;
             } else {
-                ve2199.setError(null);
+                ve1788.setError(null);
             }
+            if (ve18.getCheckedRadioButtonId() == -1) {
+                Toast.makeText(this, "ERROR(not selected): " + getString(R.string.ve18), Toast.LENGTH_LONG).show();
+                ve1888.setError("This data is Required!");
+                Log.i(TAG, "ve188: This data is Required!");
+                return false;
+            } else {
+                ve1888.setError(null);
+            }
+            if (ve19.getCheckedRadioButtonId() == -1) {
+                Toast.makeText(this, "ERROR(not selected): " + getString(R.string.ve19), Toast.LENGTH_LONG).show();
+                ve1988.setError("This data is Required!");
+                Log.i(TAG, "ve198: This data is Required!");
+                return false;
+            } else {
+                ve1988.setError(null);
+            }
+            if (ve20.getCheckedRadioButtonId() == -1) {
+                Toast.makeText(this, "ERROR(not selected): " + getString(R.string.ve20), Toast.LENGTH_LONG).show();
+                ve2007.setError("This data is Required!");
+                Log.i(TAG, "ve208: This data is Required!");
+                return false;
+            } else {
+                ve2007.setError(null);
+            }
+            if (ve1302.isChecked()) {
 
-            if (ve2101.isChecked()) {
-
-                if (ve22.getCheckedRadioButtonId() == -1) {
-                    Toast.makeText(this, "ERROR(not selected): " + getString(R.string.ve22), Toast.LENGTH_LONG).show();
-                    ve2288.setError("This data is Required!");
-                    Log.i(TAG, "ve22: This data is Required!");
+                if (ve21.getCheckedRadioButtonId() == -1) {
+                    Toast.makeText(this, "ERROR(not selected): " + getString(R.string.ve21), Toast.LENGTH_LONG).show();
+                    ve2199.setError("This data is Required!");
+                    Log.i(TAG, "ve21: This data is Required!");
                     return false;
                 } else {
-                    ve2288.setError(null);
+                    ve2199.setError(null);
                 }
 
-                if (ve2288.isChecked() && ve2288x.getText().toString().isEmpty()) {
-                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.ve22) + " - " + getString(R.string.Others), Toast.LENGTH_LONG).show();
-                    ve2288x.setError("This data is Required!");
-                    Log.i(TAG, "ve2288x: This data is Required!");
-                    return false;
-                } else {
-                    ve2288x.setError(null);
+                if (ve2101.isChecked()) {
+
+                    if (ve22.getCheckedRadioButtonId() == -1) {
+                        Toast.makeText(this, "ERROR(not selected): " + getString(R.string.ve22), Toast.LENGTH_LONG).show();
+                        ve2288.setError("This data is Required!");
+                        Log.i(TAG, "ve22: This data is Required!");
+                        return false;
+                    } else {
+                        ve2288.setError(null);
+                    }
+
+                    if (ve2288.isChecked() && ve2288x.getText().toString().isEmpty()) {
+                        Toast.makeText(this, "ERROR(empty): " + getString(R.string.ve22) + " - " + getString(R.string.Others), Toast.LENGTH_LONG).show();
+                        ve2288x.setError("This data is Required!");
+                        Log.i(TAG, "ve2288x: This data is Required!");
+                        return false;
+                    } else {
+                        ve2288x.setError(null);
+                    }
                 }
             }
-        }
-        if (ve23.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "ERROR(not selected): " + getString(R.string.ve23), Toast.LENGTH_LONG).show();
-            ve2388.setError("This data is Required!");
-            Log.i(TAG, "ve238: This data is Required!");
-            return false;
-        } else {
-            ve2388.setError(null);
+            if (ve23.getCheckedRadioButtonId() == -1) {
+                Toast.makeText(this, "ERROR(not selected): " + getString(R.string.ve23), Toast.LENGTH_LONG).show();
+                ve2388.setError("This data is Required!");
+                Log.i(TAG, "ve238: This data is Required!");
+                return false;
+            } else {
+                ve2388.setError(null);
+            }
+
         }
 
         if (ve24.getCheckedRadioButtonId() == -1) {
@@ -1972,7 +1973,7 @@ public class SectionEActivity extends Activity {
 
     @Override
     public void onBackPressed() {
-        Toast.makeText(getApplicationContext(),"You Can't go back",Toast.LENGTH_LONG).show();
+        Toast.makeText(getApplicationContext(), "You Can't go back", Toast.LENGTH_LONG).show();
     }
 
 
