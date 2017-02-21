@@ -1125,74 +1125,76 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="@string/ve16" />
 
-        <CheckBox
-            android:id="@+id/ve1601"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/ve1601" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/ve16" />
 
-        <CheckBox
-            android:id="@+id/ve1602"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/ve1602" />
+            <CheckBox
+                android:id="@+id/ve1601"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/ve1601" />
 
-        <CheckBox
-            android:id="@+id/ve1603"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/ve1603" />
+            <CheckBox
+                android:id="@+id/ve1602"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/ve1602" />
 
-        <CheckBox
-            android:id="@+id/ve1604"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/ve1604" />
+            <CheckBox
+                android:id="@+id/ve1603"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/ve1603" />
 
-        <CheckBox
-            android:id="@+id/ve1605"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/ve1605" />
+            <CheckBox
+                android:id="@+id/ve1604"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/ve1604" />
 
-        <CheckBox
-            android:id="@+id/ve1606"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/ve1606" />
+            <CheckBox
+                android:id="@+id/ve1605"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/ve1605" />
 
-        <CheckBox
-            android:id="@+id/ve1699"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/DNK" />
+            <CheckBox
+                android:id="@+id/ve1606"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/ve1606" />
 
-        <CheckBox
-            android:id="@+id/ve1688"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/Others" />
+            <CheckBox
+                android:id="@+id/ve1699"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/DNK" />
 
-        <EditText
-            android:id="@+id/ve1688x"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/Others"
-            android:visibility="gone" />
+            <CheckBox
+                android:id="@+id/ve1688"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/Others" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="@string/ve17" />
-        </LinearLayout>
-        <RadioGroup
+            <EditText
+                android:id="@+id/ve1688x"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/Others"
+                android:visibility="gone" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/ve17" />
+
+
+            <RadioGroup
             android:id="@+id/ve17"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
@@ -1421,45 +1423,9 @@
                 android:text="@string/ve2007" />
 
         </RadioGroup>
-
+        </LinearLayout>
         <LinearLayout
             android:id="@+id/fldGrpve21"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="@string/ve21" />
-
-        <RadioGroup
-            android:id="@+id/ve21"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <RadioButton
-                android:id="@+id/ve2101"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/Yes" />
-
-            <RadioButton
-                android:id="@+id/ve2102"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/No" />
-
-            <RadioButton
-                android:id="@+id/ve2199"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/DNK" />
-
-        </RadioGroup>
-
-        <LinearLayout
-            android:id="@+id/fldGrpve22"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
@@ -1468,53 +1434,91 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="@string/ve22" />
+                android:text="@string/ve21" />
 
             <RadioGroup
-                android:id="@+id/ve22"
+                android:id="@+id/ve21"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
                 <RadioButton
-                    android:id="@+id/ve2201"
+                    android:id="@+id/ve2101"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/ve2201" />
+                    android:text="@string/Yes" />
 
                 <RadioButton
-                    android:id="@+id/ve2202"
+                    android:id="@+id/ve2102"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/ve2202" />
+                    android:text="@string/No" />
 
                 <RadioButton
-                    android:id="@+id/ve2203"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/ve2203" />
-
-                <RadioButton
-                    android:id="@+id/ve2299"
+                    android:id="@+id/ve2199"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/DNK" />
 
-                <RadioButton
-                    android:id="@+id/ve2288"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/Others" />
-
             </RadioGroup>
 
-            <EditText
-                android:id="@+id/ve2288x"
+            <LinearLayout
+                android:id="@+id/fldGrpve22"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/Others"
-                android:visibility="gone" />
-        </LinearLayout>
-        </LinearLayout>
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/ve22" />
+
+                <RadioGroup
+                    android:id="@+id/ve22"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <RadioButton
+                        android:id="@+id/ve2201"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/ve2201" />
+
+                    <RadioButton
+                        android:id="@+id/ve2202"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/ve2202" />
+
+                    <RadioButton
+                        android:id="@+id/ve2203"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/ve2203" />
+
+                    <RadioButton
+                        android:id="@+id/ve2299"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/DNK" />
+
+                    <RadioButton
+                        android:id="@+id/ve2288"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/Others" />
+
+                </RadioGroup>
+
+                <EditText
+                    android:id="@+id/ve2288x"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/Others"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -1577,7 +1581,7 @@
             android:hint="@string/Others"
             android:visibility="gone" />
 
-
+        </LinearLayout>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

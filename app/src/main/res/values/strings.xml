@@ -40,7 +40,7 @@
     <string name="sectionD"> D.	 انڈیکس چائلڈ کے خاندان کی سماجی ومعاشی حیثیت </string>
     <string name="sectionE"> E.	 معلومات، رویہ اور عمل</string>
     <string name="sectionF"> F.	 انڈیکس چائلڈ کا ویکسینیشن ریکارڈ</string>
-    <string name="sectionG"> G. دیگر بچے کی تفصیلات (انڈیکس چائلڈ کے علاوہ، دو سال سے کم عمر) </string>
+  <string name="sectionG"> G. دیگر بچے کی تفصیلات (انڈیکس چائلڈ کے علاوہ، تیس (۳۰) ماہ سے کم عمر) </string>
 
 
     <string name="title_activity_splashscreen">SplashscreenActivity</string>
@@ -48,7 +48,7 @@
     <string name="dummy_content">DUMMY\nCONTENT</string>
 
     <string name="AreaCode">علاقہ</string>
-    <string name="childCount">دو سال سے کم عمر بچوں کی تعداد (بشمول منتخب بچےکے)</string>
+  <string name="childCount">تیس (۳۰) ماہ سے کم عمر بچوں کی تعداد (بشمول منتخب بچےکے)</string>
 
     <string name="va01"> علاقہ کوڈ </string>
     <string name="va101"> پہلوان گوٹھ </string>

@@ -686,11 +686,10 @@ public class SectionEActivity extends Activity {
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
                 if (ve1201.isChecked()) {
                     fldGrpve12a.setVisibility(View.GONE);
+                    ve12a.clearCheck();
                     ve12a88x.setText(null);
                 } else {
                     fldGrpve12a.setVisibility(View.VISIBLE);
-                    ve12a.clearCheck();
-                    ve12a88x.setText(null);
                 }
             }
         });
@@ -700,12 +699,17 @@ public class SectionEActivity extends Activity {
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
                 if (ve1301.isChecked() || ve1399.isChecked() ) {
                     fldGrpve14.setVisibility(View.GONE);
-                    fldGrpve16.setVisibility(View.GONE);
-                    fldGrpve21.setVisibility(View.GONE);
+                    fldGrpve16.setVisibility(View.VISIBLE);
+                    fldGrpve21.setVisibility(View.VISIBLE);
                     ve1488x.setText(null);
                     ve1688x.setText(null);
                     ve2288x.setText(null);
                     ve14.clearCheck();
+
+                } else {
+                    fldGrpve14.setVisibility(View.VISIBLE);
+                    fldGrpve16.setVisibility(View.GONE);
+                    fldGrpve21.setVisibility(View.GONE);
                     ve1601.setChecked(false);
                     ve1602.setChecked(false);
                     ve1603.setChecked(false);
@@ -716,10 +720,31 @@ public class SectionEActivity extends Activity {
                     ve1688.setChecked(false);
                     ve21.clearCheck();
                     ve22.clearCheck();
-                } else {
-                    fldGrpve14.setVisibility(View.VISIBLE);
+                }
+            }
+        });
+
+        ve15.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                if ((ve1502.isChecked() || ve1599.isChecked()) && ((ve1302.isChecked() || ve1399.isChecked()))) {
                     fldGrpve16.setVisibility(View.VISIBLE);
                     fldGrpve21.setVisibility(View.VISIBLE);
+
+
+                } else {
+                    fldGrpve16.setVisibility(View.GONE);
+                    fldGrpve21.setVisibility(View.GONE);
+                    ve1601.setChecked(false);
+                    ve1602.setChecked(false);
+                    ve1603.setChecked(false);
+                    ve1604.setChecked(false);
+                    ve1605.setChecked(false);
+                    ve1606.setChecked(false);
+                    ve1699.setChecked(false);
+                    ve1688.setChecked(false);
+                    ve21.clearCheck();
+                    ve22.clearCheck();
                 }
             }
         });
@@ -755,11 +780,11 @@ public class SectionEActivity extends Activity {
                     fldGrpve24a.setVisibility(View.GONE);
                     fldGrpve24b.setVisibility(View.VISIBLE);
                     ve24a01.setChecked(false);
-                    ve24a01.setChecked(false);
-                    ve24a01.setChecked(false);
-                    ve24a01.setChecked(false);
-                    ve24a01.setChecked(false);
-                    ve24a01.setChecked(false);
+                    ve24a02.setChecked(false);
+                    ve24a03.setChecked(false);
+                    ve24a04.setChecked(false);
+                    ve24a88.setChecked(false);
+                    ve24a99.setChecked(false);
                     ve24a88x.setText(null);
                 } else if (ve2499.isChecked()) {
                     fldGrpve24.setVisibility(View.GONE);
@@ -771,11 +796,11 @@ public class SectionEActivity extends Activity {
                     ve24b88.setChecked(false);
                     ve24b88x.setText(null);
                     ve24a01.setChecked(false);
-                    ve24a01.setChecked(false);
-                    ve24a01.setChecked(false);
-                    ve24a01.setChecked(false);
-                    ve24a01.setChecked(false);
-                    ve24a01.setChecked(false);
+                    ve24a02.setChecked(false);
+                    ve24a03.setChecked(false);
+                    ve24a04.setChecked(false);
+                    ve24a99.setChecked(false);
+                    ve24a88.setChecked(false);
                     ve24a88x.setText(null);
                 }
             }
@@ -790,11 +815,12 @@ public class SectionEActivity extends Activity {
                 } else if (ve2502.isChecked()) {
                     fldGrpve25a.setVisibility(View.GONE);
                     ve25a01.setChecked(false);
-                    ve25a01.setChecked(false);
-                    ve25a01.setChecked(false);
-                    ve25a01.setChecked(false);
-                    ve25a01.setChecked(false);
-                    ve25a01.setChecked(false);
+                    ve25a02.setChecked(false);
+                    ve25a03.setChecked(false);
+                    ve25a04.setChecked(false);
+                    ve25a05.setChecked(false);
+                    ve25a99.setChecked(false);
+                    ve25a88.setChecked(false);
                     ve25a88x.setText(null);
                 }
             }
