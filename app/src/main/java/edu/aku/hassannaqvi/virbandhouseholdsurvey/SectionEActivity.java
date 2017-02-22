@@ -726,11 +726,6 @@ public class SectionEActivity extends Activity {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
                 if ((ve1502.isChecked() || ve1599.isChecked()) && ((ve1302.isChecked() || ve1399.isChecked()))) {
-                    fldGrpve16.setVisibility(View.VISIBLE);
-                    fldGrpve21.setVisibility(View.VISIBLE);
-
-
-                } else {
                     fldGrpve16.setVisibility(View.GONE);
                     fldGrpve21.setVisibility(View.GONE);
                     ve1601.setChecked(false);
@@ -743,6 +738,9 @@ public class SectionEActivity extends Activity {
                     ve1688.setChecked(false);
                     ve21.clearCheck();
                     ve22.clearCheck();
+                } else {
+                    fldGrpve16.setVisibility(View.VISIBLE);
+                    fldGrpve21.setVisibility(View.VISIBLE);
                 }
             }
         });
@@ -1766,7 +1764,7 @@ public class SectionEActivity extends Activity {
             ve1599.setError(null);
         }
 
-        if ((ve1502.isChecked() || ve1599.isChecked()) && ((ve1302.isChecked() || ve1399.isChecked()))) {
+        if (!(ve1502.isChecked() || ve1599.isChecked()) && (ve1301.isChecked())) {
 
             if (!(ve1601.isChecked()
                     || ve1602.isChecked()

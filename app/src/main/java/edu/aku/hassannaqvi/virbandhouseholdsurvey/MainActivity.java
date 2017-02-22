@@ -28,8 +28,8 @@ public class MainActivity extends Activity {
     LinearLayout adminsec;
     @BindView(R.id.recordSummary)
     TextView recordSummary;
-    @BindView(R.id.areaCode)
-    EditText areaCode;
+//    @BindView(R.id.areaCode)
+//    EditText areaCode;
     boolean doubleBackToExitPressedOnce = false;
     private String rSumText = "";
 
