@@ -109,6 +109,9 @@ public class SectionAActivity extends Activity {
 
         ButterKnife.bind(this);
 
+//        Focus on Sub Area Code
+        subAreaCode.requestFocus();
+
 // Spinner Drop down elements
         lables = new ArrayList<String>();
         lables.add("Pehelwan Goth");
@@ -119,7 +122,7 @@ public class SectionAActivity extends Activity {
         values.add("02");
         areaCode.setText(getString(R.string.AreaCode) + ": " + lables.get(values.indexOf(String.valueOf(MainApp.areaCode))));
         vb03.setMaxDate(new Date().getTime());
-        vb03.setMinDate((long) (new Date().getTime() - ((MainApp.MILLISECONDS_IN_YEAR * 2.5)+ MainApp.MILLISECONDS_IN_DAY)));
+        vb03.setMinDate((long) (new Date().getTime() - ((MainApp.MILLISECONDS_IN_YEAR * 2.5) + MainApp.MILLISECONDS_IN_DAY)));
 
         vbAgeDob.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
@@ -237,7 +240,6 @@ public class SectionAActivity extends Activity {
         }
 
 
-
         sB.put("vb05", vb05.getText().toString());
         sB.put("vb06", vb06.getText().toString());
         sB.put("vb07", vb0701.isChecked() ? "1" : vb0702.isChecked() ? "2" : vb0703.isChecked() ? "3"
@@ -288,23 +290,22 @@ public class SectionAActivity extends Activity {
         }
 
         if (Integer.parseInt(MainApp.areaCode) == 1 && ((Integer.parseInt(subAreaCode.getText().toString()) < 1)
-                                                                    || Integer.parseInt(subAreaCode.getText().toString()) > 13)){
+                || Integer.parseInt(subAreaCode.getText().toString()) > 13)) {
             Toast.makeText(this, "ERROR: " + getString(R.string.subAreaCode), Toast.LENGTH_LONG).show();
             subAreaCode.setError("Cluster in range from 1 - 13");
             Log.i(TAG, "vbSubAreaCode: Cluster in range from 1 - 13!");
             return false;
-        }
-        else {
+        } else {
             subAreaCode.setError(null);
         }
 
         if (Integer.parseInt(MainApp.areaCode) == 2 && ((Integer.parseInt(subAreaCode.getText().toString()) < 14)
-                || Integer.parseInt(subAreaCode.getText().toString()) > 20)){
+                || Integer.parseInt(subAreaCode.getText().toString()) > 20)) {
             Toast.makeText(this, "ERROR: " + getString(R.string.subAreaCode), Toast.LENGTH_LONG).show();
             subAreaCode.setError("Cluster in range from 14 - 20");
             Log.i(TAG, "vbSubAreaCode: Cluster in range from 1 - 13!");
             return false;
-        }else {
+        } else {
             subAreaCode.setError(null);
         }
 
@@ -378,29 +379,113 @@ public class SectionAActivity extends Activity {
             Log.i(TAG, "vbAgeDOB: This data is Required!");
             return false;
         } else {
-                vbAge.setError(null);
+            vbAge.setError(null);
         }
 
 
 //        Age Validation
 
+//        if (vbAge.isChecked()) {
+//
+//            if (vb04d.getText().toString().isEmpty()) {
+//                vb04d.setError("ERROR(incomplete): " + getString(R.string.vb04));
+//                Toast.makeText(getApplicationContext(), "Please enter age in days", Toast.LENGTH_LONG).show();
+//                vb04d.requestFocus();
+//                Log.d(TAG, "ValidateForm: Error Type:vb04 empty");
+//                return false;
+//            } else {
+//                vb04d.setError(null);
+//
+//                if (Integer.parseInt(vb04d.getText().toString()) > 29) {
+//                    vb04d.setError("Invalid:" + getString(R.string.vb04));
+//                    Toast.makeText(getApplicationContext(), "Invalid:" + getString(R.string.vb04), Toast.LENGTH_LONG).show();
+//                    vb04d.requestFocus();
+//                    Log.d(TAG, "ValidateForm: Error Type:vb04 invalid");
+//                    return false;
+//                } else {
+//                    vb04d.setError(null);
+//                }
+//            }
+//
+//            if (vb04m.getText().toString().isEmpty()) {
+//                vb04m.setError("ERROR(incomplete): " + getString(R.string.vb04m));
+//                Toast.makeText(getApplicationContext(), "Please enter age in months", Toast.LENGTH_LONG).show();
+//                vb04m.requestFocus();
+//                Log.d(TAG, "ValidateForm: Error Type:vb04m empty");
+//                return false;
+//            } else {
+//                vb04m.setError(null);
+//
+//                if (Integer.parseInt(vb04m.getText().toString()) > MainApp.MONTHS_UPPER_LIMIT ) {
+//                    vb04m.setError("Invalid:" + getString(R.string.vb04m));
+//                    Toast.makeText(getApplicationContext(), "Invalid:" + getString(R.string.vb04m), Toast.LENGTH_LONG).show();
+//                    vb04m.requestFocus();
+//                    return false;
+//                } else {
+//                    vb04m.setError(null);
+//                }
+//            }
+//
+//            if (vb04y.getText().toString().isEmpty()) {
+//                vb04y.setError("ERROR(incomplete): " + getString(R.string.vb04y));
+//                Toast.makeText(getApplicationContext(), "Please enter age in Year", Toast.LENGTH_LONG).show();
+//                vb04y.requestFocus();
+//                Log.d(TAG, "ValidateForm: Error Type:vb04y empty");
+//                return false;
+//            } else {
+//                vb04y.setError(null);
+//
+//                if (Integer.parseInt(vb04y.getText().toString()) > MainApp.YEARS_LIMIT) {
+//                    vb04y.setError("Invalid:" + getString(R.string.vb04y));
+//                    Toast.makeText(getApplicationContext(), "Invalid:" + getString(R.string.vb04y), Toast.LENGTH_LONG).show();
+//                    vb04y.requestFocus();
+//                    return false;
+//                } else {
+//                    vb04y.setError(null);
+//                }
+//            }
+//        }
 
-        if (vbAge.isChecked() && (vb04d.getText().toString().isEmpty() || vb04m.getText().toString().isEmpty() || vb04y.getText().toString().isEmpty())) {
-            Toast.makeText(this, "ERROR(incomplete): " + getString(R.string.vb04), Toast.LENGTH_LONG).show();
-            vb04d.setError("Age not given");
-            Log.i(TAG, "vb04: Age no given");
-            return false;
-        }
+        if (vbAge.isChecked()) {
+            if (vb04d.getText().toString().isEmpty()) {
+                vb04d.setError("ERROR(incomplete): " + getString(R.string.vb04d));
+                Toast.makeText(getApplicationContext(), "Please enter age in days", Toast.LENGTH_LONG).show();
+                vb04d.requestFocus();
+                Log.d(TAG, "ValidateForm: Error Type:vb04d empty");
+                return false;
+            } else {
+                vb04d.setError(null);
+            }
 
-        else if(vbAge.isChecked() && (new utility().dobValidation(Integer.valueOf(vb04y.getText().toString()),Integer.valueOf(vb04m.getText().toString()),
-                Integer.valueOf(vb04d.getText().toString())))){
-            Toast.makeText(this, "ERROR(invalid): " + getString(R.string.vb04), Toast.LENGTH_LONG).show();
-            vb04m.setError("This is invalid");
-            Log.i(TAG, "This is invalid");
-            return false;
-        }
-        else {
-            vb04d.setError(null);
+            if (vb04m.getText().toString().isEmpty()) {
+                vb04m.setError("ERROR(incomplete): " + getString(R.string.vb04m));
+                Toast.makeText(getApplicationContext(), "Please enter age in months", Toast.LENGTH_LONG).show();
+                vb04m.requestFocus();
+                Log.d(TAG, "ValidateForm: Error Type:vb04m empty");
+                return false;
+            } else {
+                vb04m.setError(null);
+            }
+
+            if (vb04y.getText().toString().isEmpty()) {
+                vb04y.setError("ERROR(incomplete): " + getString(R.string.vb04y));
+                Toast.makeText(getApplicationContext(), "Please enter age in years", Toast.LENGTH_LONG).show();
+                vb04y.requestFocus();
+                Log.d(TAG, "ValidateForm: Error Type:vb04y empty");
+                return false;
+            } else {
+                vb04y.setError(null);
+            }
+
+            if (new utility().dobValidation(Integer.valueOf(vb04y.getText().toString()), Integer.valueOf(vb04m.getText().toString()),
+                    Integer.valueOf(vb04d.getText().toString()))) {
+                Toast.makeText(this, "ERROR(invalid): " + getString(R.string.vb04), Toast.LENGTH_LONG).show();
+                vb04y.setError("This is invalid");
+                Log.i(TAG, "This is invalid");
+                return false;
+            } else {
+                vb04y.setError(null);
+            }
         }
 
 //        if (vbDob.isChecked()) {
@@ -468,7 +553,6 @@ public class SectionAActivity extends Activity {
         } else {
             vb0788x.setError(null);
         }
-
 
 
         return true;

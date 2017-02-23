@@ -829,6 +829,7 @@ public class SectionEActivity extends Activity {
                     ve0288x.setVisibility(View.VISIBLE);
                 } else {
                     ve0288x.setVisibility(View.GONE);
+                    ve0288x.setText(null);
                 }
             }
         });
@@ -840,6 +841,7 @@ public class SectionEActivity extends Activity {
                     ve0388x.setVisibility(View.VISIBLE);
                 } else {
                     ve0388x.setVisibility(View.GONE);
+                    ve0388x.setText(null);
                 }
             }
         });
@@ -851,6 +853,7 @@ public class SectionEActivity extends Activity {
                     ve04a88x.setVisibility(View.VISIBLE);
                 } else {
                     ve04a88x.setVisibility(View.GONE);
+                    ve04a88x.setText(null);
                 }
             }
         });
@@ -862,6 +865,7 @@ public class SectionEActivity extends Activity {
                     ve04b88x.setVisibility(View.VISIBLE);
                 } else {
                     ve04b88x.setVisibility(View.GONE);
+                    ve04b88x.setText(null);
                 }
             }
         });
@@ -873,6 +877,7 @@ public class SectionEActivity extends Activity {
                     ve0588x.setVisibility(View.VISIBLE);
                 } else {
                     ve0588x.setVisibility(View.GONE);
+                    ve0588x.setText(null);
                 }
             }
         });
@@ -884,6 +889,7 @@ public class SectionEActivity extends Activity {
                     ve0688x.setVisibility(View.VISIBLE);
                 } else {
                     ve0688x.setVisibility(View.GONE);
+                    ve0688x.setText(null);
                 }
             }
         });
@@ -895,6 +901,7 @@ public class SectionEActivity extends Activity {
                     ve0788x.setVisibility(View.VISIBLE);
                 } else {
                     ve0788x.setVisibility(View.GONE);
+                    ve0788x.setText(null);
                 }
             }
         });
@@ -906,6 +913,7 @@ public class SectionEActivity extends Activity {
                     ve08a88x.setVisibility(View.VISIBLE);
                 } else {
                     ve08a88x.setVisibility(View.GONE);
+                    ve08a88x.setText(null);
                 }
             }
         });
@@ -917,6 +925,7 @@ public class SectionEActivity extends Activity {
                     ve08b88x.setVisibility(View.VISIBLE);
                 } else {
                     ve08b88x.setVisibility(View.GONE);
+                    ve08b88x.setText(null);
                 }
             }
         });
@@ -928,6 +937,7 @@ public class SectionEActivity extends Activity {
                     ve1088x.setVisibility(View.VISIBLE);
                 } else {
                     ve1088x.setVisibility(View.GONE);
+                    ve1088x.setText(null);
                 }
             }
         });
@@ -939,6 +949,7 @@ public class SectionEActivity extends Activity {
                     ve1188x.setVisibility(View.VISIBLE);
                 } else {
                     ve1188x.setVisibility(View.GONE);
+                    ve1188x.setText(null);
                 }
             }
         });
@@ -950,6 +961,7 @@ public class SectionEActivity extends Activity {
                     ve12a88x.setVisibility(View.VISIBLE);
                 } else {
                     ve12a88x.setVisibility(View.GONE);
+                    ve12a88x.setText(null);
                 }
             }
         });
@@ -961,6 +973,7 @@ public class SectionEActivity extends Activity {
                     ve1488x.setVisibility(View.VISIBLE);
                 } else {
                     ve1488x.setVisibility(View.GONE);
+                    ve1488x.setText(null);
                 }
             }
         });
@@ -972,6 +985,7 @@ public class SectionEActivity extends Activity {
                     ve1688x.setVisibility(View.VISIBLE);
                 } else {
                     ve1688x.setVisibility(View.GONE);
+                    ve1688x.setText(null);
                 }
             }
         });
@@ -983,6 +997,7 @@ public class SectionEActivity extends Activity {
                     ve1788x.setVisibility(View.VISIBLE);
                 } else {
                     ve1788x.setVisibility(View.GONE);
+                    ve1788x.setText(null);
                 }
             }
         });
@@ -994,6 +1009,7 @@ public class SectionEActivity extends Activity {
                     ve1888x.setVisibility(View.VISIBLE);
                 } else {
                     ve1888x.setVisibility(View.GONE);
+                    ve1888x.setText(null);
                 }
             }
         });
@@ -1005,6 +1021,7 @@ public class SectionEActivity extends Activity {
                     ve1988x.setVisibility(View.VISIBLE);
                 } else {
                     ve1988x.setVisibility(View.GONE);
+                    ve1988x.setText(null);
                 }
             }
         });
@@ -1016,6 +1033,7 @@ public class SectionEActivity extends Activity {
                     ve2288x.setVisibility(View.VISIBLE);
                 } else {
                     ve2288x.setVisibility(View.GONE);
+                    ve2288x.setText(null);
                 }
             }
         });
@@ -1027,6 +1045,7 @@ public class SectionEActivity extends Activity {
                     ve2388x.setVisibility(View.VISIBLE);
                 } else {
                     ve2388x.setVisibility(View.GONE);
+                    ve2388x.setText(null);
                 }
             }
         });
@@ -1038,6 +1057,7 @@ public class SectionEActivity extends Activity {
                     ve24a88x.setVisibility(View.VISIBLE);
                 } else {
                     ve24a88x.setVisibility(View.GONE);
+                    ve24a88x.setText(null);
                 }
             }
         });
@@ -1049,6 +1069,7 @@ public class SectionEActivity extends Activity {
                     ve24b88x.setVisibility(View.VISIBLE);
                 } else {
                     ve24b88x.setVisibility(View.GONE);
+                    ve24b88x.setText(null);
                 }
             }
         });
@@ -1060,6 +1081,7 @@ public class SectionEActivity extends Activity {
                     ve25a88x.setVisibility(View.VISIBLE);
                 } else {
                     ve25a88x.setVisibility(View.GONE);
+                    ve25a88x.setText(null);
                 }
             }
         });
