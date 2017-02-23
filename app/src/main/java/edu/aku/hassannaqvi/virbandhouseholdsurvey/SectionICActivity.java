@@ -766,82 +766,103 @@ public class SectionICActivity extends Activity {
 
             //        Spinner Validation
 
-            TextView vic_t_f01g = (TextView) vic_f01g.getSelectedView();
-            if (vic_f01.isChecked() && vic_f01g.getSelectedItemId() == 0) {
-                Toast.makeText(this, "ERROR: " + getString(R.string.vic_f), Toast.LENGTH_LONG).show();
-                vic_t_f01g.setTextColor(Color.RED);//just to highlight that this is an error
-                vic_t_f01g.setText("Please select an Answer");//changes the selected item text to this
-                Log.i(TAG, "vic_f01: Select value from dropdown!");
-                return false;
-            } else {
-                vic_t_f01g.setError(null);
+
+            if (vic_f01.isChecked()) {
+                TextView vic_t_f01g = (TextView) vic_f01g.getSelectedView();
+                if (vic_f01g.getSelectedItemId() == 0
+                        ) {
+                    Toast.makeText(this, "ERROR: " + getString(R.string.vic_f), Toast.LENGTH_LONG).show();
+                    vic_t_f01g.setTextColor(Color.RED);//just to highlight that this is an error
+                    vic_t_f01g.setText("Please select an Answer");//changes the selected item text to this
+                    Log.i(TAG, "vic_f01: Select value from dropdown!");
+                    return false;
+                } else {
+                    vic_t_f01g.setError(null);
+                }
             }
 
-
-            TextView vic_t_f02g = (TextView) vic_f02g.getSelectedView();
-            if (vic_f02.isChecked() && vic_f02g.getSelectedItemId() == 0) {
-                Toast.makeText(this, "ERROR: " + getString(R.string.vic_f), Toast.LENGTH_LONG).show();
-                vic_t_f02g.setTextColor(Color.RED);//just to highlight that this is an error
-                vic_t_f02g.setText("Please select an Answer");//changes the selected item text to this
-                Log.i(TAG, "vic_f02: Select value from dropdown!");
-                return false;
-            } else {
-                vic_t_f02g.setError(null);
+            if (vic_f02.isChecked()) {
+                TextView vic_t_f02g = (TextView) vic_f02g.getSelectedView();
+                if (vic_f02g.getSelectedItemId() == 0
+                        ) {
+                    Toast.makeText(this, "ERROR: " + getString(R.string.vic_f), Toast.LENGTH_LONG).show();
+                    vic_t_f02g.setTextColor(Color.RED);//just to highlight that this is an error
+                    vic_t_f02g.setText("Please select an Answer");//changes the selected item text to this
+                    Log.i(TAG, "vic_f02: Select value from dropdown!");
+                    return false;
+                } else {
+                    vic_t_f02g.setError(null);
+                }
             }
 
-            TextView vic_t_f03g = (TextView) vic_f03g.getSelectedView();
-            if (vic_f03.isChecked() && vic_f03g.getSelectedItemId() == 0) {
-                Toast.makeText(this, "ERROR: " + getString(R.string.vic_f), Toast.LENGTH_LONG).show();
-                vic_t_f03g.setTextColor(Color.RED);//just to highlight that this is an error
-                vic_t_f03g.setText("Please select an Answer");//changes the selected item text to this
-                Log.i(TAG, "vic_f03: Select value from dropdown!");
-                return false;
-            } else {
-                vic_t_f03g.setError(null);
+            if (vic_f03.isChecked()) {
+                TextView vic_t_f03g = (TextView) vic_f03g.getSelectedView();
+                if (vic_f03g.getSelectedItemId() == 0
+                        ) {
+                    Toast.makeText(this, "ERROR: " + getString(R.string.vic_f), Toast.LENGTH_LONG).show();
+                    vic_t_f03g.setTextColor(Color.RED);//just to highlight that this is an error
+                    vic_t_f03g.setText("Please select an Answer");//changes the selected item text to this
+                    Log.i(TAG, "vic_f03: Select value from dropdown!");
+                    return false;
+                } else {
+                    vic_t_f03g.setError(null);
+                }
             }
 
-            TextView vic_t_f04g = (TextView) vic_f04g.getSelectedView();
-            if (vic_f04.isChecked() && vic_f04g.getSelectedItemId() == 0) {
-                Toast.makeText(this, "ERROR: " + getString(R.string.vic_f), Toast.LENGTH_LONG).show();
-                vic_t_f04g.setTextColor(Color.RED);//just to highlight that this is an error
-                vic_t_f04g.setText("Please select an Answer");//changes the selected item text to this
-                Log.i(TAG, "vic_f04: Select value from dropdown!");
-                return false;
-            } else {
-                vic_t_f04g.setError(null);
+            if (vic_f04.isChecked()) {
+                TextView vic_t_f04g = (TextView) vic_f04g.getSelectedView();
+                if (vic_f04g.getSelectedItemId() == 0
+                        ) {
+                    Toast.makeText(this, "ERROR: " + getString(R.string.vic_f), Toast.LENGTH_LONG).show();
+                    vic_t_f04g.setTextColor(Color.RED);//just to highlight that this is an error
+                    vic_t_f04g.setText("Please select an Answer");//changes the selected item text to this
+                    Log.i(TAG, "vic_f04: Select value from dropdown!");
+                    return false;
+                } else {
+                    vic_t_f04g.setError(null);
+                }
             }
 
-            TextView vic_t_f05g = (TextView) vic_f05g.getSelectedView();
-            if (vic_f05.isChecked() && vic_f05g.getSelectedItemId() == 0) {
-                Toast.makeText(this, "ERROR: " + getString(R.string.vic_f), Toast.LENGTH_LONG).show();
-                vic_t_f05g.setTextColor(Color.RED);//just to highlight that this is an error
-                vic_t_f05g.setText("Please select an Answer");//changes the selected item text to this
-                Log.i(TAG, "vic_f05: Select value from dropdown!");
-                return false;
-            } else {
-                vic_t_f05g.setError(null);
+            if (vic_f05.isChecked()) {
+                TextView vic_t_f05g = (TextView) vic_f05g.getSelectedView();
+                if (vic_f05g.getSelectedItemId() == 0
+                        ) {
+                    Toast.makeText(this, "ERROR: " + getString(R.string.vic_f), Toast.LENGTH_LONG).show();
+                    vic_t_f05g.setTextColor(Color.RED);//just to highlight that this is an error
+                    vic_t_f05g.setText("Please select an Answer");//changes the selected item text to this
+                    Log.i(TAG, "vic_f05: Select value from dropdown!");
+                    return false;
+                } else {
+                    vic_t_f05g.setError(null);
+                }
             }
 
-            TextView vic_t_f06g = (TextView) vic_f06g.getSelectedView();
-            if (vic_f06.isChecked() && vic_f06g.getSelectedItemId() == 0) {
-                Toast.makeText(this, "ERROR: " + getString(R.string.vic_f), Toast.LENGTH_LONG).show();
-                vic_t_f06g.setTextColor(Color.RED);//just to highlight that this is an error
-                vic_t_f06g.setText("Please select an Answer");//changes the selected item text to this
-                Log.i(TAG, "vic_f06: Select value from dropdown!");
-                return false;
-            } else {
-                vic_t_f06g.setError(null);
+            if (vic_f06.isChecked()) {
+                TextView vic_t_f06g = (TextView) vic_f06g.getSelectedView();
+                if (vic_f06g.getSelectedItemId() == 0
+                        ) {
+                    Toast.makeText(this, "ERROR: " + getString(R.string.vic_f), Toast.LENGTH_LONG).show();
+                    vic_t_f06g.setTextColor(Color.RED);//just to highlight that this is an error
+                    vic_t_f06g.setText("Please select an Answer");//changes the selected item text to this
+                    Log.i(TAG, "vic_f06: Select value from dropdown!");
+                    return false;
+                } else {
+                    vic_t_f06g.setError(null);
+                }
             }
 
-            TextView vic_t_f99g = (TextView) vic_f99g.getSelectedView();
-            if (vic_f99.isChecked() && vic_f99g.getSelectedItemId() == 0) {
-                Toast.makeText(this, "ERROR: " + getString(R.string.vic_f), Toast.LENGTH_LONG).show();
-                vic_t_f99g.setTextColor(Color.RED);//just to highlight that this is an error
-                vic_t_f99g.setText("Please select an Answer");//changes the selected item text to this
-                Log.i(TAG, "vic_f99: Select value from dropdown!");
-                return false;
-            } else {
-                vic_t_f99g.setError(null);
+            if (vic_f99.isChecked()) {
+                TextView vic_t_f99g = (TextView) vic_f99g.getSelectedView();
+                if (vic_f99g.getSelectedItemId() == 0
+                        ) {
+                    Toast.makeText(this, "ERROR: " + getString(R.string.vic_f), Toast.LENGTH_LONG).show();
+                    vic_t_f99g.setTextColor(Color.RED);//just to highlight that this is an error
+                    vic_t_f99g.setText("Please select an Answer");//changes the selected item text to this
+                    Log.i(TAG, "vic_f99: Select value from dropdown!");
+                    return false;
+                } else {
+                    vic_t_f99g.setError(null);
+                }
             }
 
             if (vic_f88.isChecked() && vic_f88x.getText().toString().isEmpty()) {
